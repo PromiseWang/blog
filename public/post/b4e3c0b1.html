@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://promisewang.github.io/images/160_3.png">
 <meta property="og:image" content="https://promisewang.github.io/images/142_1.jpeg">
 <meta property="article:published_time" content="2023-09-23T13:32:23.000Z">
-<meta property="article:modified_time" content="2023-09-23T15:20:11.292Z">
+<meta property="article:modified_time" content="2023-09-23T15:21:33.498Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="代码随想录">
@@ -353,7 +353,7 @@
 <img src="../images/142_1.jpeg" srcset="/img/loading.gif" lazyload alt="142_1" style="zoom:80%;" />
 
 <p>为什么一圈必定会追上：假设他们同时进入入口（整个链表就是个环），慢指针走一圈后，快指针走两圈。如果快指针先进入，那么追上慢指针必定走不到一圈。</p>
-<p>最后推出来$x&#x3D;z$，意味着此时的快指针降速（速度变为1），同时新定义的指针从头开始运动，两者必定在入口处相遇</p>
+<p>最后推出来x&#x3D;z，意味着此时的快指针降速（速度变为1），同时新定义的指针从头开始运动，两者必定在入口处相遇</p>
 <h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">detectCycle</span><span class="hljs-params">(head *ListNode)</span></span> *ListNode &#123;<br>    fast := head<br>    slow := head<br>    p := head<br>    <span class="hljs-comment">// 这层for寻找环</span><br>    <span class="hljs-keyword">for</span> fast != <span class="hljs-literal">nil</span> &#123;<br>        slow = slow.Next<br>        fast = fast.Next<br>        <span class="hljs-keyword">if</span> fast != <span class="hljs-literal">nil</span> &#123;<br>            fast = fast.Next<br>            <span class="hljs-keyword">if</span> slow == fast &#123;  <span class="hljs-comment">// 两指针相遇说明有环</span><br>            <span class="hljs-keyword">for</span> p != fast &#123;  <span class="hljs-comment">// 这层for执行的是公式中x=z的一步</span><br>                p = p.Next<br>                fast = fast.Next<br>            &#125;<br>            <span class="hljs-keyword">return</span> p<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">break</span><br>        &#125;        <br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
@@ -461,6 +461,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/post/20198d61.html" title="代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
