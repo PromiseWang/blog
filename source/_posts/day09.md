@@ -33,7 +33,7 @@ date: 2023-09-28 15:08:08
 KMP算法，匹配过程放入到一个小视频当中，每个画面持续3秒。好多视频讲解都是“移动模式串”来讲，自己写代码时候有点蒙，所以自己做了个小动图，不使用“移动”来呈现。
 
 <div style="position: relative; width: 100%; height: 100%;padding-bottom: 100%;"><iframe 
-src="../images/KMP/匹配.mp4" scrolling="no" border="0" 
+src="../images/day09/匹配.mp4" scrolling="no" border="0" 
 frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
 height: 100%; left: 0; top: 0;"> </iframe></div>
 
@@ -41,7 +41,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 #### Next数组构建过程
 
 <div style="position: relative; width: 100%; height: 0;padding-bottom: 100%;"><iframe 
-src="../images/KMP/next数组构建.mp4" scrolling="no" border="0" 
+src="../images/day09/next数组构建.mp4" scrolling="no" border="0" 
 frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
 height: 100%; left: 0; top: 0;"> </iframe></div>
 

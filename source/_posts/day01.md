@@ -164,7 +164,7 @@ func removeElement(nums []int, val int) int {
 
 方法二还是的边界条件有点绕的，自己把自己绕进去了
 
-![绕晕了的边界](../images/image-20230920140818304.png)
+![绕晕了的边界](../images/day01/image-20230920140818304.png)
 
 
 
@@ -256,7 +256,7 @@ func binary(nums []int, target int, flag bool) int {
 }
 ```
 
-![AC！](../images/image-20230920152650727.png)
+![AC！](../images/day01/image-20230920152650727.png)
 
 ### 官方解法
 
@@ -280,7 +280,7 @@ func searchRange(nums []int, target int) []int {
 
 `sort.SearchInts()`函数没有接触过，看看源码
 
-<img src="../images/image-20230920152855240.png" alt="sort.SearchInts()源码" style="zoom:67%;" />
+<img src="../images/day01/image-20230920152855240.png" alt="sort.SearchInts()源码" style="zoom:67%;" />
 
 >   SearchInts在整型数组的有序切片中搜索x，并返回由Search指定的索引。如果x不存在，返回值是插入x的索引(可以是len(a))。
 >   切片必须按升序排序。
@@ -328,7 +328,7 @@ public:
 
 -   群里面有位同学说到了这个事情，之前从未注意过：
 
-    <img src="../images/image-20230920153829216.png" alt="群友聊天" style="zoom:80%;" />
+    <img src="../images/day01/image-20230920153829216.png" alt="群友聊天" style="zoom:80%;" />
 
     看别人的二分确实发现了第一种写法，但是并不是很理解，也没有很在意。
 

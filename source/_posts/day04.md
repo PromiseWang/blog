@@ -25,7 +25,7 @@ date: 2023-09-23 21:32:23
 
 1.   定义新的头结点，定义指针`p = newHead`，定义两个新的结点`tempNode1.Val = 2`，`tempNode2.Val = 1`（这里的值`1`和`2`是为了简化描述）
 
-<img src="../images/IMG_1372.PNG" alt="链表相关指针（变量说明）" style="zoom:80%;" />
+<img src="../images/day04/IMG_1372.PNG" alt="链表相关指针（变量说明）" style="zoom:80%;" />
 
 2.   使用新的结点重新进行连接，并且`p`前进到下一个位置（注意连接顺序，防止断链）
      -   `tempNode2.Next = p.Next.Next.Next`
@@ -33,7 +33,7 @@ date: 2023-09-23 21:32:23
      -   `p.Next = tempNode1`
      -   `p = p.Next.Next`
 
-<img src="../images/IMG_1373.PNG" alt="IMG_1373" style="zoom:80%;" />
+<img src="../images/day04/IMG_1373.PNG" alt="IMG_1373" style="zoom:80%;" />
 
 ### 代码
 
@@ -79,9 +79,9 @@ func swapPairs(head *ListNode) *ListNode {
 
 >   会不会出现`n`大于链表长度的情况（例如链表长度为5，删除倒数第8个元素）：不会，leetcode题解中给出。
 >
->   <img src="../images/QQ20230923-221152.png" alt="题目说明" style="zoom:80%;" />
+>   <img src="../images/day04/QQ20230923-221152.png" alt="题目说明" style="zoom:80%;" />
 
-<img src="../images/IMG_2D422EDB0DFC-1.jpeg" alt="图解" style="zoom:80%;" />
+<img src="../images/day04/IMG_2D422EDB0DFC-1.jpeg" alt="图解" style="zoom:80%;" />
 
 ### 代码
 
@@ -125,11 +125,11 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 假设是两个一维数组（只是为了方便逻辑上描述），查看是否相交，那么需要“尾部对齐”。假设长的链表开始的索引为0，我们需要从短的数组的开始。大意如下图
 
-<img src="../images/160_1.png" alt="判断第一组结点" style="zoom:80%;" />
+<img src="../images/day04/160_1.png" alt="判断第一组结点" style="zoom:80%;" />
 
-<img src="../images/160_2.png" alt="判断第二组结点" style="zoom:80%;" />
+<img src="../images/day04/160_2.png" alt="判断第二组结点" style="zoom:80%;" />
 
-<img src="../images/160_3.png" alt="判断第三组结点" style="zoom:80%;" />
+<img src="../images/day04/160_3.png" alt="判断第三组结点" style="zoom:80%;" />
 
 走到末尾都没发现有相同地址的节点则不存在相交的情况。
 
@@ -211,7 +211,7 @@ func getIntersectionNode(headA, headB *ListNode) *ListNode {
 
 2.   找到入口：（卡哥视频讲的很好，如果有疑问一定**看完视频**再提问）
 
-<img src="../images/142_1.jpeg" alt="142_1" style="zoom:80%;" />
+<img src="../images/day04/142_1.jpeg" alt="142_1" style="zoom:80%;" />
 
 为什么一圈必定会追上：假设他们同时进入入口（整个链表就是个环），慢指针走一圈后，快指针走两圈。如果快指针先进入，那么追上慢指针必定走不到一圈。
 

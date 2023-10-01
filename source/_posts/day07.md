@@ -207,7 +207,7 @@ func threeSum(nums []int) [][]int {
 
 以前用别的语言写回溯，很自然的使用了全局变量，结果在Go语言中发生了奇妙的事情。请看截图
 
-<img src="../images/使用全局变量leetcode.png" alt="使用全局变量leetcode" style="zoom:80%;" />
+<img src="../images/day07/使用全局变量leetcode.png" alt="使用全局变量leetcode" style="zoom:80%;" />
 
 明明输入的只有0和1，怎么会输出了2。而且这个测试用例这么眼熟呢，没错这就是给出的测试用例Case1的答案。放到Goland里面明明是正确答案！到这里就变了，说明全局变量出现了问题。解决这个问题有两个想法：
 
