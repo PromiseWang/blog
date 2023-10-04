@@ -16,24 +16,27 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串28.实现strStr()   题目链接：力扣题目链接   文章讲解：代码随想录(programmercarl.com)   视频讲解：  帮你把KMP算法学个通透！B站（理论篇） 帮你把KMP算法学个通透！（求next数组代码篇）    状态：看过视频之后AC  思路具体KMP算法原理看卡哥的视频，讲的很好。 KM">
+    <meta name="description" content="【study】Leetcode中Go语言第三方包在刷Leetcode时，发现Go并不像其他语言有原生的栈、队列等等结构。虽然很多操作都可以用切片或数组代替，但还是想知道如果自己想使用这些数据结构应该怎么办。   支持的库的连接 包含的数据结构如下  Containers Lists ArrayList SinglyLinkedList DoublyLinkedList   Sets HashSet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串">
-<meta property="og:url" content="https://promisewang.github.io/post/369230e4.html">
+<meta property="og:title" content="【study】Leetcode中Go语言第三方包">
+<meta property="og:url" content="https://promisewang.github.io/post/2360e101.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串28.实现strStr()   题目链接：力扣题目链接   文章讲解：代码随想录(programmercarl.com)   视频讲解：  帮你把KMP算法学个通透！B站（理论篇） 帮你把KMP算法学个通透！（求next数组代码篇）    状态：看过视频之后AC  思路具体KMP算法原理看卡哥的视频，讲的很好。 KM">
+<meta property="og:description" content="【study】Leetcode中Go语言第三方包在刷Leetcode时，发现Go并不像其他语言有原生的栈、队列等等结构。虽然很多操作都可以用切片或数组代替，但还是想知道如果自己想使用这些数据结构应该怎么办。   支持的库的连接 包含的数据结构如下  Containers Lists ArrayList SinglyLinkedList DoublyLinkedList   Sets HashSet">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-09-28T07:08:08.000Z">
-<meta property="article:modified_time" content="2023-10-01T16:54:10.458Z">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90study%E3%80%91Leetcode%E4%B8%ADGo%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/Leetcode%E4%B8%AD%E7%9A%84Go.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90study%E3%80%91Leetcode%E4%B8%ADGo%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/Leetcode%E6%94%AF%E6%8C%81Go%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93.png">
+<meta property="article:published_time" content="2023-10-03T12:17:03.000Z">
+<meta property="article:modified_time" content="2023-10-03T12:35:44.322Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="LeetCode">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="代码随想录">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://promisewang.github.io/images/%E3%80%90study%E3%80%91Leetcode%E4%B8%ADGo%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/Leetcode%E4%B8%AD%E7%9A%84Go.png">
   
   
   
-  <title>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串 - Study Or Debug</title>
+  <title>【study】Leetcode中Go语言第三方包 - Study Or Debug</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -187,7 +190,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串"></span>
+            <span id="subtitle" data-typed-text="【study】Leetcode中Go语言第三方包"></span>
           
         </div>
 
@@ -198,8 +201,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-09-28 15:08" pubdate>
-          2023年9月28日 下午
+        <time datetime="2023-10-03 20:17" pubdate>
+          2023年10月3日 晚上
         </time>
       </span>
     
@@ -210,7 +213,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          933 字
         
       </span>
     
@@ -221,7 +224,7 @@
         
         
         
-          12 分钟
+          8 分钟
         
       </span>
     
@@ -258,55 +261,88 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</h1>
+            <h1 id="seo-header">【study】Leetcode中Go语言第三方包</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串"><a href="#代码随想录算法训练营第九天-28-实现-strStr-。459-重复的子字符串" class="headerlink" title="代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串"></a>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</h1><h2 id="28-实现strStr"><a href="#28-实现strStr" class="headerlink" title="28.实现strStr()"></a>28.实现strStr()</h2><blockquote>
-<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/">力扣题目链接</a></p>
-<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0028.%E5%AE%9E%E7%8E%B0strStr.html">代码随想录(programmercarl.com)</a></p>
-<p>  视频讲解：</p>
+                <h1 id="【study】Leetcode中Go语言第三方包"><a href="#【study】Leetcode中Go语言第三方包" class="headerlink" title="【study】Leetcode中Go语言第三方包"></a>【study】Leetcode中Go语言第三方包</h1><p>在刷Leetcode时，发现Go并不像其他语言有原生的栈、队列等等结构。虽然很多操作都可以用<strong>切片</strong>或<strong>数组</strong>代替，但还是想知道如果自己想使用这些数据结构应该怎么办。</p>
+<p><img src="/../images/%E3%80%90study%E3%80%91Leetcode%E4%B8%ADGo%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/Leetcode%E4%B8%AD%E7%9A%84Go.png" srcset="/img/loading.gif" lazyload alt="Leetcode中的Go"></p>
+<p><img src="/../images/%E3%80%90study%E3%80%91Leetcode%E4%B8%ADGo%E8%AF%AD%E8%A8%80%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8C%85/Leetcode%E6%94%AF%E6%8C%81Go%E7%9A%84%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93.png" srcset="/img/loading.gif" lazyload alt="Leetcode支持Go的第三方库"></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/emirpasic/gods/tree/v1.18.1">支持的库的连接</a></p>
+<p>包含的数据结构如下</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1PD4y1o7nd/">帮你把KMP算法学个通透！B站（理论篇）</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1M5411j7Xx">帮你把KMP算法学个通透！（求next数组代码篇）</a></li>
+<li>Containers<ul>
+<li>Lists<ul>
+<li>ArrayList</li>
+<li>SinglyLinkedList</li>
+<li>DoublyLinkedList</li>
 </ul>
-<p>  状态：看过视频之后AC</p>
-</blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>具体KMP算法原理看卡哥的视频，讲的很好。</p>
-<h4 id="KMP中匹配的过程"><a href="#KMP中匹配的过程" class="headerlink" title="KMP中匹配的过程"></a>KMP中匹配的过程</h4><p>KMP算法，匹配过程放入到一个小视频当中，每个画面持续3秒。好多视频讲解都是“移动模式串”来讲，自己写代码时候有点蒙，所以自己做了个小动图，不使用“移动”来呈现。</p>
-<div style="position: relative; width: 100%; height: 100%;padding-bottom: 100%;"><iframe 
-src="../images/day09/匹配.mp4" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-
-<h4 id="Next数组构建过程"><a href="#Next数组构建过程" class="headerlink" title="Next数组构建过程"></a>Next数组构建过程</h4><div style="position: relative; width: 100%; height: 0;padding-bottom: 100%;"><iframe 
-src="../images/day09/next数组构建.mp4" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>
-
-
-
-<h4 id="Next数组说明"><a href="#Next数组说明" class="headerlink" title="Next数组说明"></a>Next数组说明</h4><p>Next数组中，每个元素表示：</p>
-<ul>
-<li>截止到目前为止，最长相等前后缀的长度；</li>
-<li>截止到目前为止，最长前缀的后一位。</li>
+</li>
+<li>Sets<ul>
+<li>HashSet</li>
+<li>TreeSet</li>
+<li>LinkedHashSet</li>
 </ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">getNext</span><span class="hljs-params">(next []<span class="hljs-type">int</span>, s <span class="hljs-type">string</span>)</span></span> &#123;<br>	j := <span class="hljs-number">0</span><br>	next[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">1</span>; i &lt; <span class="hljs-built_in">len</span>(s); i++ &#123;<br>		<span class="hljs-keyword">for</span> s[i] != s[j] &amp;&amp; j &gt; <span class="hljs-number">0</span> &#123;<br>			j = next[j<span class="hljs-number">-1</span>]<br>		&#125;<br>		<span class="hljs-keyword">if</span> s[i] == s[j] &#123;<br>			j++<br>		&#125;<br>		next[i] = j<br>		<span class="hljs-comment">//fmt.Printf(&quot;第%v次循环后的next数组结果为:%v\n&quot;, i, next)</span><br>	&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">strStr</span><span class="hljs-params">(haystack <span class="hljs-type">string</span>, needle <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">int</span> &#123;<br>	<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(needle) == <span class="hljs-number">0</span> &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-number">0</span><br>	&#125;<br>	next := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(needle))<br>	getNext(next, needle)<br>	j := <span class="hljs-number">0</span><br>	<span class="hljs-keyword">for</span> i := <span class="hljs-keyword">range</span> haystack &#123;<br>		<span class="hljs-keyword">for</span> j &gt; <span class="hljs-number">0</span> &amp;&amp; haystack[i] != needle[j] &#123;<br>			j = next[j<span class="hljs-number">-1</span>]<br>		&#125;<br>		<span class="hljs-keyword">if</span> haystack[i] == needle[j] &#123;<br>			j++<br>		&#125;<br>		<span class="hljs-keyword">if</span> j == <span class="hljs-built_in">len</span>(needle) &#123;<br>			<span class="hljs-keyword">return</span> i - <span class="hljs-built_in">len</span>(needle) + <span class="hljs-number">1</span><br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> <span class="hljs-number">-1</span><br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li>Stacks<ul>
+<li>LinkedListStack</li>
+<li>ArrayStack</li>
+</ul>
+</li>
+<li>Maps<ul>
+<li>HashMap</li>
+<li>TreeMap</li>
+<li>LinkedHashMap</li>
+<li>HashBidiMap</li>
+<li>TreeBidiMap</li>
+</ul>
+</li>
+<li>Trees<ul>
+<li>RedBlackTree</li>
+<li>AVLTree</li>
+<li>BTree</li>
+<li>BinaryHeap</li>
+</ul>
+</li>
+<li>Queues<ul>
+<li>LinkedListQueue</li>
+<li>ArrayQueue</li>
+<li>CircularBuffer</li>
+<li>PriorityQueue</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Functions<ul>
+<li>Comparator</li>
+<li>Iterator<ul>
+<li>IteratorWithIndex</li>
+<li>IteratorWithKey</li>
+<li>ReverseIteratorWithIndex</li>
+<li>ReverseIteratorWithKey</li>
+</ul>
+</li>
+<li>Enumerable<ul>
+<li>EnumerableWithIndex</li>
+<li>EnumerableWithKey</li>
+</ul>
+</li>
+<li>Serialization<ul>
+<li>JSONSerializer</li>
+<li>JSONDeserializer</li>
+</ul>
+</li>
+<li>Sort</li>
+<li>Container</li>
+</ul>
+</li>
+<li>Appendix</li>
+</ul>
+<p>所有数据结构都依赖<code>Container</code>接口，调用起来也很方便</p>
+<h3 id="以栈举例"><a href="#以栈举例" class="headerlink" title="以栈举例"></a>以栈举例</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">import</span> <span class="hljs-string">&quot;github.com/emirpasic/gods/stacks/arraystack&quot;</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    stack = arraystack.New()  <span class="hljs-comment">// 初始化一个栈</span><br>    stack.Push(<span class="hljs-number">1</span>)  <span class="hljs-comment">// 入栈</span><br>    value, _ := stack.Peek()  <span class="hljs-comment">// 查看站定元素</span><br>    value, _ := stack.Pop()  <span class="hljs-comment">// 出栈</span><br>    size := stack.Size()  <span class="hljs-comment">// 栈的大小</span><br>    isEmpty := stack.Empty()  <span class="hljs-comment">// 是否为空栈</span><br>    stack.Clear()  <span class="hljs-comment">// 清空栈</span><br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-<h2 id="459-重复的字符串"><a href="#459-重复的字符串" class="headerlink" title="459. 重复的字符串"></a>459. 重复的字符串</h2><blockquote>
-<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/repeated-substring-pattern/">力扣题目链接</a></p>
-<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0459.%E9%87%8D%E5%A4%8D%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2.html">代码随想录(programmercarl.com)</a></p>
-<p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1cg41127fw">字符串这么玩，可有点难度！ | LeetCode：459.重复的子字符串</a></p>
-<p>  状态：AC</p>
-</blockquote>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>如果不使用KMP算法还是比较简单的，有很多东西语言已经帮我们实现好了。看了卡哥的讲解感叹这个思路。</p>
-<p>构建一个新字符串<code>newString</code>为两个旧串<code>s</code>的拼接，但是要掐头去尾一个元素。如果<code>newString</code>仍然包含<code>s</code>，说明存在子串构成原字符串。</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">repeatedSubstringPattern</span><span class="hljs-params">(s <span class="hljs-type">string</span>)</span></span> <span class="hljs-type">bool</span> &#123;<br>	newString := s + s<br>	newString = newString[<span class="hljs-number">1</span> : <span class="hljs-built_in">len</span>(newString)<span class="hljs-number">-2</span>]<br>	<span class="hljs-keyword">return</span> strings.Contains(newString, s)<br>&#125;<br></code></pre></td></tr></table></figure>
-
+<p>更多操作可以看github中的<code>README.md</code>文件或者看源码</p>
 
                 
               </div>
@@ -325,7 +361,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%88%B7%E9%A2%98/" class="category-chain-item">刷题</a>
+  <a href="/categories/Study/" class="category-chain-item">Study</a>
   
   
 
@@ -342,9 +378,9 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
       
         <a href="/tags/LeetCode/" class="print-no-link">#LeetCode</a>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/" class="print-no-link">#算法</a>
+        <a href="/tags/Study/" class="print-no-link">#Study</a>
       
-        <a href="/tags/%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95/" class="print-no-link">#代码随想录</a>
+        <a href="/tags/Go/" class="print-no-link">#Go</a>
       
     </div>
   
@@ -356,8 +392,8 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>代码随想录算法训练营第九天 28. 实现 strStr()。459.重复的子字符串</div>
-      <div>https://promisewang.github.io/post/369230e4.html</div>
+      <div>【study】Leetcode中Go语言第三方包</div>
+      <div>https://promisewang.github.io/post/2360e101.html</div>
     </div>
     <div class="license-meta">
       
@@ -369,7 +405,7 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年9月28日</div>
+          <div>2023年10月3日</div>
         </div>
       
       
@@ -401,18 +437,12 @@ height: 100%; left: 0; top: 0;"> </iframe></div>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/a8d0ca77.html" title="代码随想录算法训练营第十天 232.用栈实现队列、225. 用队列实现栈。">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码随想录算法训练营第十天 232.用栈实现队列、225. 用队列实现栈。</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/6416b651.html" title="代码随想录算法训练营第八天 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。">
-                        <span class="hidden-mobile">代码随想录算法训练营第八天 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。</span>
+                      <a href="/post/bdbe1e6e.html" title="代码随想录算法训练营第十一天 20. 有效的括号、1047. 删除字符串中的所有相邻重复项、150. 逆波兰表达式求值。">
+                        <span class="hidden-mobile">代码随想录算法训练营第十一天 20. 有效的括号、1047. 删除字符串中的所有相邻重复项、150. 逆波兰表达式求值。</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

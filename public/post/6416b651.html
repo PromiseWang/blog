@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="Study Or Debug">
 <meta property="og:description" content="代码随想录算法训练营第八天| 344. 反转字符串、541. 反转字符串II、剑指Offer 05.替换空格、151.翻转字符串里的单词、剑指Offer58-II.左旋转字符串。344. 反转字符串   题目链接：力扣题目链接   文章讲解：代码随想录(programmercarl.com)   视频讲解：字符串基础操作！ | LeetCode：344.反转字符串   状态：AC  思路 相同颜色">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%8F%8D%E8%BD%AC2(1).png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A7%BB%E4%BD%8D.png">
+<meta property="og:image" content="https://promisewang.github.io/images/day08/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
+<meta property="og:image" content="https://promisewang.github.io/images/day08/%E5%8F%8D%E8%BD%AC2(1).png">
+<meta property="og:image" content="https://promisewang.github.io/images/day08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A7%BB%E4%BD%8D.png">
 <meta property="article:published_time" content="2023-09-28T06:17:36.000Z">
-<meta property="article:modified_time" content="2023-09-30T11:43:21.123Z">
+<meta property="article:modified_time" content="2023-10-01T16:53:26.466Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="代码随想录">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://promisewang.github.io/images/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
+<meta name="twitter:image" content="https://promisewang.github.io/images/day08/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
   
   
   
@@ -273,7 +273,7 @@
 <p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fV4y17748">字符串基础操作！ | LeetCode：344.反转字符串</a></p>
 <p>  状态：AC</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="/../images/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png" srcset="/img/loading.gif" lazyload alt="截屏2023-09-28 14.28.20"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p><img src="/../images/day08/%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2.png" srcset="/img/loading.gif" lazyload alt="截屏2023-09-28 14.28.20"></p>
 <p>相同颜色的互换位置即可，即<code>i</code>与<code>len(s) - 1 - i</code>交换。<code>i</code>的范围到<code>len(s)/2</code></p>
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reverseString</span><span class="hljs-params">(s []<span class="hljs-type">byte</span>)</span></span> &#123;<br>	<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">len</span>(s)/<span class="hljs-number">2</span>; i++ &#123;<br>		temp := s[i]<br>		s[i] = s[<span class="hljs-built_in">len</span>(s)-i<span class="hljs-number">-1</span>]<br>		s[<span class="hljs-built_in">len</span>(s)-i<span class="hljs-number">-1</span>] = temp<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -283,7 +283,7 @@
 <p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dT411j7NN">字符串操作进阶！ | LeetCode：541. 反转字符串II</a></p>
 <p>  状态：AC</p>
 </blockquote>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p><img src="/../images/%E5%8F%8D%E8%BD%AC2(1).png" srcset="/img/loading.gif" lazyload alt="反转2(1)"></p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p><img src="/../images/day08/%E5%8F%8D%E8%BD%AC2(1).png" srcset="/img/loading.gif" lazyload alt="反转2(1)"></p>
 <ol>
 <li>如图，图中相同颜色的部分代表一个<code>2k</code>段，循环条件：<code>for i := 0; i &lt; len(s); i += 2 * k</code>。</li>
 <li>相同颜色下，分为两段，前<code>k</code>段和后<code>k</code>段。前<code>k</code>段进行反转，后<code>k</code>段直接拼接。如果某一段到达了字符串<code>s</code>尾部，需要停止。</li>
@@ -318,7 +318,7 @@
 <p>  状态：AC</p>
 </blockquote>
 <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>直接拼接</p>
-<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p><img src="/../images/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A7%BB%E4%BD%8D.png" srcset="/img/loading.gif" lazyload alt="字符串移位"></p>
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p><img src="/../images/day08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A7%BB%E4%BD%8D.png" srcset="/img/loading.gif" lazyload alt="字符串移位"></p>
 <h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 方法一</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">dynamicPassword</span><span class="hljs-params">(password <span class="hljs-type">string</span>, target <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">string</span> &#123;<br>	<span class="hljs-keyword">return</span> password[target:] + password[:target]<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 方法二</span><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">reverse</span><span class="hljs-params">(chars []<span class="hljs-type">byte</span>, left, right <span class="hljs-type">int</span>)</span></span> &#123;<br>    <span class="hljs-keyword">for</span> left &lt; right &#123;<br>        temp := chars[left]<br>        chars[left] = chars[right]<br>        chars[right] = temp<br>        left++<br>        right--<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">dynamicPassword</span><span class="hljs-params">(password <span class="hljs-type">string</span>, target <span class="hljs-type">int</span>)</span></span> <span class="hljs-type">string</span> &#123;<br>    chars := []<span class="hljs-type">byte</span>(s)<br>    reverse(chars, <span class="hljs-number">0</span>, target - <span class="hljs-number">1</span>)<br>    reverse(chars, target, <span class="hljs-built_in">len</span>(chars) - <span class="hljs-number">1</span>)<br>    reverse(chars, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(chars) - <span class="hljs-number">1</span>)<br>    <span class="hljs-keyword">return</span> <span class="hljs-type">string</span>(chars)<br>&#125;<br></code></pre></td></tr></table></figure>

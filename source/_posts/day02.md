@@ -112,7 +112,7 @@ func minSubArrayLen(target int, nums []int) int {
 
 ### 思路
 
-![image-20230921130326208](../images/image-20230921130326208.png)
+![image-20230921130326208](../images/day02/image-20230921130326208.png)
 
 1.   循环次数是`n/2`
 

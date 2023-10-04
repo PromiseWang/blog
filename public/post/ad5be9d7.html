@@ -23,28 +23,28 @@
 <meta property="og:site_name" content="Study Or Debug">
 <meta property="og:description" content="【debug】Java中的map比较题目链接：242. 有效的字母异位词 事情起因：（由于自己对Java了解不深、有表达错误的请指出，感谢！）     群友发了一张代码截图，觉得自己写的代码并没有错，但是不能通过测试用例。 他的算法我简单说一下，有点麻烦，但算法不是这篇博客的重点。  两个Map：hashS、hashT分别用于存放字符串s和t中字母出现的频率(19行之前)； 遍历长的字符串对应的M">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://promisewang.github.io/images/java_map_debug.jpg">
-<meta property="og:image" content="https://promisewang.github.io/images/hashST.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E7%9F%AD%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png">
-<meta property="og:image" content="https://promisewang.github.io/images/26%E5%AD%97%E6%AF%8D.png">
-<meta property="og:image" content="https://promisewang.github.io/images/3000%E5%A4%9A%E9%95%BF%E5%BA%A6.png">
-<meta property="og:image" content="https://promisewang.github.io/images/6%E6%AC%A1%E6%89%A9%E5%A2%9E.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E5%B1%95%E7%A4%BA%E4%BB%A3%E7%A0%81.png">
-<meta property="og:image" content="https://promisewang.github.io/images/128%E5%8D%A1%E4%BD%8F.png">
-<meta property="og:image" content="https://promisewang.github.io/images/26%E9%9A%8F%E6%9C%BA%E5%AD%97%E6%AF%8D%E6%8A%A5%E9%94%99.png">
-<meta property="og:image" content="https://promisewang.github.io/images/map%E6%BA%90%E7%A0%81.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E7%AC%AC%E4%B8%80%E4%B8%AA127.png">
-<meta property="og:image" content="https://promisewang.github.io/images/%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA127.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/java_map_debug.jpg">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/hashST.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E6%96%AD%E7%82%B9%E8%B0%83%E8%AF%95.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E5%88%9D%E6%AD%A5%E8%A7%A3%E5%86%B3.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E7%9F%AD%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/26%E5%AD%97%E6%AF%8D.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/3000%E5%A4%9A%E9%95%BF%E5%BA%A6.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/6%E6%AC%A1%E6%89%A9%E5%A2%9E.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E5%B1%95%E7%A4%BA%E4%BB%A3%E7%A0%81.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/128%E5%8D%A1%E4%BD%8F.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/26%E9%9A%8F%E6%9C%BA%E5%AD%97%E6%AF%8D%E6%8A%A5%E9%94%99.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/map%E6%BA%90%E7%A0%81.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E7%AC%AC%E4%B8%80%E4%B8%AA127.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/%E6%9C%80%E5%90%8E%E4%B8%80%E4%B8%AA127.png">
 <meta property="article:published_time" content="2023-09-25T14:10:40.000Z">
-<meta property="article:modified_time" content="2023-09-25T15:26:43.456Z">
+<meta property="article:modified_time" content="2023-10-01T16:55:41.048Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="Debug">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://promisewang.github.io/images/java_map_debug.jpg">
+<meta name="twitter:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91Java%E4%B8%AD%E7%9A%84map%E6%AF%94%E8%BE%83/java_map_debug.jpg">
   
   
   
@@ -280,7 +280,7 @@
                 
                 <h1 id="【debug】Java中的map比较"><a href="#【debug】Java中的map比较" class="headerlink" title="【debug】Java中的map比较"></a>【debug】Java中的map比较</h1><p>题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-anagram/">242. 有效的字母异位词</a></p>
 <p>事情起因：（由于自己对Java了解不深、有表达错误的请指出，感谢！）</p>
-<img src="../images/java_map_debug.jpg" srcset="/img/loading.gif" lazyload alt="报错截图" style="zoom:100%;" />
+<img src="../images/【debug】Java中的map比较/java_map_debug.jpg" srcset="/img/loading.gif" lazyload alt="报错截图" style="zoom:100%;" />
 
 
 
@@ -292,28 +292,28 @@
 </ol>
 <p>当时我是在外面，看到了这段代码，理解了他的想法之后好像真的没什么问题。</p>
 <h3 id="复现Bug与初步解决"><a href="#复现Bug与初步解决" class="headerlink" title="复现Bug与初步解决"></a>复现Bug与初步解决</h3><p>回来之后代码放到idea里面跑了一下，发现这个测试用例长度为50000位，而且每个字母出现的频率是一样的</p>
-<img src="../images/hashST.png" srcset="/img/loading.gif" lazyload alt="两个Map的内容" style="zoom:67%;" />
+<img src="../images/【debug】Java中的map比较/hashST.png" srcset="/img/loading.gif" lazyload alt="两个Map的内容" style="zoom:67%;" />
 
 
 
 <p>打上断点继续向下走，看看是哪一步出现了问题。</p>
-<img src="../images/断点调试.png" srcset="/img/loading.gif" lazyload alt="断点调试" style="zoom:67%;" />
+<img src="../images/【debug】Java中的map比较/断点调试.png" srcset="/img/loading.gif" lazyload alt="断点调试" style="zoom:67%;" />
 
 
 
 <p>没想到第一次循环就出错了，<code>hashT.get(c)</code>与<code>hashS.get(c)</code>的值都是1913，但是地址不一样，一个是<code>&#123;Integer@531&#125;</code>，一个是<code>&#123;Integer@587&#125;</code>。看来这里的<code>!=</code>判断的是地址而不是值，使用<code>equal()</code>方法即可，如下：</p>
-<img src="../images/初步解决.png" srcset="/img/loading.gif" lazyload alt="初步解决" style="zoom:67%;" />
+<img src="../images/【debug】Java中的map比较/初步解决.png" srcset="/img/loading.gif" lazyload alt="初步解决" style="zoom:67%;" />
 
 
 
 <h3 id="深层探索"><a href="#深层探索" class="headerlink" title="深层探索"></a>深层探索</h3><p>事情并没有真正的解决，既然群友能通过一些测试用例，说明了一些情况使用<code>!=</code>是可以用的，那几个测试用例都是用了很短的字符串，我也看下是什么情况，<code>s=&quot;anagram&quot;</code>，<code>t=&quot;nagaram&quot;</code>，这是个正确的用例，debug的结果是这样</p>
-<img src="../images/短测试用例.png" srcset="/img/loading.gif" lazyload alt="短测试用例" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/短测试用例.png" srcset="/img/loading.gif" lazyload alt="短测试用例" style="zoom:80%;" />
 
 
 
 <p>这可就是玄学了呀，短的数据不会出现问题，而长的会出现。</p>
 <h4 id="猜想一：与Map的大小有关"><a href="#猜想一：与Map的大小有关" class="headerlink" title="猜想一：与Map的大小有关"></a>猜想一：与Map的大小有关</h4><p>因为长的测试用例有26个键值对（每个字母均出现），而短的只出现了5个字母。我设置测试用例<code>s = t = &quot;abcdefghijklmnopqrstuvwxyz&quot;</code>（以下简称字母表），让每个字母都出现一次。</p>
-<img src="../images/26字母.png" srcset="/img/loading.gif" lazyload alt="26字母" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/26字母.png" srcset="/img/loading.gif" lazyload alt="26字母" style="zoom:80%;" />
 
 
 
@@ -323,44 +323,44 @@
 
 
 
-<img src="../images/3000多长度.png" srcset="/img/loading.gif" lazyload alt="长度为3328" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/3000多长度.png" srcset="/img/loading.gif" lazyload alt="长度为3328" style="zoom:80%;" />
 
 
 
 <p>还是有错误，继续缩短长度，将扩增代码循环6次，减少一次再看看</p>
-<img src="../images/6次扩增.png" srcset="/img/loading.gif" lazyload alt="6次扩增" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/6次扩增.png" srcset="/img/loading.gif" lazyload alt="6次扩增" style="zoom:80%;" />
 
 
 
 <p>这次竟然又不出错了，玄学！妥妥的玄学！</p>
 <p>我换了种思路，这次不用字母表了，只是用一个变量看看会不会触发这个BUG，如果依然触发，每次长度增加1，那么很快就会得到到底在多长的时候会出现。25行打上断点，被执行前一定会卡住。</p>
-<img src="../images/展示代码.png" srcset="/img/loading.gif" lazyload alt="展示代码" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/展示代码.png" srcset="/img/loading.gif" lazyload alt="展示代码" style="zoom:80%;" />
 
 
 
-<img src="../images/128卡住.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次时候开始报错" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/128卡住.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次时候开始报错" style="zoom:80%;" />
 
 
 
 <p>最后做一次验证，是不是Map中，只要有val超过128就会发生地址改变的情况。这次的测试用例使用随机字母</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-type">String</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-type">Random</span> <span class="hljs-variable">random</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Random</span>();<br><span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> random.nextInt(<span class="hljs-number">26</span>) + <span class="hljs-number">97</span>;<br>    s += (<span class="hljs-type">char</span>)temp;<br>    t += (<span class="hljs-type">char</span>)temp;<br>    System.out.println(isAnagram(s, t));<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<img src="../images/26随机字母报错.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次的时候开始报错" style="zoom:80%"/>
+<img src="../images/【debug】Java中的map比较/26随机字母报错.png" srcset="/img/loading.gif" lazyload alt="字母a出现了128次的时候开始报错" style="zoom:80%"/>
 
 
 
 
 <p>很好！当字母w出现了超过128次时候地址发生了变化。128这个数字相信大家一定很敏感，那么这个范围很可能是[-128, 127]。那么则需要看看底层源码是怎么说的，去看看<code>Map.java</code>，搜索<code>127</code>，并没有发现相关说明。</p>
-<img src="../images/map源码.png" srcset="/img/loading.gif" lazyload alt="map源码" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/map源码.png" srcset="/img/loading.gif" lazyload alt="map源码" style="zoom:80%;" />
 
 
 
 <p><code>&#123;Integer@***&#125;</code>这里面经常变得数字就是星号部分，那么去<code>Ieteger.java</code>里面看看有什么发现。</p>
-<img src="../images/第一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果1" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/第一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果1" style="zoom:80%;" />
 
 
 
-<img src="../images/最后一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果2" style="zoom:80%;" />
+<img src="../images/【debug】Java中的map比较/最后一个127.png" srcset="/img/loading.gif" lazyload alt="搜索结果2" style="zoom:80%;" />
 
 
 
@@ -470,8 +470,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/20198d61.html" title="代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。">
-                        <span class="hidden-mobile">代码随想录算法训练营第五天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。</span>
+                      <a href="/post/20198d61.html" title="代码随想录算法训练营第六天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。">
+                        <span class="hidden-mobile">代码随想录算法训练营第六天| 242.有效的字母异位词、349. 两个数组的交集、202. 快乐数、1. 两数之和 。</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
