@@ -2,11 +2,36 @@ package main
 
 import (
 	"fmt"
-	"leetcode/day11"
+	"leetcode/6_tree/day14"
 )
 
 func main() {
-	s := []string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
+	root := &day14.TreeNode{
+		Val:   1,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Left = &day14.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Right = &day14.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Left.Left = &day14.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
 
-	fmt.Println(day11.EvalRPN(s))
+	root.Right.Left = &day14.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
+	result := day14.T(root)
+	fmt.Println(result)
 }
