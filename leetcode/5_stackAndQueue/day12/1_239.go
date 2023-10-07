@@ -1,9 +1,5 @@
 package day12
 
-import (
-	"fmt"
-)
-
 type Deque struct {
 	queue []int
 }
@@ -50,10 +46,4 @@ func maxSlidingWindow(nums []int, k int) []int {
 		result = append(result, deque.Front())
 	}
 	return result
-}
-
-func main() {
-	nums := []int{1, -1}
-	k := 1
-	fmt.Println(maxSlidingWindow(nums, k))
 }

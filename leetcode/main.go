@@ -1,15 +1,41 @@
 package main
 
 import (
-	"leetcode/day13"
+	"fmt"
+	"leetcode/6_tree/day15"
 )
 
 func main() {
-	root := &day13.TreeNode{
+	root := &day15.TreeNode{
 		Val:   1,
 		Left:  nil,
 		Right: nil,
 	}
-	day13.InsertRight(2, root)
-	day13.InsertLeft(3, root)
+	root.Left = &day15.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Right = &day15.TreeNode{
+		Val:   3,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Left.Left = &day15.TreeNode{
+		Val:   4,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Left.Right = &day15.TreeNode{
+		Val:   5,
+		Left:  nil,
+		Right: nil,
+	}
+	root.Right.Left = &day15.TreeNode{
+		Val:   6,
+		Left:  nil,
+		Right: nil,
+	}
+	result := day15.T(root)
+	fmt.Println(result)
 }
