@@ -1,12 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"leetcode/day11"
+	"leetcode/day13"
 )
 
 func main() {
-	s := []string{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"}
-
-	fmt.Println(day11.EvalRPN(s))
+	root := &day13.TreeNode{
+		Val:   1,
+		Left:  nil,
+		Right: nil,
+	}
+	day13.InsertRight(2, root)
+	day13.InsertLeft(3, root)
 }
