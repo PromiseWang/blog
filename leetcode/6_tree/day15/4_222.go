@@ -1,27 +1,19 @@
-package day14
+package day15
 
-// 每一层最大值
+import "github.com/emirpasic/gods/queues/arrayqueue"
 
-import (
-	"github.com/emirpasic/gods/queues/arrayqueue"
-	"math"
-)
-
-func largestValues(root *TreeNode) []int {
-	var result []int
+func countNodes(root *TreeNode) int {
 	if root == nil {
-		return result
+		return 0
 	}
 	queue := arrayqueue.New()
 	queue.Enqueue(root)
+	count := 0
 	for !queue.Empty() {
 		size := queue.Size()
-		maxNum := math.MinInt32
 		for i := 0; i < size; i++ {
 			node, _ := queue.Dequeue()
-			if node.(*TreeNode).Val > maxNum {
-				maxNum = node.(*TreeNode).Val
-			}
+			count++
 			if node.(*TreeNode).Left != nil {
 				queue.Enqueue(node.(*TreeNode).Left)
 			}
@@ -29,7 +21,10 @@ func largestValues(root *TreeNode) []int {
 				queue.Enqueue(node.(*TreeNode).Right)
 			}
 		}
-		result = append(result, maxNum)
 	}
-	return result
+	return count
+}
+
+func T(root *TreeNode) int {
+	return countNodes(root)
 }

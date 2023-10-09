@@ -3,6 +3,8 @@ package day14
 import "github.com/emirpasic/gods/queues/arrayqueue"
 
 // 与117题代码相同
+// 二叉树向右链接节点
+
 type Node struct {
 	Val   int
 	Left  *Node

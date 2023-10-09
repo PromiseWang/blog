@@ -2,6 +2,8 @@ package day14
 
 import "github.com/emirpasic/gods/queues/arrayqueue"
 
+// 层序遍历n叉树
+
 type Node1 struct {
 	Val      int
 	Children []*Node1
