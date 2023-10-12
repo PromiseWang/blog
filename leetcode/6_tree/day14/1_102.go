@@ -2,6 +2,7 @@ package day14
 
 import "github.com/emirpasic/gods/queues/arrayqueue"
 
+// 层序遍历
 func LevelOrder(root *TreeNode) [][]int {
 	var result [][]int
 	if root == nil {
