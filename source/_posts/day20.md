@@ -205,5 +205,13 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 
 	}
 }
+func getInorderPath(root *TreeNode, path *[]int) {
+	if root == nil {
+		return
+	}
+	getInorderPath(root.Left, path)
+	*path = append(*path, root.Val)
+	getInorderPath(root.Right, path)
+}
 ```
 
