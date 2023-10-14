@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
-	"leetcode/6_tree/day19"
+	"leetcode/6_tree/day20"
 )
 
-func pre(root *day19.TreeNode) {
+func pre(root *day20.TreeNode) {
 	if root == nil {
 		return
 	}
@@ -19,9 +19,19 @@ func pre(root *day19.TreeNode) {
 }
 
 func main() {
-	var root1 *day19.TreeNode
-	root1 = day19.Init4(root1)
-	result := day19.T(root1)
-	fmt.Println(result)
+	var root1 *day20.TreeNode
+	root1 = day20.Init4(root1)
+	p := &day20.TreeNode{
+		Val:   2,
+		Left:  nil,
+		Right: nil,
+	}
+	q := &day20.TreeNode{
+		Val:   3,
+		Left:  nil,
+		Right: nil,
+	}
+	result := day20.T(root1, p, q)
+	fmt.Println(result.Val)
 
 }

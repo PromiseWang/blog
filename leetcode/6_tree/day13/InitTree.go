@@ -5,7 +5,3 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
-
-type Operator interface {
-	InsertLeft()
-}

@@ -1,5 +1,7 @@
 package day19
 
+import "leetcode/6_tree/InitTree"
+
 // 给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
 //
 // 有效 二叉搜索树定义如下：
@@ -7,7 +9,7 @@ package day19
 // 节点的左子树只包含 小于 当前节点的数。
 // 节点的右子树只包含 大于 当前节点的数。
 // 所有左子树和右子树自身必须也是二叉搜索树。
-func isValidBST(root *TreeNode) bool {
+func isValidBST(root *InitTree.TreeNode) bool {
 	// 错误代码
 	//if root.Left == nil && root.Right != nil {
 	//	if root.Val < root.Right.Val {
@@ -39,7 +41,7 @@ func isValidBST(root *TreeNode) bool {
 	}
 	return true
 }
-func inorder(root *TreeNode, path *[]int) {
+func inorder(root *InitTree.TreeNode, path *[]int) {
 	if root == nil {
 		return
 	}
@@ -48,6 +50,6 @@ func inorder(root *TreeNode, path *[]int) {
 	inorder(root.Right, path)
 }
 
-func T(root *TreeNode) bool {
+func T(root *InitTree.TreeNode) bool {
 	return isValidBST(root)
 }
