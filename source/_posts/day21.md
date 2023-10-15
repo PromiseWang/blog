@@ -13,13 +13,7 @@ date: 2023-10-14 22:31:50
 
 ## 235.二叉搜索树的最近公共祖先
 
->   题目链接：[力扣题目链接](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/)
->
->   文章讲解：[代码随想录(https://programmercarl.com)](https://programmercarl.com/0235.%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88.html)
->
->   视频讲解：[二叉搜索树找祖先就有点不一样了！| 235. 二叉搜索树的最近公共祖先](https://www.bilibili.com/video/BV1Zt4y1F7ww?share_source=copy_web)
->
->   状态：AC
+>   
 
 ### 思路
 
