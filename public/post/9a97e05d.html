@@ -16,15 +16,15 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树669.修建二叉搜索树   题目链接：力扣题目链接   文章讲解：代码随想录(https:&#x2F;&#x2F;programmercarl.com)   视频讲解：你修剪的方式不对，我来给你纠正一下！| LeetCode：669. 修剪二叉搜索树   状态：AC  思路与昨天最后一道题类似">
+    <meta name="description" content="代码随想录算法训练营第二十四天  77.组合   题目链接：力扣题目链接   文章讲解：代码随想录(https:&#x2F;&#x2F;programmercarl.com)   视频讲解：  带你学透回溯算法-组合问题（对应力扣题目：77.组合） 组合问题的剪枝操作    状态：AC  思路这是一道经典的回溯算法的题目，开始做的时候没有考虑到剪枝的情况。直接请出回溯三步：  确立函数和参数：需要参数n, k, in">
 <meta property="og:type" content="article">
-<meta property="og:title" content="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树">
-<meta property="og:url" content="https://promisewang.github.io/post/b6e45431.html">
+<meta property="og:title" content="代码随想录算法训练营第二十四天  77.组合">
+<meta property="og:url" content="https://promisewang.github.io/post/9a97e05d.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树669.修建二叉搜索树   题目链接：力扣题目链接   文章讲解：代码随想录(https:&#x2F;&#x2F;programmercarl.com)   视频讲解：你修剪的方式不对，我来给你纠正一下！| LeetCode：669. 修剪二叉搜索树   状态：AC  思路与昨天最后一道题类似">
+<meta property="og:description" content="代码随想录算法训练营第二十四天  77.组合   题目链接：力扣题目链接   文章讲解：代码随想录(https:&#x2F;&#x2F;programmercarl.com)   视频讲解：  带你学透回溯算法-组合问题（对应力扣题目：77.组合） 组合问题的剪枝操作    状态：AC  思路这是一道经典的回溯算法的题目，开始做的时候没有考虑到剪枝的情况。直接请出回溯三步：  确立函数和参数：需要参数n, k, in">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-15T12:53:48.000Z">
-<meta property="article:modified_time" content="2023-10-15T13:11:48.083Z">
+<meta property="article:published_time" content="2023-10-16T03:26:54.000Z">
+<meta property="article:modified_time" content="2023-10-16T03:42:04.264Z">
 <meta property="article:author" content="Promise">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="算法">
@@ -33,7 +33,7 @@
   
   
   
-  <title>代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树 - Study Or Debug</title>
+  <title>代码随想录算法训练营第二十四天  77.组合 - Study Or Debug</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -187,7 +187,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树"></span>
+            <span id="subtitle" data-typed-text="代码随想录算法训练营第二十四天  77.组合"></span>
           
         </div>
 
@@ -198,8 +198,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-15 20:53" pubdate>
-          2023年10月15日 晚上
+        <time datetime="2023-10-16 11:26" pubdate>
+          2023年10月16日 上午
         </time>
       </span>
     
@@ -210,7 +210,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          1.3k 字
         
       </span>
     
@@ -221,7 +221,7 @@
         
         
         
-          15 分钟
+          11 分钟
         
       </span>
     
@@ -258,41 +258,31 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树</h1>
+            <h1 id="seo-header">代码随想录算法训练营第二十四天  77.组合</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="代码随想录算法训练营第二十二天-669-修建二叉搜索树、108-将有序数组转化为二叉搜索树、538-把二叉搜索树转化为累加树"><a href="#代码随想录算法训练营第二十二天-669-修建二叉搜索树、108-将有序数组转化为二叉搜索树、538-把二叉搜索树转化为累加树" class="headerlink" title="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树"></a>代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树</h1><h2 id="669-修建二叉搜索树"><a href="#669-修建二叉搜索树" class="headerlink" title="669.修建二叉搜索树"></a>669.修建二叉搜索树</h2><blockquote>
-<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trim-a-binary-search-tree/">力扣题目链接</a></p>
-<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0669.%E4%BF%AE%E5%89%AA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html">代码随想录(https://programmercarl.com)</a></p>
-<p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV17P41177ud?share_source=copy_web">你修剪的方式不对，我来给你纠正一下！| LeetCode：669. 修剪二叉搜索树</a></p>
+                <h1 id="代码随想录算法训练营第二十四天-77-组合"><a href="#代码随想录算法训练营第二十四天-77-组合" class="headerlink" title="代码随想录算法训练营第二十四天  77.组合"></a>代码随想录算法训练营第二十四天  77.组合</h1><blockquote>
+<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combinations/">力扣题目链接</a></p>
+<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0077.%E7%BB%84%E5%90%88.html#">代码随想录(https://programmercarl.com)</a></p>
+<p>  视频讲解：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ti4y1L7cv">带你学透回溯算法-组合问题（对应力扣题目：77.组合）</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wi4y157er">组合问题的剪枝操作</a></li>
+</ul>
 <p>  状态：AC</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>与昨天最后一道题类似，昨天最后一道题要求删除一个节点，这道题则为批量删除节点，多加一个判断条件即可</p>
-<p><a href="https://promisewang.github.io/post/1b36a0ee.html#450-%E5%88%A0%E9%99%A4%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B9">链接跳转</a></p>
-<p>先使用前序遍历得到树的所有节点，再以此判断改节点是否应该删除</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">trimBST</span><span class="hljs-params">(root *TreeNode, low <span class="hljs-type">int</span>, high <span class="hljs-type">int</span>)</span></span> *TreeNode &#123;<br>	path := []<span class="hljs-type">int</span>&#123;&#125;<br>	pre(root, &amp;path)<br>	<span class="hljs-keyword">for</span> _, v := <span class="hljs-keyword">range</span> path &#123;<br>		<span class="hljs-keyword">if</span> !(low &lt;= v &amp;&amp; v &lt;= high) &#123;<br>			root = deleteNode(root, v)<br>		&#125;<br>	&#125;<br>	<span class="hljs-keyword">return</span> root<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">pre</span><span class="hljs-params">(root *TreeNode, path *[]<span class="hljs-type">int</span>)</span></span> &#123;<br>	<span class="hljs-keyword">if</span> root == <span class="hljs-literal">nil</span> &#123;<br>		<span class="hljs-keyword">return</span><br>	&#125;<br>	*path = <span class="hljs-built_in">append</span>(*path, root.Val)<br>	pre(root.Left, path)<br>	pre(root.Right, path)<br>&#125;<br></code></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这是一道经典的回溯算法的题目，开始做的时候没有考虑到剪枝的情况。直接请出回溯三步：</p>
+<ol>
+<li>确立函数和参数：需要参数<code>n, k, index</code>分别表示范围、k个数、当前位置</li>
+<li>确定终止条件：路径<code>path</code>长度为<code>k</code>时，将<code>path</code>追加到<code>append</code></li>
+<li>单次逻辑：从<code>index</code>开始逐渐向<code>path</code>追加之后的元素；递归调用；删除刚追加的元素</li>
+</ol>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">combine</span><span class="hljs-params">(n <span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> [][]<span class="hljs-type">int</span> &#123;<br>	path := []<span class="hljs-type">int</span>&#123;&#125;<br>	result := [][]<span class="hljs-type">int</span>&#123;&#125;<br>	<span class="hljs-keyword">var</span> backTracking <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span><br>	backTracking = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span> &#123;<br>		<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) == k &#123;<br>			temp := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(path))<br>			<span class="hljs-built_in">copy</span>(temp, path)<br>			result = <span class="hljs-built_in">append</span>(result, temp)<br>			<span class="hljs-keyword">return</span><br>		&#125;<br>		<span class="hljs-keyword">for</span> i := index; i &lt;= n; i++ &#123;<br>			path = <span class="hljs-built_in">append</span>(path, i)<br>			backTracking(n, k, i+<span class="hljs-number">1</span>)<br>			path = path[:<span class="hljs-built_in">len</span>(path)<span class="hljs-number">-1</span>]<br>		&#125;<br>	&#125;<br>	backTracking(n, k, <span class="hljs-number">1</span>)<br>	<span class="hljs-keyword">return</span> result<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="108-将有序数组转化为二叉搜索树"><a href="#108-将有序数组转化为二叉搜索树" class="headerlink" title="108.将有序数组转化为二叉搜索树"></a>108.将有序数组转化为二叉搜索树</h2><blockquote>
-<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/">力扣题目链接</a></p>
-<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0108.%E5%B0%86%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91.html">代码随想录(https://programmercarl.com)</a></p>
-<p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1uR4y1X7qL?share_source=copy_web">构造平衡二叉搜索树！| LeetCode：108.将有序数组转换为二叉搜索树</a></p>
-<p>  状态：AC</p>
-</blockquote>
-<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>根据二叉搜索树的定义，比根节点小的值在根节点左侧，比根节点大的值在根节点右侧。而且还要建立平衡搜索树，那么根节点应该为数组最中间的那个值。切割数组，然后递归</p>
-<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sortedArrayToBST</span><span class="hljs-params">(nums []<span class="hljs-type">int</span>)</span></span> *TreeNode &#123;<br>	<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(nums) == <span class="hljs-number">0</span> &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span><br>	&#125;<br>	root := backTracking(nums, <span class="hljs-number">0</span>, <span class="hljs-built_in">len</span>(nums)<span class="hljs-number">-1</span>)<br>	<span class="hljs-keyword">return</span> root<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">backTracking</span><span class="hljs-params">(nums []<span class="hljs-type">int</span>, left, right <span class="hljs-type">int</span>)</span></span> *TreeNode &#123;<br>	<span class="hljs-keyword">if</span> left &gt; right &#123;<br>		<span class="hljs-keyword">return</span> <span class="hljs-literal">nil</span><br>	&#125;<br>	mid := (left + right) / <span class="hljs-number">2</span><br>	root := &amp;TreeNode&#123;<br>		Val:   nums[mid],<br>		Left:  backTracking(nums, left, mid<span class="hljs-number">-1</span>),<br>		Right: backTracking(nums, mid+<span class="hljs-number">1</span>, right),<br>	&#125;<br>	<span class="hljs-keyword">return</span> root<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h2 id="538-把二叉搜索树转化为累加树"><a href="#538-把二叉搜索树转化为累加树" class="headerlink" title="538.把二叉搜索树转化为累加树"></a>538.把二叉搜索树转化为累加树</h2><blockquote>
-<p>  题目链接：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-bst-to-greater-tree/">力扣题目链接</a></p>
-<p>  文章讲解：<a target="_blank" rel="noopener" href="https://programmercarl.com/0538.%E6%8A%8A%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%B4%AF%E5%8A%A0%E6%A0%91.html">代码随想录(https://programmercarl.com)</a></p>
-<p>  视频讲解：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1d44y1f7wP?share_source=copy_web">普大喜奔！二叉树章节已全部更完啦！| LeetCode：538.把二叉搜索树转换为累加树</a></p>
-<p>  状态：AC</p>
-</blockquote>
-<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>看到树的构建过程，实际上是对树进行“右根左”的遍历。使用双指针，一个指向当前节点，另一个指向过去的节点。当前结点的新的值要加上过去节点的值。总体思路与530题思路一样。<a href="https://promisewang.github.io/post/80a9e5fb.html#530-%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E5%B0%8F%E7%BB%9D%E5%AF%B9%E5%B7%AE">跳转链接</a></p>
-<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">convertBST</span><span class="hljs-params">(root *TreeNode)</span></span> *TreeNode &#123;<br>	<span class="hljs-keyword">var</span> pre *TreeNode<br>	<span class="hljs-keyword">var</span> function <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(cur *TreeNode)</span></span><br>	function = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(cur *TreeNode)</span></span> &#123;<br>		<span class="hljs-keyword">if</span> cur == <span class="hljs-literal">nil</span> &#123;<br>			<span class="hljs-keyword">return</span><br>		&#125;<br>		function(cur.Right)<br>		<span class="hljs-keyword">if</span> pre != <span class="hljs-literal">nil</span> &#123;<br>			cur.Val += pre.Val<br>		&#125;<br>		pre = cur<br>		function(cur.Left)<br>	&#125;<br>	function(root)<br>	<span class="hljs-keyword">return</span> root<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+<h3 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h3><p>来举一个例子，<code>n = 4, k = 4</code>，那么第一层for循环的时候，从元素2开始的遍历都没有意义了。 在第二层for循环，从元素3开始的遍历都没有意义了。那么在第一层遍历时候，对<code>i</code>的判断应该更改：<code>i &lt;= n - (k - len(path) + 1)</code></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">combine</span><span class="hljs-params">(n <span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> [][]<span class="hljs-type">int</span> &#123;<br>	path := []<span class="hljs-type">int</span>&#123;&#125;<br>	result := [][]<span class="hljs-type">int</span>&#123;&#125;<br>	<span class="hljs-keyword">var</span> backTracking <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span><br>	backTracking = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span> &#123;<br>		<span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) == k &#123;<br>			temp := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(path))<br>			<span class="hljs-built_in">copy</span>(temp, path)<br>			result = <span class="hljs-built_in">append</span>(result, temp)<br>			<span class="hljs-keyword">return</span><br>		&#125;<br>		<span class="hljs-keyword">for</span> i := index; i &lt;= n-(k-<span class="hljs-built_in">len</span>(path))+<span class="hljs-number">1</span>; i++ &#123;<br>			path = <span class="hljs-built_in">append</span>(path, i)<br>			backTracking(n, k, i+<span class="hljs-number">1</span>)<br>			path = path[:<span class="hljs-built_in">len</span>(path)<span class="hljs-number">-1</span>]<br>		&#125;<br>	&#125;<br>	backTracking(n, k, <span class="hljs-number">1</span>)<br>	<span class="hljs-keyword">return</span> result<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
                 
@@ -343,8 +333,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树</div>
-      <div>https://promisewang.github.io/post/b6e45431.html</div>
+      <div>代码随想录算法训练营第二十四天  77.组合</div>
+      <div>https://promisewang.github.io/post/9a97e05d.html</div>
     </div>
     <div class="license-meta">
       
@@ -356,7 +346,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年10月15日</div>
+          <div>2023年10月16日</div>
         </div>
       
       
@@ -388,18 +378,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/post/9a97e05d.html" title="代码随想录算法训练营第二十四天  77.组合">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">代码随想录算法训练营第二十四天  77.组合</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/post/1b36a0ee.html" title="代码随想录算法训练营第二十一天  235.二叉搜索树的最近公共祖先、701.二叉搜索树中的插入操作、450.删除二叉搜索树中的节点">
-                        <span class="hidden-mobile">代码随想录算法训练营第二十一天  235.二叉搜索树的最近公共祖先、701.二叉搜索树中的插入操作、450.删除二叉搜索树中的节点</span>
+                      <a href="/post/b6e45431.html" title="代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树">
+                        <span class="hidden-mobile">代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

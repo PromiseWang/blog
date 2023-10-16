@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>代码随想录算法训练营第二十四天  77.组合</title>
+    <link href="/post/9a97e05d.html"/>
+    <url>/post/9a97e05d.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码随想录算法训练营第二十四天-77-组合"><a href="#代码随想录算法训练营第二十四天-77-组合" class="headerlink" title="代码随想录算法训练营第二十四天  77.组合"></a>代码随想录算法训练营第二十四天  77.组合</h1><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/combinations/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0077.%E7%BB%84%E5%90%88.html#">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：</p><ul><li><a href="https://www.bilibili.com/video/BV1ti4y1L7cv">带你学透回溯算法-组合问题（对应力扣题目：77.组合）</a></li><li><a href="https://www.bilibili.com/video/BV1wi4y157er">组合问题的剪枝操作</a></li></ul><p>  状态：AC</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这是一道经典的回溯算法的题目，开始做的时候没有考虑到剪枝的情况。直接请出回溯三步：</p><ol><li>确立函数和参数：需要参数<code>n, k, index</code>分别表示范围、k个数、当前位置</li><li>确定终止条件：路径<code>path</code>长度为<code>k</code>时，将<code>path</code>追加到<code>append</code></li><li>单次逻辑：从<code>index</code>开始逐渐向<code>path</code>追加之后的元素；递归调用；删除刚追加的元素</li></ol><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">combine</span><span class="hljs-params">(n <span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> [][]<span class="hljs-type">int</span> &#123;<br>path := []<span class="hljs-type">int</span>&#123;&#125;<br>result := [][]<span class="hljs-type">int</span>&#123;&#125;<br><span class="hljs-keyword">var</span> backTracking <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span><br>backTracking = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span> &#123;<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) == k &#123;<br>temp := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(path))<br><span class="hljs-built_in">copy</span>(temp, path)<br>result = <span class="hljs-built_in">append</span>(result, temp)<br><span class="hljs-keyword">return</span><br>&#125;<br><span class="hljs-keyword">for</span> i := index; i &lt;= n; i++ &#123;<br>path = <span class="hljs-built_in">append</span>(path, i)<br>backTracking(n, k, i+<span class="hljs-number">1</span>)<br>path = path[:<span class="hljs-built_in">len</span>(path)<span class="hljs-number">-1</span>]<br>&#125;<br>&#125;<br>backTracking(n, k, <span class="hljs-number">1</span>)<br><span class="hljs-keyword">return</span> result<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="剪枝"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝</h3><p>来举一个例子，<code>n = 4, k = 4</code>，那么第一层for循环的时候，从元素2开始的遍历都没有意义了。 在第二层for循环，从元素3开始的遍历都没有意义了。那么在第一层遍历时候，对<code>i</code>的判断应该更改：<code>i &lt;= n - (k - len(path) + 1)</code></p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">combine</span><span class="hljs-params">(n <span class="hljs-type">int</span>, k <span class="hljs-type">int</span>)</span></span> [][]<span class="hljs-type">int</span> &#123;<br>path := []<span class="hljs-type">int</span>&#123;&#125;<br>result := [][]<span class="hljs-type">int</span>&#123;&#125;<br><span class="hljs-keyword">var</span> backTracking <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span><br>backTracking = <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">(n, k, index <span class="hljs-type">int</span>)</span></span> &#123;<br><span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(path) == k &#123;<br>temp := <span class="hljs-built_in">make</span>([]<span class="hljs-type">int</span>, <span class="hljs-built_in">len</span>(path))<br><span class="hljs-built_in">copy</span>(temp, path)<br>result = <span class="hljs-built_in">append</span>(result, temp)<br><span class="hljs-keyword">return</span><br>&#125;<br><span class="hljs-keyword">for</span> i := index; i &lt;= n-(k-<span class="hljs-built_in">len</span>(path))+<span class="hljs-number">1</span>; i++ &#123;<br>path = <span class="hljs-built_in">append</span>(path, i)<br>backTracking(n, k, i+<span class="hljs-number">1</span>)<br>path = path[:<span class="hljs-built_in">len</span>(path)<span class="hljs-number">-1</span>]<br>&#125;<br>&#125;<br>backTracking(n, k, <span class="hljs-number">1</span>)<br><span class="hljs-keyword">return</span> result<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>代码随想录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>代码随想录算法训练营第二十二天  669.修建二叉搜索树、108.将有序数组转化为二叉搜索树、538.把二叉搜索树转化为累加树</title>
     <link href="/post/b6e45431.html"/>
     <url>/post/b6e45431.html</url>
