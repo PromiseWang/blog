@@ -2,9 +2,10 @@ package main
 
 import (
 	"fmt"
-	"leetcode/7_backtracking/day24"
+	"leetcode/7_backtracking/day25"
 )
 
 func main() {
-	fmt.Println(day24.T(4, 2))
+	result := day25.T("7")
+	fmt.Println(result)
 }
