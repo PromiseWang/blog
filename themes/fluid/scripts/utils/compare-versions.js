@@ -73,7 +73,7 @@
     }
 
     return 0;
-  };
+  }
 
   var allowedOperators = [
     '>',
