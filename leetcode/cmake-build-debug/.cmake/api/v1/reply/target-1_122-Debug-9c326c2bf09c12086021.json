@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "2_78"
+			"path" : "1_122"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 13,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
@@ -67,7 +67,7 @@
 			]
 		}
 	],
-	"id" : "2_78::@6890427a1f51a3e7e1df",
+	"id" : "1_122::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -83,8 +83,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "2_78",
-	"nameOnDisk" : "2_78",
+	"name" : "1_122",
+	"nameOnDisk" : "1_122",
 	"paths" : 
 	{
 		"build" : ".",
@@ -105,7 +105,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "7_backtracking/day27/2_78.cpp",
+			"path" : "8_greed/day32/1_122.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
