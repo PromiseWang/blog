@@ -1,0 +1,714 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Promise">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="【debug】记一次失败的爬虫经历今天我的室友需要在一个网站上批量下载一些数据，但是他并不会代码，我尝试帮他处理一下 URL:http:&#x2F;&#x2F;dc2.cistrome.org&#x2F;#&#x2F;   网站上需要点击这些选项，Factors需要每个点击，可能有些因素并没有数据。   先选中第一行，然后才会出现下方的Inspector部分，再点击Putative Targets进入下载页面   下载页面输入验证码点击">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【debug】记一次失败的爬虫经历">
+<meta property="og:url" content="https://promisewang.github.io/post/94786f20.html">
+<meta property="og:site_name" content="Study Or Debug">
+<meta property="og:description" content="【debug】记一次失败的爬虫经历今天我的室友需要在一个网站上批量下载一些数据，但是他并不会代码，我尝试帮他处理一下 URL:http:&#x2F;&#x2F;dc2.cistrome.org&#x2F;#&#x2F;   网站上需要点击这些选项，Factors需要每个点击，可能有些因素并没有数据。   先选中第一行，然后才会出现下方的Inspector部分，再点击Putative Targets进入下载页面   下载页面输入验证码点击">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E7%BD%91%E9%A1%B5%E6%88%AA%E5%9B%BE.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E7%BD%91%E9%A1%B5%E6%88%AA%E5%9B%BE2.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/Fildder1.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E6%AD%A3%E5%B8%B8%E6%93%8D%E4%BD%9C%E6%8A%93%E5%8C%85.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E8%8E%B7%E5%8F%96factors.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E8%8E%B7%E5%8F%96id.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E6%AD%A3%E5%B8%B8%E6%93%8D%E4%BD%9C%E6%8A%93%E5%8C%85.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E5%93%AA%E4%B8%AA%E8%A1%A8%E8%BE%BE%E5%9F%BA%E5%9B%A0.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E5%88%86%E6%9E%90HTML.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E6%AD%A3%E5%B8%B8%E6%93%8D%E4%BD%9C%E6%8A%93%E5%8C%85.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/POST.png">
+<meta property="og:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/Wrong.png">
+<meta property="article:published_time" content="2023-10-24T16:46:14.416Z">
+<meta property="article:modified_time" content="2023-10-24T17:43:21.142Z">
+<meta property="article:author" content="Promise">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://promisewang.github.io/images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E7%BD%91%E9%A1%B5%E6%88%AA%E5%9B%BE.png">
+  
+  
+  
+  <title>【debug】记一次失败的爬虫经历 - Study Or Debug</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"promisewang.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【debug】记一次失败的爬虫经历"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-10-25 00:46" pubdate>
+          2023年10月25日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          34 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">【debug】记一次失败的爬虫经历</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="【debug】记一次失败的爬虫经历"><a href="#【debug】记一次失败的爬虫经历" class="headerlink" title="【debug】记一次失败的爬虫经历"></a>【debug】记一次失败的爬虫经历</h1><p>今天我的室友需要在一个网站上批量下载一些数据，但是他并不会代码，我尝试帮他处理一下</p>
+<p>URL:<code>http://dc2.cistrome.org/#/</code></p>
+<img src="../images/【debug】记一次失败的爬虫经历/网页截图.png" srcset="/img/loading.gif" lazyload alt="网页截图" style="zoom:67%;" />
+
+<p>网站上需要点击这些选项，<code>Factors</code>需要每个点击，可能有些因素并没有数据。</p>
+<img src="../images/【debug】记一次失败的爬虫经历/网页截图2.png" srcset="/img/loading.gif" lazyload alt="网页截图2" style="zoom:67%;" />
+
+<p>先选中第一行，然后才会出现下方的<code>Inspector</code>部分，再点击<code>Putative Targets</code>进入下载页面</p>
+<img src="../images/【debug】记一次失败的爬虫经历/下载页面.png" srcset="/img/loading.gif" lazyload alt="下载页面" style="zoom:80%;" />
+
+<p>下载页面输入验证码点击下载即可。</p>
+<h2 id="1-分析、抓包"><a href="#1-分析、抓包" class="headerlink" title="1. 分析、抓包"></a>1. 分析、抓包</h2><p>抓包使用了Fiddler这个软件。设置好URL进行筛选</p>
+<img src="../images/【debug】记一次失败的爬虫经历/Fildder1.png" srcset="/img/loading.gif" lazyload alt="Fildder1" style="zoom:80%;" />
+
+<p>先正常的操作一遍，让Fiddler记录这个过程。</p>
+<img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" srcset="/img/loading.gif" lazyload alt="正常操作抓包" style="zoom:67%;" />
+
+<p>依次查看每一行：</p>
+<ul>
+<li>19~21：选择第一张图的一些条件，一共要选三次，出现了三条数据，分析其中参数很简单。需要查找factors的列表</li>
+<li>22：加载第二张图的Inspector部分，需要查找id</li>
+<li>23：在第二张图最下面还有一部分，我没有截出来，这里是获取到一张图片</li>
+<li>24：向URL请求，此处的URL里面都是冒号，返回的是301，重定向将冒号替换为<code>%3A</code>的URL编码</li>
+<li>26：重定向，返回的是验证码的那个页面</li>
+<li>27：请求验证码的图片</li>
+<li>28：提交验证码</li>
+<li>29：下载链接（返回txt文件）</li>
+</ul>
+<h2 id="2-获取每个部分的关键数据"><a href="#2-获取每个部分的关键数据" class="headerlink" title="2. 获取每个部分的关键数据"></a>2. 获取每个部分的关键数据</h2><h3 id="导入相关的包"><a href="#导入相关的包" class="headerlink" title="导入相关的包"></a>导入相关的包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br></code></pre></td></tr></table></figure>
+
+<h3 id="获取每个factors"><a href="#获取每个factors" class="headerlink" title="获取每个factors"></a>获取每个factors</h3><img src="../images/【debug】记一次失败的爬虫经历/获取factors.png" srcset="/img/loading.gif" lazyload alt="image-20231025010850092" style="zoom:50%;" />
+
+<p>根据上面分析，使用第20行的URL即可得到所有的factors，然后替换其中的<code>factors=all</code>，将<code>all</code>替换为每一个<code>factors</code>即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">url1 = <span class="hljs-string">&quot;http://dc2.cistrome.org/api/main_filter_ng?allqc=false&amp;cellinfos=ti_Breast&amp;completed=false&amp;curated=false&amp;factors=all&amp;keyword=&amp;page=1&amp;peakqc=false&amp;run=false&amp;species=Homo+sapiens&quot;</span>  <span class="hljs-comment"># 21行URL</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;</span>,<br>    <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>,<br>    <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://dc2.cistrome.org&quot;</span>,<br>    <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3&quot;</span>,<br>    <span class="hljs-string">&quot;Host&quot;</span>: <span class="hljs-string">&quot;dc2.cistrome.org&quot;</span>,<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; Tablet PC 2.0; wbx 1.0.0; wbxapp 1.0.0; Zoom 3.6.0)&quot;</span>,<br>&#125;<br><br>session = requests.session()<br><br>response = session.get(url, headers=headers)<br>json_list = response.json()[<span class="hljs-string">&quot;factors&quot;</span>]<br></code></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-获取inspector中的id值"><a href="#3-获取inspector中的id值" class="headerlink" title="3. 获取inspector中的id值"></a>3. 获取inspector中的id值</h2><p>为了方便书写，就以第一个factors作为演示</p>
+<p>继续刚刚请求，将新的<code>factors</code>替换，查看response的结果</p>
+<img src="../images/【debug】记一次失败的爬虫经历/获取id.png" srcset="/img/loading.gif" lazyload alt="获取id" style="zoom:67%;" />
+
+<p>有可能Inspector中会出现多栏，经过查阅后去第1个id就好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">url2 = <span class="hljs-string">f&quot;http://dc2.cistrome.org/api/main_filter_ng?allqc=false&amp;cellinfos=ti_Breast&amp;completed=false&amp;curated=false&amp;factors=AHO1&amp;keyword=&amp;page=1&amp;peakqc=false&amp;run=false&amp;species=Homo+sapiens&quot;</span><br>response = session.get(url2, headers=headers)<br><span class="hljs-built_in">id</span> = response.json()[<span class="hljs-string">&quot;datasets&quot;</span>][<span class="hljs-number">0</span>][<span class="hljs-string">&quot;id&quot;</span>]<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-跳转至验证码页面"><a href="#4-跳转至验证码页面" class="headerlink" title="4. 跳转至验证码页面"></a>4. 跳转至验证码页面</h2><p>根据Fiddler中的URL显示：<code>http://dc2.cistrome.org/api/downloads/eyJpZCI6IjQ4NjEwIn0%3A1qvKhR%3AxwR7aSlYncCHoao44VSfL3o22igp</code></p>
+<p>需要查看最后面一串字符是什么或从哪里来。我们查看22行的请求</p>
+<img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" srcset="/img/loading.gif" lazyload alt="正常操作抓包" style="zoom:67%;" />
+
+<img src="../images/【debug】记一次失败的爬虫经历/哪个表达基因.png" srcset="/img/loading.gif" lazyload alt="哪个表达基因" style="zoom:67%;" />
+
+<p>进入22行的请求发现就是<code>sign</code>这一项，并且将冒号替换为<code>%3A</code>即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">download_url = <span class="hljs-string">f&quot;http://dc2.cistrome.org/api/inspector?id=<span class="hljs-subst">&#123;<span class="hljs-built_in">id</span>&#125;</span>&quot;</span><br>response_url = session.get(download_url, headers=headers)<br>sign = response_url.json()[<span class="hljs-string">&quot;sign&quot;</span>]<br>sign = sign.replace(<span class="hljs-string">&quot;:&quot;</span>, <span class="hljs-string">&quot;%3A&quot;</span>)<br></code></pre></td></tr></table></figure>
+
+<h2 id="5-输入验证码"><a href="#5-输入验证码" class="headerlink" title="5. 输入验证码"></a>5. 输入验证码</h2><p>这一步之前，发送了两个请求，一个是获取HTML，一个是获取验证码。分析27行的数据，能发现最后与刚刚的<code>sign</code>值完全不同，查看27行最后一串是什么。</p>
+<p>分析获取到的HTML，能看到如下内容</p>
+<p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E5%88%86%E6%9E%90HTML.png" srcset="/img/loading.gif" lazyload alt="分析HTML"></p>
+<p>红色是为27行的URL最后的部分，绿色则是要提交的表单，将验证码下载到本地手动数据数据再提交上去。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">soup = BeautifulSoup(response.content, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>img_tag = soup.find(<span class="hljs-string">&quot;img&quot;</span>)[<span class="hljs-string">&quot;src&quot;</span>]<br>img_id = img_tag.split(<span class="hljs-string">&quot;/&quot;</span>)[-<span class="hljs-number">2</span>]<br>img_url = <span class="hljs-string">&quot;http://dc2.cistrome.org&quot;</span> + img_tag<br>image = session.get(img_url, headers=headers)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.png&quot;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(image.content)<br>    captcha = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入test.png的验证码&quot;</span>))<br>    data = &#123;<br>        <span class="hljs-string">&quot;csrfmiddlewaretoken&quot;</span>: session.cookies[<span class="hljs-string">&quot;csrftoken&quot;</span>],<br>        <span class="hljs-string">&quot;captcha_0&quot;</span>: img_id,<br>        <span class="hljs-string">&quot;captcha_1&quot;</span>: captcha<br>    &#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="6-问题出现"><a href="#6-问题出现" class="headerlink" title="6. 问题出现"></a>6. 问题出现</h2><p>分析28行请求</p>
+<img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" srcset="/img/loading.gif" lazyload alt="正常操作抓包" style="zoom:67%;" />
+
+<p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/POST.png" srcset="/img/loading.gif" lazyload alt="POST"></p>
+<p>看起来只需要POST以下三个数据就好，之后再<code>get</code>29行操作，但是始终拿不到正确的数据</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">response = session.post(url=download_url, headers=headers, data=data)<br>download = session.get(<span class="hljs-string">f&quot;http://dc2.cistrome.org/api/files/<span class="hljs-subst">&#123;sign&#125;</span>/&quot;</span>, headers=headers)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> file:<br>    file.write(download.text)<br></code></pre></td></tr></table></figure>
+
+<p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/Wrong.png" srcset="/img/loading.gif" lazyload alt="Wrong"></p>
+<p>无论如何都是错误的参数，看了好多次都没有找到哪里请求有问题。</p>
+<p>尝试改了<code>session.post(data)</code>参数，改成<code>json</code>也不对。改了<code>data</code>中的<code>captcha_1</code>的类型也不对。传输字符串的形式也不对<code>session.post(data=f&quot;csrfmiddlewaretoken=&#123;session.cookies[&#39;csrftoken&#39;]&#125;&amp;captcha_0=&#123;img_id&#125;&amp;captcha_1=&#123;captcha&#125;&quot;)</code>。</p>
+<p>但是我在网页先进行输入验证码操作，拿到可以下载的“权限”之后，再去fiddler中模拟29行get请求却可以正常下载。想了好久也没找到什么好的办法。</p>
+<h2 id="7-验证码其他的失败的想法"><a href="#7-验证码其他的失败的想法" class="headerlink" title="7. 验证码其他的失败的想法"></a>7. 验证码其他的失败的想法</h2><ol>
+<li>最开始认为验证码如果人为输入会比较慢，应该让AI去识别，识别到字符串之后使用python中的<code>eval()</code>语句获得到结果。后来测试两个发现识别的非常不准。因为运算符不是常规角度，有可能会被识别为字母。最后放弃了这个方法。</li>
+<li><code>captcha_0</code>和<code>captcha_1</code>这两个参数一个是验证码的<code>id</code>，应该为后台数据库存储的名字，一个是计算结果。尝试了始终使用一组正确的不断的请求骗过服务器验证。还是因为卡在了上一步始终为参数错误，再过了一会就显示<code>Time Out!</code>。我觉得如果参数正确可以尝试一下这个方法。</li>
+<li>尝试SQL注入，使用语句<code>&#39; or 1=1 --</code>还是失败。</li>
+</ol>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Debug/" class="category-chain-item">Debug</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【debug】记一次失败的爬虫经历</div>
+      <div>https://promisewang.github.io/post/94786f20.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Promise</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年10月25日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/post/5aa98f1b.html" title="代码随想录算法训练营第三十一天  455.分发饼干、376.摆动序列、53.最大子数组和">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">代码随想录算法训练营第三十一天  455.分发饼干、376.摆动序列、53.最大子数组和</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/70a8aaa7.html" title="代码随想录算法训练营第二十八天  491.递增子序列、46.全排列、47.全排列II">
+                        <span class="hidden-mobile">代码随想录算法训练营第二十八天  491.递增子序列、46.全排列、47.全排列II</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

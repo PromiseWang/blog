@@ -1,0 +1,195 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.21.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "leetcode",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "1_332::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1_332-Debug-a779cddd4bb596d8cab6.json",
+					"name" : "1_332",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "1_455::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1_455-Debug-5cc78058c7da285d3448.json",
+					"name" : "1_455",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "1_491::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1_491-Debug-a4c1413636479f275d6c.json",
+					"name" : "1_491",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "1_93::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-1_93-Debug-58d8333b84e29c224430.json",
+					"name" : "1_93",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "2_376::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-2_376-Debug-f4bf1b73d495b616e394.json",
+					"name" : "2_376",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "2_40::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-2_40-Debug-8bc6dd89b0e0e07bd4d6.json",
+					"name" : "2_40",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "2_46::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-2_46-Debug-c60bda9d10161d2012dc.json",
+					"name" : "2_46",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "2_78::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-2_78-Debug-b1cb446076fca959ce18.json",
+					"name" : "2_78",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "3_131::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3_131-Debug-1ba569ce75906bd7692e.json",
+					"name" : "3_131",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "3_37::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3_37-Debug-83b5c5e7517582b0bf6d.json",
+					"name" : "3_37",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "3_47::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3_47-Debug-9c51ff367a174ea7f8ee.json",
+					"name" : "3_47",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "3_53::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3_53-Debug-0a51873a9e028d28abcf.json",
+					"name" : "3_53",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "3_90::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-3_90-Debug-8a2ef69210c84e132719.json",
+					"name" : "3_90",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "day29::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-day29-Debug-7aca69414f6b374a4e4e.json",
+					"name" : "day29",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test-Debug-65877414f22e6dc631b0.json",
+					"name" : "test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test27::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test27-Debug-08132885c39d6fbc8604.json",
+					"name" : "test27",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/promise/Promise Code/blog/leetcode/cmake-build-debug",
+		"source" : "/Users/promise/Promise Code/blog/leetcode"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}
