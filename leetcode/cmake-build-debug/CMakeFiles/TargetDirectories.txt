@@ -17,5 +17,9 @@
 /Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/1_122.dir
 /Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/2_55.dir
 /Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/3_45.dir
+/Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/1_1005.dir
+/Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/2_134.dir
+/Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/day33_test.dir
+/Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/3_135.dir
 /Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/promise/Promise Code/blog/leetcode/cmake-build-debug/CMakeFiles/rebuild_cache.dir
