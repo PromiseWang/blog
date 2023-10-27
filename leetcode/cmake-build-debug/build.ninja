@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_test: phony || CMakeFiles/test.dir
 build CMakeFiles/test.dir/7_backtracking/day26/test.cpp.o: CXX_COMPILER__test_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day26/test.cpp || cmake_object_order_depends_target_test
   DEP_FILE = CMakeFiles/test.dir/7_backtracking/day26/test.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/test.dir
   OBJECT_FILE_DIR = CMakeFiles/test.dir/7_backtracking/day26
 
@@ -84,7 +84,7 @@ build cmake_object_order_depends_target_2_40: phony || CMakeFiles/2_40.dir
 build CMakeFiles/2_40.dir/7_backtracking/day26/2_40.cpp.o: CXX_COMPILER__2_40_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day26/2_40.cpp || cmake_object_order_depends_target_2_40
   DEP_FILE = CMakeFiles/2_40.dir/7_backtracking/day26/2_40.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_40.dir
   OBJECT_FILE_DIR = CMakeFiles/2_40.dir/7_backtracking/day26
 
@@ -116,7 +116,7 @@ build cmake_object_order_depends_target_3_131: phony || CMakeFiles/3_131.dir
 build CMakeFiles/3_131.dir/7_backtracking/day26/3_131.cpp.o: CXX_COMPILER__3_131_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day26/3_131.cpp || cmake_object_order_depends_target_3_131
   DEP_FILE = CMakeFiles/3_131.dir/7_backtracking/day26/3_131.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_131.dir
   OBJECT_FILE_DIR = CMakeFiles/3_131.dir/7_backtracking/day26
 
@@ -148,7 +148,7 @@ build cmake_object_order_depends_target_1_93: phony || CMakeFiles/1_93.dir
 build CMakeFiles/1_93.dir/7_backtracking/day27/1_93.cpp.o: CXX_COMPILER__1_93_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day27/1_93.cpp || cmake_object_order_depends_target_1_93
   DEP_FILE = CMakeFiles/1_93.dir/7_backtracking/day27/1_93.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_93.dir
   OBJECT_FILE_DIR = CMakeFiles/1_93.dir/7_backtracking/day27
 
@@ -180,7 +180,7 @@ build cmake_object_order_depends_target_test27: phony || CMakeFiles/test27.dir
 build CMakeFiles/test27.dir/7_backtracking/day27/test.cpp.o: CXX_COMPILER__test27_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day27/test.cpp || cmake_object_order_depends_target_test27
   DEP_FILE = CMakeFiles/test27.dir/7_backtracking/day27/test.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/test27.dir
   OBJECT_FILE_DIR = CMakeFiles/test27.dir/7_backtracking/day27
 
@@ -212,7 +212,7 @@ build cmake_object_order_depends_target_2_78: phony || CMakeFiles/2_78.dir
 build CMakeFiles/2_78.dir/7_backtracking/day27/2_78.cpp.o: CXX_COMPILER__2_78_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day27/2_78.cpp || cmake_object_order_depends_target_2_78
   DEP_FILE = CMakeFiles/2_78.dir/7_backtracking/day27/2_78.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_78.dir
   OBJECT_FILE_DIR = CMakeFiles/2_78.dir/7_backtracking/day27
 
@@ -244,7 +244,7 @@ build cmake_object_order_depends_target_3_90: phony || CMakeFiles/3_90.dir
 build CMakeFiles/3_90.dir/7_backtracking/day27/3_90.cpp.o: CXX_COMPILER__3_90_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day27/3_90.cpp || cmake_object_order_depends_target_3_90
   DEP_FILE = CMakeFiles/3_90.dir/7_backtracking/day27/3_90.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
-  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/Header"
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_90.dir
   OBJECT_FILE_DIR = CMakeFiles/3_90.dir/7_backtracking/day27
 
@@ -263,6 +263,518 @@ build 3_90: CXX_EXECUTABLE_LINKER__3_90_Debug CMakeFiles/3_90.dir/7_backtracking
   PRE_LINK = :
   TARGET_FILE = 3_90
   TARGET_PDB = 3_90.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_491
+
+
+#############################################
+# Order-only phony target for 1_491
+
+build cmake_object_order_depends_target_1_491: phony || CMakeFiles/1_491.dir
+
+build CMakeFiles/1_491.dir/7_backtracking/day28/1_491.cpp.o: CXX_COMPILER__1_491_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day28/1_491.cpp || cmake_object_order_depends_target_1_491
+  DEP_FILE = CMakeFiles/1_491.dir/7_backtracking/day28/1_491.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_491.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_491.dir/7_backtracking/day28
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_491
+
+
+#############################################
+# Link the executable 1_491
+
+build 1_491: CXX_EXECUTABLE_LINKER__1_491_Debug CMakeFiles/1_491.dir/7_backtracking/day28/1_491.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_491.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 1_491
+  TARGET_PDB = 1_491.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 2_46
+
+
+#############################################
+# Order-only phony target for 2_46
+
+build cmake_object_order_depends_target_2_46: phony || CMakeFiles/2_46.dir
+
+build CMakeFiles/2_46.dir/7_backtracking/day28/2_46.cpp.o: CXX_COMPILER__2_46_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day28/2_46.cpp || cmake_object_order_depends_target_2_46
+  DEP_FILE = CMakeFiles/2_46.dir/7_backtracking/day28/2_46.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/2_46.dir
+  OBJECT_FILE_DIR = CMakeFiles/2_46.dir/7_backtracking/day28
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2_46
+
+
+#############################################
+# Link the executable 2_46
+
+build 2_46: CXX_EXECUTABLE_LINKER__2_46_Debug CMakeFiles/2_46.dir/7_backtracking/day28/2_46.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/2_46.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_46
+  TARGET_PDB = 2_46.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_47
+
+
+#############################################
+# Order-only phony target for 3_47
+
+build cmake_object_order_depends_target_3_47: phony || CMakeFiles/3_47.dir
+
+build CMakeFiles/3_47.dir/7_backtracking/day28/3_47.cpp.o: CXX_COMPILER__3_47_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day28/3_47.cpp || cmake_object_order_depends_target_3_47
+  DEP_FILE = CMakeFiles/3_47.dir/7_backtracking/day28/3_47.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_47.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_47.dir/7_backtracking/day28
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_47
+
+
+#############################################
+# Link the executable 3_47
+
+build 3_47: CXX_EXECUTABLE_LINKER__3_47_Debug CMakeFiles/3_47.dir/7_backtracking/day28/3_47.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_47.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 3_47
+  TARGET_PDB = 3_47.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_37
+
+
+#############################################
+# Order-only phony target for 3_37
+
+build cmake_object_order_depends_target_3_37: phony || CMakeFiles/3_37.dir
+
+build CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.o: CXX_COMPILER__3_37_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day29/3_37.cpp || cmake_object_order_depends_target_3_37
+  DEP_FILE = CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_37.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_37.dir/7_backtracking/day29
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_37
+
+
+#############################################
+# Link the executable 3_37
+
+build 3_37: CXX_EXECUTABLE_LINKER__3_37_Debug CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_37.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 3_37
+  TARGET_PDB = 3_37.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target day29
+
+
+#############################################
+# Order-only phony target for day29
+
+build cmake_object_order_depends_target_day29: phony || CMakeFiles/day29.dir
+
+build CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.o: CXX_COMPILER__day29_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day29/test.cpp || cmake_object_order_depends_target_day29
+  DEP_FILE = CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/day29.dir
+  OBJECT_FILE_DIR = CMakeFiles/day29.dir/7_backtracking/day29
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target day29
+
+
+#############################################
+# Link the executable day29
+
+build day29: CXX_EXECUTABLE_LINKER__day29_Debug CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/day29.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = day29
+  TARGET_PDB = day29.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_332
+
+
+#############################################
+# Order-only phony target for 1_332
+
+build cmake_object_order_depends_target_1_332: phony || CMakeFiles/1_332.dir
+
+build CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.o: CXX_COMPILER__1_332_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/7_backtracking/day29/1_332.cpp || cmake_object_order_depends_target_1_332
+  DEP_FILE = CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_332.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_332.dir/7_backtracking/day29
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_332
+
+
+#############################################
+# Link the executable 1_332
+
+build 1_332: CXX_EXECUTABLE_LINKER__1_332_Debug CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_332.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 1_332
+  TARGET_PDB = 1_332.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_455
+
+
+#############################################
+# Order-only phony target for 1_455
+
+build cmake_object_order_depends_target_1_455: phony || CMakeFiles/1_455.dir
+
+build CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.o: CXX_COMPILER__1_455_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day31/1_455.cpp || cmake_object_order_depends_target_1_455
+  DEP_FILE = CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_455.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_455.dir/8_greed/day31
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_455
+
+
+#############################################
+# Link the executable 1_455
+
+build 1_455: CXX_EXECUTABLE_LINKER__1_455_Debug CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_455.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 1_455
+  TARGET_PDB = 1_455.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 2_376
+
+
+#############################################
+# Order-only phony target for 2_376
+
+build cmake_object_order_depends_target_2_376: phony || CMakeFiles/2_376.dir
+
+build CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.o: CXX_COMPILER__2_376_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day31/2_376.cpp || cmake_object_order_depends_target_2_376
+  DEP_FILE = CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/2_376.dir
+  OBJECT_FILE_DIR = CMakeFiles/2_376.dir/8_greed/day31
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2_376
+
+
+#############################################
+# Link the executable 2_376
+
+build 2_376: CXX_EXECUTABLE_LINKER__2_376_Debug CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/2_376.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_376
+  TARGET_PDB = 2_376.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_53
+
+
+#############################################
+# Order-only phony target for 3_53
+
+build cmake_object_order_depends_target_3_53: phony || CMakeFiles/3_53.dir
+
+build CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.o: CXX_COMPILER__3_53_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day31/3_53.cpp || cmake_object_order_depends_target_3_53
+  DEP_FILE = CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_53.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_53.dir/8_greed/day31
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_53
+
+
+#############################################
+# Link the executable 3_53
+
+build 3_53: CXX_EXECUTABLE_LINKER__3_53_Debug CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_53.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 3_53
+  TARGET_PDB = 3_53.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_122
+
+
+#############################################
+# Order-only phony target for 1_122
+
+build cmake_object_order_depends_target_1_122: phony || CMakeFiles/1_122.dir
+
+build CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.o: CXX_COMPILER__1_122_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day32/1_122.cpp || cmake_object_order_depends_target_1_122
+  DEP_FILE = CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_122.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_122.dir/8_greed/day32
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_122
+
+
+#############################################
+# Link the executable 1_122
+
+build 1_122: CXX_EXECUTABLE_LINKER__1_122_Debug CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_122.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 1_122
+  TARGET_PDB = 1_122.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 2_55
+
+
+#############################################
+# Order-only phony target for 2_55
+
+build cmake_object_order_depends_target_2_55: phony || CMakeFiles/2_55.dir
+
+build CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.o: CXX_COMPILER__2_55_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day32/2_55.cpp || cmake_object_order_depends_target_2_55
+  DEP_FILE = CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/2_55.dir
+  OBJECT_FILE_DIR = CMakeFiles/2_55.dir/8_greed/day32
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2_55
+
+
+#############################################
+# Link the executable 2_55
+
+build 2_55: CXX_EXECUTABLE_LINKER__2_55_Debug CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/2_55.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_55
+  TARGET_PDB = 2_55.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_45
+
+
+#############################################
+# Order-only phony target for 3_45
+
+build cmake_object_order_depends_target_3_45: phony || CMakeFiles/3_45.dir
+
+build CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.o: CXX_COMPILER__3_45_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day32/3_45.cpp || cmake_object_order_depends_target_3_45
+  DEP_FILE = CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_45.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_45.dir/8_greed/day32
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_45
+
+
+#############################################
+# Link the executable 3_45
+
+build 3_45: CXX_EXECUTABLE_LINKER__3_45_Debug CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_45.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 3_45
+  TARGET_PDB = 3_45.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_1005
+
+
+#############################################
+# Order-only phony target for 1_1005
+
+build cmake_object_order_depends_target_1_1005: phony || CMakeFiles/1_1005.dir
+
+build CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.o: CXX_COMPILER__1_1005_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day33/1_1005.cpp || cmake_object_order_depends_target_1_1005
+  DEP_FILE = CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_1005.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_1005.dir/8_greed/day33
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_1005
+
+
+#############################################
+# Link the executable 1_1005
+
+build 1_1005: CXX_EXECUTABLE_LINKER__1_1005_Debug CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_1005.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 1_1005
+  TARGET_PDB = 1_1005.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 2_134
+
+
+#############################################
+# Order-only phony target for 2_134
+
+build cmake_object_order_depends_target_2_134: phony || CMakeFiles/2_134.dir
+
+build CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.o: CXX_COMPILER__2_134_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day33/2_134.cpp || cmake_object_order_depends_target_2_134
+  DEP_FILE = CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/2_134.dir
+  OBJECT_FILE_DIR = CMakeFiles/2_134.dir/8_greed/day33
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2_134
+
+
+#############################################
+# Link the executable 2_134
+
+build 2_134: CXX_EXECUTABLE_LINKER__2_134_Debug CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/2_134.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 2_134
+  TARGET_PDB = 2_134.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target day33_test
+
+
+#############################################
+# Order-only phony target for day33_test
+
+build cmake_object_order_depends_target_day33_test: phony || CMakeFiles/day33_test.dir
+
+build CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.o: CXX_COMPILER__day33_test_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day33/test.cpp || cmake_object_order_depends_target_day33_test
+  DEP_FILE = CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/day33_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/day33_test.dir/8_greed/day33
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target day33_test
+
+
+#############################################
+# Link the executable day33_test
+
+build day33_test: CXX_EXECUTABLE_LINKER__day33_test_Debug CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/day33_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = day33_test
+  TARGET_PDB = day33_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_135
+
+
+#############################################
+# Order-only phony target for 3_135
+
+build cmake_object_order_depends_target_3_135: phony || CMakeFiles/3_135.dir
+
+build CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.o: CXX_COMPILER__3_135_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day33/3_135.cpp || cmake_object_order_depends_target_3_135
+  DEP_FILE = CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_135.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_135.dir/8_greed/day33
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_135
+
+
+#############################################
+# Link the executable 3_135
+
+build 3_135: CXX_EXECUTABLE_LINKER__3_135_Debug CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_135.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = 3_135
+  TARGET_PDB = 3_135.dbg
 
 
 #############################################
@@ -298,7 +810,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/promise/Promise Code/blog/leetcode/cmake-build-debug
 
-build all: phony test 2_40 3_131 1_93 test27 2_78 3_90
+build all: phony test 2_40 3_131 1_93 test27 2_78 3_90 1_491 2_46 3_47 3_37 day29 1_332 1_455 2_376 3_53 1_122 2_55 3_45 1_1005 2_134 day33_test 3_135
 
 # =============================================================================
 # Built-in targets

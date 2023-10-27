@@ -12,6 +12,8 @@
 #include "unordered_set"
 #include "string"
 #include "cstring"
+#include "fstream"
+#include "cmath"
 
 using namespace std;
 

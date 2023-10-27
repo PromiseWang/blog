@@ -4,6 +4,106 @@
   
   
   <entry>
+    <title>代码随想录算法训练营第三十三天  1005.K次取反后最大化的数组和、134.加油站、135.分发糖果</title>
+    <link href="/post/af9e53d4.html"/>
+    <url>/post/af9e53d4.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码随想录算法训练营第三十三天-1005-K次取反后最大化的数组和、134-加油站、135-分发糖果"><a href="#代码随想录算法训练营第三十三天-1005-K次取反后最大化的数组和、134-加油站、135-分发糖果" class="headerlink" title="代码随想录算法训练营第三十三天  1005.K次取反后最大化的数组和、134.加油站、135.分发糖果"></a>代码随想录算法训练营第三十三天  1005.K次取反后最大化的数组和、134.加油站、135.分发糖果</h1><h2 id="1005-K次取反后最大化的数组和"><a href="#1005-K次取反后最大化的数组和" class="headerlink" title="1005.K次取反后最大化的数组和"></a>1005.K次取反后最大化的数组和</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/1005.K%E6%AC%A1%E5%8F%96%E5%8F%8D%E5%90%8E%E6%9C%80%E5%A4%A7%E5%8C%96%E7%9A%84%E6%95%B0%E7%BB%84%E5%92%8C.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV138411G7LY">贪心算法，这不就是常识？还能叫贪心？LeetCode：1005.K次取反后最大化的数组和</a></p><p>  状态：AC</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><ol><li>对数组排序，统计负数个数<code>count</code>，遍历时再记录绝对值最小的数。</li><li>如果<code>count &gt;= k</code>，那么前k个数全都取反</li><li>如果<code>count &lt; k</code>，说明将负数全都取反后，还有额外的操作次数，判断该次数<code>k - count</code>是奇数还是偶数，如果是偶数不用操作，如果是奇数，翻转绝对值最小的数</li></ol><h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>贪尽可能多的正数</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">largestSumAfterKNegations</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-built_in">sort</span>(nums.<span class="hljs-built_in">begin</span>(), nums.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;  <span class="hljs-comment">// 负数个数</span><br>        <span class="hljs-type">int</span> minIndex = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &lt; <span class="hljs-number">0</span>) &#123;<br>                count++;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">abs</span>(nums[i]) &lt; <span class="hljs-built_in">abs</span>(nums[minIndex])) &#123;<br>                minIndex = i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// count &gt;= k 前k个负数全都翻</span><br>        <span class="hljs-keyword">if</span> (count &gt;= k) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; k; ++i) &#123;<br>                nums[i] = -nums[i];<br>            &#125;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// count &lt; k</span><br>            <span class="hljs-comment">//   1. 所有负数都翻转</span><br>            <span class="hljs-comment">//   2.1 if (k - count) % 2 == 0 输出</span><br>            <span class="hljs-comment">//   2.2 else 翻转绝对值最小的数</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; count; ++i) &#123;<br>                nums[i] = -nums[i];<br>            &#125;<br>            <span class="hljs-keyword">if</span> ((k - count) % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) &#123;<br>                nums[minIndex] = -nums[minIndex];<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i: nums) &#123;<br>            sum += i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h2 id="134-加油站"><a href="#134-加油站" class="headerlink" title="134. 加油站"></a>134. 加油站</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/gas-station/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0134.%E5%8A%A0%E6%B2%B9%E7%AB%99.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1jA411r7WX">贪心算法，得这么加油才能跑完全程！LeetCode ：134.加油站</a></p><p>  状态：AC</p></blockquote><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><ol><li>将环路展开成直线的路，即将<code>gas</code>数组向后拼接一个自己，<code>cost</code>向后拼接一个自己，但是去掉一位。</li><li>外层遍历<code>gas</code>，范围从0到<code>gas.size()/2</code>，索引为<code>i</code>。内层遍历<code>cost</code>，范围从<code>i</code>到<code>i+gas.sise()/2</code></li><li>定义当前的油量<code>cur</code>，如果<code>cur + gas[j] &gt;= cost[j]</code>，那么下一次的剩余油量则为<code>cur += gas[j] - cost[j]</code>。否则从<code>i</code>开始的路不能走一圈，继续向下遍历</li></ol><h4 id="贪心算法-1"><a href="#贪心算法-1" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>从一点出发贪最远的路</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">canCompleteCircuit</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;gas, vector&lt;<span class="hljs-type">int</span>&gt; &amp;cost)</span> </span>&#123;<br>        gas.<span class="hljs-built_in">insert</span>(gas.<span class="hljs-built_in">end</span>(), gas.<span class="hljs-built_in">begin</span>(), gas.<span class="hljs-built_in">end</span>());<br>        cost.<span class="hljs-built_in">insert</span>(cost.<span class="hljs-built_in">end</span>(), cost.<span class="hljs-built_in">begin</span>(), cost.<span class="hljs-built_in">end</span>() - <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; gas.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>; ++i) &#123;<br>            <span class="hljs-type">int</span> cur = <span class="hljs-number">0</span>;<br>            <span class="hljs-type">bool</span> flag = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i; j &lt; i + gas.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (cur + gas[j] &gt;= cost[j]) &#123;<br>                    cur += gas[j] - cost[j];<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    flag = <span class="hljs-literal">false</span>;<br>                    i = j;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (flag) &#123;<br>                <span class="hljs-keyword">return</span> i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h2 id="135-分发糖果"><a href="#135-分发糖果" class="headerlink" title="135. 分发糖果"></a>135. 分发糖果</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/candy/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0135.%E5%88%86%E5%8F%91%E7%B3%96%E6%9E%9C.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1ev4y1r7wN">贪心算法，两者兼顾很容易顾此失彼！LeetCode：135.分发糖果</a></p><p>  状态：AC</p></blockquote><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>这道题没有想明白，看了题解后懂了。前后两次遍历评分数组。每个人糖果初始化为1。</p><p>前向遍历时如果后一项大于前一项，那么后一项的糖果值为前一项加1。</p><p>反向遍历时，如果前一项大于后一项时，并且前一项糖果也不超过后一项时，那么前一项糖果等于后一项加1。</p><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">candy</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;ratings)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">result</span><span class="hljs-params">(ratings.size(), <span class="hljs-number">1</span>)</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; ratings.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (ratings[i] &gt; ratings[i - <span class="hljs-number">1</span>]) &#123;<br>                result[i] = result[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = ratings.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">1</span>; --i) &#123;<br>            <span class="hljs-keyword">if</span> (ratings[i - <span class="hljs-number">1</span>] &gt; ratings[i] &amp;&amp; result[i - <span class="hljs-number">1</span>] &lt;= result[i]) &#123;<br>                result[i - <span class="hljs-number">1</span>] = result[i] + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> i: result) &#123;<br>            sum += i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>代码随想录</tag>
+      
+      <tag>贪心算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>代码随想录算法训练营第三十二天  122. 买卖股票的最佳时机II、55.跳跃游戏、45.跳跃游戏II</title>
+    <link href="/post/4486d5e0.html"/>
+    <url>/post/4486d5e0.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码随想录算法训练营第三十二天-122-买卖股票的最佳时机II、55-跳跃游戏、45-跳跃游戏II"><a href="#代码随想录算法训练营第三十二天-122-买卖股票的最佳时机II、55-跳跃游戏、45-跳跃游戏II" class="headerlink" title="代码随想录算法训练营第三十二天  122. 买卖股票的最佳时机II、55.跳跃游戏、45.跳跃游戏II"></a>代码随想录算法训练营第三十二天  122. 买卖股票的最佳时机II、55.跳跃游戏、45.跳跃游戏II</h1><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0122.%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BAII.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1ev4y1C7na">贪心算法也能解决股票问题！LeetCode：122.买卖股票最佳时机 II</a></p><p>  状态：AC</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>这道题已经给出了一定的提示</p><blockquote><p>  输入：prices &#x3D; [7,1,5,3,6,4]<br>输出：7<br>解释：</p></blockquote><p>   在第 2 天（股票价格 &#x3D; 1）的时候买入，在第 3 天（股票价格 &#x3D; 5）的时候卖出, 这笔交易所能获得利润 &#x3D; 5 - 1 &#x3D; 4 。</p><p>   随后，在第 4 天（股票价格 &#x3D; 3）的时候买入，在第 5 天（股票价格 &#x3D; 6）的时候卖出, 这笔交易所能获得利润 &#x3D; 6 - 3 &#x3D; 3 。  </p><p>   总利润为 4 + 3 &#x3D; 7 。</p><p>利润是可以叠加计算的。</p><h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>假设每一天都买股票，第二天都卖股票，计算出第二天的利润，将所有正利润加和即可。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxProfit</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;prices)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">profit</span><span class="hljs-params">(prices.size(), <span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-type">int</span> result = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; prices.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">if</span> (prices[i] - prices[i - <span class="hljs-number">1</span>] &gt; <span class="hljs-number">0</span>) &#123;<br>                result += prices[i] - prices[i - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h2 id="55-跳跃游戏"><a href="#55-跳跃游戏" class="headerlink" title="55. 跳跃游戏"></a>55. 跳跃游戏</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/jump-game/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0055.%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8F.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1VG4y1X7kB">贪心算法，怎么跳跃不重要，关键在覆盖范围 | LeetCode：55.跳跃游戏</a></p><p>  状态：AC</p></blockquote><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>定义距离<code>dis</code>，每一格都走最远的路，和<code>dis</code>做比较，如果更远更新<code>dis</code>，最后比较<code>dis</code>能否到<code>nums.size()-1</code></p><h4 id="贪心算法-1"><a href="#贪心算法-1" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>每一格都贪最远的路</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canJump</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> dis = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (nums.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt;= dis; ++i) &#123;<br>            dis = <span class="hljs-built_in">max</span>(nums[i] + i, dis);<br>            <span class="hljs-keyword">if</span> (dis &gt;= nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h2 id="45-跳跃游戏II"><a href="#45-跳跃游戏II" class="headerlink" title="45. 跳跃游戏II"></a>45. 跳跃游戏II</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/jump-game-ii/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0045.%E8%B7%B3%E8%B7%83%E6%B8%B8%E6%88%8FII.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1Y24y1r7XZ">贪心算法，最少跳几步还得看覆盖范围 | LeetCode： 45.跳跃游戏 II</a></p><p>  状态：投降</p></blockquote><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>这道题最终没有做出来。看了题解。</p><p>先尽量远走，如果达不到则向下走一步再向远走。需要两个变量分别记录当前最远距离位置<code>curDis</code>和下一次的最远距离位置<code>nextDis</code>。</p><p>如果<code>curDis</code>为当前的位置，则更新成<code>nextDis</code></p><h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">jump</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(nums.size(), <span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-keyword">if</span> (nums.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> curDis = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> nextDis = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            nextDis = <span class="hljs-built_in">max</span>(i + nums[i], nextDis);<br>            <span class="hljs-keyword">if</span> (i == curDis) &#123;<br>                curDis = nextDis;<br>                count++;<br>                <span class="hljs-keyword">if</span> (nextDis &gt;= nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>) &#123;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p><font color="red">这道题值得反复思考，暂时想通了，可能睡一觉起来又忘了</font></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>代码随想录</tag>
+      
+      <tag>贪心算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>代码随想录算法训练营第三十一天  455.分发饼干、376.摆动序列、53.最大子数组和</title>
+    <link href="/post/5aa98f1b.html"/>
+    <url>/post/5aa98f1b.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="代码随想录算法训练营第三十一天-455-分发饼干、376-摆动序列、53-最大子数组和"><a href="#代码随想录算法训练营第三十一天-455-分发饼干、376-摆动序列、53-最大子数组和" class="headerlink" title="代码随想录算法训练营第三十一天  455.分发饼干、376.摆动序列、53.最大子数组和"></a>代码随想录算法训练营第三十一天  455.分发饼干、376.摆动序列、53.最大子数组和</h1><h2 id="455-分发饼干"><a href="#455-分发饼干" class="headerlink" title="455. 分发饼干"></a>455. 分发饼干</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/assign-cookies/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0455.%E5%88%86%E5%8F%91%E9%A5%BC%E5%B9%B2.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1MM411b7cq">贪心算法，你想先喂哪个小孩？| LeetCode：455.分发饼干</a></p><p>  状态：AC</p></blockquote><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>先将两个数组进行排序。先遍历胃口<code>g</code>，再遍历<code>s</code>，如果<code>g[i] &lt;= s[j]</code>时，那么可以将<code>s[j]</code>喂给<code>g[i]</code>，记录此时<code>s</code>的位置放到<code>index</code>，下次<code>s</code>从<code>index</code>开始循环。</p><h4 id="贪心思路"><a href="#贪心思路" class="headerlink" title="贪心思路"></a>贪心思路</h4><p>充分利用饼干喂饱当前的孩子。</p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">findContentChildren</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;g, vector&lt;<span class="hljs-type">int</span>&gt; &amp;s)</span> </span>&#123;<br>        <span class="hljs-built_in">sort</span>(g.<span class="hljs-built_in">begin</span>(), g.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-built_in">sort</span>(s.<span class="hljs-built_in">begin</span>(), s.<span class="hljs-built_in">end</span>());<br>        <span class="hljs-type">int</span> index = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">if</span> (s.<span class="hljs-built_in">empty</span>()) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; g.<span class="hljs-built_in">size</span>() &amp;&amp; index &lt; s.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = index; j &lt; s.<span class="hljs-built_in">size</span>(); ++j) &#123;<br>                <span class="hljs-keyword">if</span> (s[j] &gt;= g[i]) &#123;<br>                    index = j + <span class="hljs-number">1</span>;<br>                    count++;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><p>看了题解之后发现从后向前遍历写起来更简单一些，而且只需要一层循环即可。</p><h2 id="376-摆动序列"><a href="#376-摆动序列" class="headerlink" title="376.摆动序列"></a>376.摆动序列</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/wiggle-subsequence/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0376.%E6%91%86%E5%8A%A8%E5%BA%8F%E5%88%97.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV17M411b7NS">贪心算法，寻找摆动有细节！| LeetCode：376.摆动序列</a></p><p>  状态：无</p></blockquote><h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p><font color="red">错误：这道题一直想的只是当前位置和前后数字进行比较，如果高于或低于旁边的两个数字判定为摆动。但是并没有思考到上一次的振幅改变不在旁边的情况，所以不能只和身边的两个数进行比较</font></p><p>定义两个差：当前差<code>cur</code>和上次的差<code>pre</code>。上次差意味着出现了连续递增或递减，比较两次差是否摆动</p><h4 id="贪心思路-1"><a href="#贪心思路-1" class="headerlink" title="贪心思路"></a>贪心思路</h4><p>递增或递减时贪最远的情况</p><h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">wiggleMaxLength</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (nums.<span class="hljs-built_in">size</span>() &lt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums.<span class="hljs-built_in">size</span>();<br>        &#125;<br>        <span class="hljs-type">int</span> cur = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> pre = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> count = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>; ++i) &#123;<br>            cur = nums[i + <span class="hljs-number">1</span>] - nums[i];<br>            <span class="hljs-keyword">if</span> ((pre &lt;= <span class="hljs-number">0</span> &amp;&amp; cur &gt; <span class="hljs-number">0</span>) || (pre &gt;= <span class="hljs-number">0</span> &amp;&amp; cur &lt; <span class="hljs-number">0</span>)) &#123;<br>                count++;<br>                pre = cur;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> count;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h2 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53.最大子数组和"></a>53.最大子数组和</h2><blockquote><p>  题目链接：<a href="https://leetcode.cn/problems/maximum-subarray/">力扣题目链接</a></p><p>  文章讲解：<a href="https://programmercarl.com/0053.%E6%9C%80%E5%A4%A7%E5%AD%90%E5%BA%8F%E5%92%8C.html">代码随想录(https://programmercarl.com)</a></p><p>  视频讲解：<a href="https://www.bilibili.com/video/BV1aY4y1Z7ya">贪心算法的巧妙需要慢慢体会！LeetCode：53. 最大子序和</a></p><p>  状态：AC</p></blockquote><h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>贪心算法没太想懂，使用动态规划还是很简单的。</p><h4 id="动态规划："><a href="#动态规划：" class="headerlink" title="动态规划："></a>动态规划：</h4><p>定义<code>dp</code>数组，<code>dp[i]</code>代表前<code>i</code>个元素最大和，如果前n项和小于0，重新开始，否则累加。<code>dp[i] = max(dp[i-1] + nums[i], nums[i])</code></p><h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxSubArray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (nums.<span class="hljs-built_in">size</span>() &lt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">dp</span><span class="hljs-params">(nums.size(), <span class="hljs-number">0</span>)</span></span>;<br>        dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-type">int</span> maxSum = dp[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            dp[i] = <span class="hljs-built_in">max</span>(dp[i - <span class="hljs-number">1</span>] + nums[i], nums[i]);<br>            <span class="hljs-keyword">if</span> (dp[i] &gt; maxSum) &#123;<br>                maxSum = dp[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> maxSum;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure><h4 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h4><p>看了卡哥的讲解：如果连续和小于0，那么重新开始（因为负数相加会越来越小）。否则继续累加。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maxSubArray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (nums.<span class="hljs-built_in">size</span>() &lt; <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> max = INT32_MIN;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            sum += nums[i];<br>            <span class="hljs-keyword">if</span> (sum &gt; max) &#123;<br>                max = sum;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (sum &lt; <span class="hljs-number">0</span>) &#123;<br>                sum = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> max;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>刷题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>LeetCode</tag>
+      
+      <tag>算法</tag>
+      
+      <tag>代码随想录</tag>
+      
+      <tag>贪心算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【debug】记一次失败的爬虫经历</title>
+    <link href="/post/94786f20.html"/>
+    <url>/post/94786f20.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="【debug】记一次失败的爬虫经历"><a href="#【debug】记一次失败的爬虫经历" class="headerlink" title="【debug】记一次失败的爬虫经历"></a>【debug】记一次失败的爬虫经历</h1><p>今天我的室友需要在一个网站上批量下载一些数据，但是他并不会代码，我尝试帮他处理一下</p><p>URL:<code>http://dc2.cistrome.org/#/</code></p><img src="../images/【debug】记一次失败的爬虫经历/网页截图.png" alt="网页截图" style="zoom:67%;" /><p>网站上需要点击这些选项，<code>Factors</code>需要每个点击，可能有些因素并没有数据。</p><img src="../images/【debug】记一次失败的爬虫经历/网页截图2.png" alt="网页截图2" style="zoom:67%;" /><p>先选中第一行，然后才会出现下方的<code>Inspector</code>部分，再点击<code>Putative Targets</code>进入下载页面</p><img src="../images/【debug】记一次失败的爬虫经历/下载页面.png" alt="下载页面" style="zoom:80%;" /><p>下载页面输入验证码点击下载即可。</p><h2 id="1-分析、抓包"><a href="#1-分析、抓包" class="headerlink" title="1. 分析、抓包"></a>1. 分析、抓包</h2><p>抓包使用了Fiddler这个软件。设置好URL进行筛选</p><img src="../images/【debug】记一次失败的爬虫经历/Fildder1.png" alt="Fildder1" style="zoom:80%;" /><p>先正常的操作一遍，让Fiddler记录这个过程。</p><img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" alt="正常操作抓包" style="zoom:67%;" /><p>依次查看每一行：</p><ul><li>19~21：选择第一张图的一些条件，一共要选三次，出现了三条数据，分析其中参数很简单。需要查找factors的列表</li><li>22：加载第二张图的Inspector部分，需要查找id</li><li>23：在第二张图最下面还有一部分，我没有截出来，这里是获取到一张图片</li><li>24：向URL请求，此处的URL里面都是冒号，返回的是301，重定向将冒号替换为<code>%3A</code>的URL编码</li><li>26：重定向，返回的是验证码的那个页面</li><li>27：请求验证码的图片</li><li>28：提交验证码</li><li>29：下载链接（返回txt文件）</li></ul><h2 id="2-获取每个部分的关键数据"><a href="#2-获取每个部分的关键数据" class="headerlink" title="2. 获取每个部分的关键数据"></a>2. 获取每个部分的关键数据</h2><h3 id="导入相关的包"><a href="#导入相关的包" class="headerlink" title="导入相关的包"></a>导入相关的包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> json<br><span class="hljs-keyword">import</span> time<br><br><span class="hljs-keyword">import</span> requests<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br></code></pre></td></tr></table></figure><h3 id="获取每个factors"><a href="#获取每个factors" class="headerlink" title="获取每个factors"></a>获取每个factors</h3><img src="../images/【debug】记一次失败的爬虫经历/获取factors.png" alt="image-20231025010850092" style="zoom:50%;" /><p>根据上面分析，使用第20行的URL即可得到所有的factors，然后替换其中的<code>factors=all</code>，将<code>all</code>替换为每一个<code>factors</code>即可。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python">url1 = <span class="hljs-string">&quot;http://dc2.cistrome.org/api/main_filter_ng?allqc=false&amp;cellinfos=ti_Breast&amp;completed=false&amp;curated=false&amp;factors=all&amp;keyword=&amp;page=1&amp;peakqc=false&amp;run=false&amp;species=Homo+sapiens&quot;</span>  <span class="hljs-comment"># 21行URL</span><br><br>headers = &#123;<br>    <span class="hljs-string">&quot;Accept&quot;</span>: <span class="hljs-string">&quot;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&quot;</span>,<br>    <span class="hljs-string">&quot;Accept-Encoding&quot;</span>: <span class="hljs-string">&quot;gzip, deflate&quot;</span>,<br>    <span class="hljs-string">&quot;Origin&quot;</span>: <span class="hljs-string">&quot;http://dc2.cistrome.org&quot;</span>,<br>    <span class="hljs-string">&quot;Accept-Language&quot;</span>: <span class="hljs-string">&quot;zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3&quot;</span>,<br>    <span class="hljs-string">&quot;Host&quot;</span>: <span class="hljs-string">&quot;dc2.cistrome.org&quot;</span>,<br>    <span class="hljs-string">&quot;User-Agent&quot;</span>: <span class="hljs-string">&quot;Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; Tablet PC 2.0; wbx 1.0.0; wbxapp 1.0.0; Zoom 3.6.0)&quot;</span>,<br>&#125;<br><br>session = requests.session()<br><br>response = session.get(url, headers=headers)<br>json_list = response.json()[<span class="hljs-string">&quot;factors&quot;</span>]<br></code></pre></td></tr></table></figure><h2 id="3-获取inspector中的id值"><a href="#3-获取inspector中的id值" class="headerlink" title="3. 获取inspector中的id值"></a>3. 获取inspector中的id值</h2><p>为了方便书写，就以第一个factors作为演示</p><p>继续刚刚请求，将新的<code>factors</code>替换，查看response的结果</p><img src="../images/【debug】记一次失败的爬虫经历/获取id.png" alt="获取id" style="zoom:67%;" /><p>有可能Inspector中会出现多栏，经过查阅后去第1个id就好</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python">url2 = <span class="hljs-string">f&quot;http://dc2.cistrome.org/api/main_filter_ng?allqc=false&amp;cellinfos=ti_Breast&amp;completed=false&amp;curated=false&amp;factors=AHO1&amp;keyword=&amp;page=1&amp;peakqc=false&amp;run=false&amp;species=Homo+sapiens&quot;</span><br>response = session.get(url2, headers=headers)<br><span class="hljs-built_in">id</span> = response.json()[<span class="hljs-string">&quot;datasets&quot;</span>][<span class="hljs-number">0</span>][<span class="hljs-string">&quot;id&quot;</span>]<br></code></pre></td></tr></table></figure><h2 id="4-跳转至验证码页面"><a href="#4-跳转至验证码页面" class="headerlink" title="4. 跳转至验证码页面"></a>4. 跳转至验证码页面</h2><p>根据Fiddler中的URL显示：<code>http://dc2.cistrome.org/api/downloads/eyJpZCI6IjQ4NjEwIn0%3A1qvKhR%3AxwR7aSlYncCHoao44VSfL3o22igp</code></p><p>需要查看最后面一串字符是什么或从哪里来。我们查看22行的请求</p><img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" alt="正常操作抓包" style="zoom:67%;" /><img src="../images/【debug】记一次失败的爬虫经历/哪个表达基因.png" alt="哪个表达基因" style="zoom:67%;" /><p>进入22行的请求发现就是<code>sign</code>这一项，并且将冒号替换为<code>%3A</code>即可。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">download_url = <span class="hljs-string">f&quot;http://dc2.cistrome.org/api/inspector?id=<span class="hljs-subst">&#123;<span class="hljs-built_in">id</span>&#125;</span>&quot;</span><br>response_url = session.get(download_url, headers=headers)<br>sign = response_url.json()[<span class="hljs-string">&quot;sign&quot;</span>]<br>sign = sign.replace(<span class="hljs-string">&quot;:&quot;</span>, <span class="hljs-string">&quot;%3A&quot;</span>)<br></code></pre></td></tr></table></figure><h2 id="5-输入验证码"><a href="#5-输入验证码" class="headerlink" title="5. 输入验证码"></a>5. 输入验证码</h2><p>这一步之前，发送了两个请求，一个是获取HTML，一个是获取验证码。分析27行的数据，能发现最后与刚刚的<code>sign</code>值完全不同，查看27行最后一串是什么。</p><p>分析获取到的HTML，能看到如下内容</p><p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/%E5%88%86%E6%9E%90HTML.png" alt="分析HTML"></p><p>红色是为27行的URL最后的部分，绿色则是要提交的表单，将验证码下载到本地手动数据数据再提交上去。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python">soup = BeautifulSoup(response.content, <span class="hljs-string">&quot;html.parser&quot;</span>)<br>img_tag = soup.find(<span class="hljs-string">&quot;img&quot;</span>)[<span class="hljs-string">&quot;src&quot;</span>]<br>img_id = img_tag.split(<span class="hljs-string">&quot;/&quot;</span>)[-<span class="hljs-number">2</span>]<br>img_url = <span class="hljs-string">&quot;http://dc2.cistrome.org&quot;</span> + img_tag<br>image = session.get(img_url, headers=headers)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.png&quot;</span>, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> f:<br>    f.write(image.content)<br>    captcha = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;输入test.png的验证码&quot;</span>))<br>    data = &#123;<br>        <span class="hljs-string">&quot;csrfmiddlewaretoken&quot;</span>: session.cookies[<span class="hljs-string">&quot;csrftoken&quot;</span>],<br>        <span class="hljs-string">&quot;captcha_0&quot;</span>: img_id,<br>        <span class="hljs-string">&quot;captcha_1&quot;</span>: captcha<br>    &#125;<br></code></pre></td></tr></table></figure><h2 id="6-问题出现"><a href="#6-问题出现" class="headerlink" title="6. 问题出现"></a>6. 问题出现</h2><p>分析28行请求</p><img src="../images/【debug】记一次失败的爬虫经历/正常操作抓包.png" alt="正常操作抓包" style="zoom:67%;" /><p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/POST.png" alt="POST"></p><p>看起来只需要POST以下三个数据就好，之后再<code>get</code>29行操作，但是始终拿不到正确的数据</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">response = session.post(url=download_url, headers=headers, data=data)<br>download = session.get(<span class="hljs-string">f&quot;http://dc2.cistrome.org/api/files/<span class="hljs-subst">&#123;sign&#125;</span>/&quot;</span>, headers=headers)<br><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;test.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>) <span class="hljs-keyword">as</span> file:<br>    file.write(download.text)<br></code></pre></td></tr></table></figure><p><img src="/../images/%E3%80%90debug%E3%80%91%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E7%88%AC%E8%99%AB%E7%BB%8F%E5%8E%86/Wrong.png" alt="Wrong"></p><p>无论如何都是错误的参数，看了好多次都没有找到哪里请求有问题。</p><p>尝试改了<code>session.post(data)</code>参数，改成<code>json</code>也不对。改了<code>data</code>中的<code>captcha_1</code>的类型也不对。传输字符串的形式也不对<code>session.post(data=f&quot;csrfmiddlewaretoken=&#123;session.cookies[&#39;csrftoken&#39;]&#125;&amp;captcha_0=&#123;img_id&#125;&amp;captcha_1=&#123;captcha&#125;&quot;)</code>。</p><p>但是我在网页先进行输入验证码操作，拿到可以下载的“权限”之后，再去fiddler中模拟29行get请求却可以正常下载。想了好久也没找到什么好的办法。</p><h2 id="7-验证码其他的失败的想法"><a href="#7-验证码其他的失败的想法" class="headerlink" title="7. 验证码其他的失败的想法"></a>7. 验证码其他的失败的想法</h2><ol><li>最开始认为验证码如果人为输入会比较慢，应该让AI去识别，识别到字符串之后使用python中的<code>eval()</code>语句获得到结果。后来测试两个发现识别的非常不准。因为运算符不是常规角度，有可能会被识别为字母。最后放弃了这个方法。</li><li><code>captcha_0</code>和<code>captcha_1</code>这两个参数一个是验证码的<code>id</code>，应该为后台数据库存储的名字，一个是计算结果。尝试了始终使用一组正确的不断的请求骗过服务器验证。还是因为卡在了上一步始终为参数错误，再过了一会就显示<code>Time Out!</code>。我觉得如果参数正确可以尝试一下这个方法。</li><li>尝试SQL注入，使用语句<code>&#39; or 1=1 --</code>还是失败。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Debug</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>代码随想录算法训练营第二十八天  491.递增子序列、46.全排列、47.全排列II</title>
     <link href="/post/70a8aaa7.html"/>
     <url>/post/70a8aaa7.html</url>
@@ -25,6 +125,47 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>回溯算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【study】Python高并发编程</title>
+    <link href="/post/6e482275.html"/>
+    <url>/post/6e482275.html</url>
+    
+    <content type="html"><![CDATA[<h1 id="【study】Python高并发编程"><a href="#【study】Python高并发编程" class="headerlink" title="【study】Python高并发编程"></a>【study】Python高并发编程</h1><p>事情起因：一个学经济学的朋友在公司实习，</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Study</tag>
+      
+      <tag>Python</tag>
+      
+      <tag>高并发编程</tag>
+      
+      <tag>进程</tag>
+      
+      <tag>线程</tag>
+      
+      <tag>协程</tag>
+      
+      <tag>连接池</tag>
+      
+      <tag>线程池</tag>
       
     </tags>
     
@@ -55,6 +196,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>回溯算法</tag>
+      
     </tags>
     
   </entry>
@@ -83,6 +226,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>回溯算法</tag>
       
     </tags>
     
@@ -113,6 +258,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>回溯算法</tag>
+      
     </tags>
     
   </entry>
@@ -141,6 +288,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>回溯算法</tag>
       
     </tags>
     
@@ -171,6 +320,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>二叉树</tag>
+      
     </tags>
     
   </entry>
@@ -199,6 +350,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>二叉树</tag>
       
     </tags>
     
@@ -229,6 +382,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>二叉树</tag>
+      
     </tags>
     
   </entry>
@@ -257,6 +412,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>二叉树</tag>
       
     </tags>
     
@@ -287,6 +444,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>二叉树</tag>
+      
     </tags>
     
   </entry>
@@ -315,6 +474,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>二叉树</tag>
       
     </tags>
     
@@ -345,6 +506,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>二叉树</tag>
+      
     </tags>
     
   </entry>
@@ -373,6 +536,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>二叉树</tag>
       
     </tags>
     
@@ -403,6 +568,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>二叉树</tag>
+      
     </tags>
     
   </entry>
@@ -431,6 +598,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>栈与队列</tag>
       
     </tags>
     
@@ -490,6 +659,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>栈与队列</tag>
+      
     </tags>
     
   </entry>
@@ -518,6 +689,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>栈与队列</tag>
       
     </tags>
     
@@ -548,6 +721,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>字符串</tag>
+      
     </tags>
     
   </entry>
@@ -577,6 +752,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>字符串</tag>
+      
     </tags>
     
   </entry>
@@ -605,6 +782,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>哈希表</tag>
       
     </tags>
     
@@ -664,6 +843,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>哈希表</tag>
+      
     </tags>
     
   </entry>
@@ -692,6 +873,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>链表</tag>
       
     </tags>
     
@@ -722,6 +905,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>链表</tag>
+      
     </tags>
     
   </entry>
@@ -751,6 +936,8 @@
       
       <tag>代码随想录</tag>
       
+      <tag>数组</tag>
+      
     </tags>
     
   </entry>
@@ -779,6 +966,8 @@
       <tag>算法</tag>
       
       <tag>代码随想录</tag>
+      
+      <tag>数组</tag>
       
     </tags>
     
