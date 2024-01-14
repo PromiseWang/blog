@@ -245,6 +245,227 @@ test27/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_47.dir\build.make CMakeFiles/3_47.dir/build
 .PHONY : 3_47/fast
 
+#=============================================================================
+# Target rules for targets named 3_37
+
+# Build rule for target.
+3_37: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3_37
+.PHONY : 3_37
+
+# fast build rule for target.
+3_37/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_37.dir\build.make CMakeFiles/3_37.dir/build
+.PHONY : 3_37/fast
+
+#=============================================================================
+# Target rules for targets named day29
+
+# Build rule for target.
+day29: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 day29
+.PHONY : day29
+
+# fast build rule for target.
+day29/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day29.dir\build.make CMakeFiles/day29.dir/build
+.PHONY : day29/fast
+
+#=============================================================================
+# Target rules for targets named 1_332
+
+# Build rule for target.
+1_332: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 1_332
+.PHONY : 1_332
+
+# fast build rule for target.
+1_332/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_332.dir\build.make CMakeFiles/1_332.dir/build
+.PHONY : 1_332/fast
+
+#=============================================================================
+# Target rules for targets named 1_455
+
+# Build rule for target.
+1_455: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 1_455
+.PHONY : 1_455
+
+# fast build rule for target.
+1_455/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_455.dir\build.make CMakeFiles/1_455.dir/build
+.PHONY : 1_455/fast
+
+#=============================================================================
+# Target rules for targets named 2_376
+
+# Build rule for target.
+2_376: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2_376
+.PHONY : 2_376
+
+# fast build rule for target.
+2_376/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_376.dir\build.make CMakeFiles/2_376.dir/build
+.PHONY : 2_376/fast
+
+#=============================================================================
+# Target rules for targets named 3_53
+
+# Build rule for target.
+3_53: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3_53
+.PHONY : 3_53
+
+# fast build rule for target.
+3_53/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_53.dir\build.make CMakeFiles/3_53.dir/build
+.PHONY : 3_53/fast
+
+#=============================================================================
+# Target rules for targets named 1_122
+
+# Build rule for target.
+1_122: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 1_122
+.PHONY : 1_122
+
+# fast build rule for target.
+1_122/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_122.dir\build.make CMakeFiles/1_122.dir/build
+.PHONY : 1_122/fast
+
+#=============================================================================
+# Target rules for targets named 2_55
+
+# Build rule for target.
+2_55: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2_55
+.PHONY : 2_55
+
+# fast build rule for target.
+2_55/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_55.dir\build.make CMakeFiles/2_55.dir/build
+.PHONY : 2_55/fast
+
+#=============================================================================
+# Target rules for targets named 3_45
+
+# Build rule for target.
+3_45: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3_45
+.PHONY : 3_45
+
+# fast build rule for target.
+3_45/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_45.dir\build.make CMakeFiles/3_45.dir/build
+.PHONY : 3_45/fast
+
+#=============================================================================
+# Target rules for targets named 1_1005
+
+# Build rule for target.
+1_1005: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 1_1005
+.PHONY : 1_1005
+
+# fast build rule for target.
+1_1005/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_1005.dir\build.make CMakeFiles/1_1005.dir/build
+.PHONY : 1_1005/fast
+
+#=============================================================================
+# Target rules for targets named 2_134
+
+# Build rule for target.
+2_134: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2_134
+.PHONY : 2_134
+
+# fast build rule for target.
+2_134/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_134.dir\build.make CMakeFiles/2_134.dir/build
+.PHONY : 2_134/fast
+
+#=============================================================================
+# Target rules for targets named day33_test
+
+# Build rule for target.
+day33_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 day33_test
+.PHONY : day33_test
+
+# fast build rule for target.
+day33_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day33_test.dir\build.make CMakeFiles/day33_test.dir/build
+.PHONY : day33_test/fast
+
+#=============================================================================
+# Target rules for targets named 3_135
+
+# Build rule for target.
+3_135: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3_135
+.PHONY : 3_135
+
+# fast build rule for target.
+3_135/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_135.dir\build.make CMakeFiles/3_135.dir/build
+.PHONY : 3_135/fast
+
+#=============================================================================
+# Target rules for targets named 1_860
+
+# Build rule for target.
+1_860: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 1_860
+.PHONY : 1_860
+
+# fast build rule for target.
+1_860/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_860.dir\build.make CMakeFiles/1_860.dir/build
+.PHONY : 1_860/fast
+
+#=============================================================================
+# Target rules for targets named day34_test
+
+# Build rule for target.
+day34_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 day34_test
+.PHONY : day34_test
+
+# fast build rule for target.
+day34_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day34_test.dir\build.make CMakeFiles/day34_test.dir/build
+.PHONY : day34_test/fast
+
+#=============================================================================
+# Target rules for targets named 2_406
+
+# Build rule for target.
+2_406: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 2_406
+.PHONY : 2_406
+
+# fast build rule for target.
+2_406/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_406.dir\build.make CMakeFiles/2_406.dir/build
+.PHONY : 2_406/fast
+
+#=============================================================================
+# Target rules for targets named 3_452
+
+# Build rule for target.
+3_452: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 3_452
+.PHONY : 3_452
+
+# fast build rule for target.
+3_452/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_452.dir\build.make CMakeFiles/3_452.dir/build
+.PHONY : 3_452/fast
+
 7_backtracking/day26/2_40.obj: 7_backtracking/day26/2_40.cpp.obj
 .PHONY : 7_backtracking/day26/2_40.obj
 
@@ -485,6 +706,414 @@ test27/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_47.dir\build.make CMakeFiles/3_47.dir/7_backtracking/day28/3_47.cpp.s
 .PHONY : 7_backtracking/day28/3_47.cpp.s
 
+7_backtracking/day29/1_332.obj: 7_backtracking/day29/1_332.cpp.obj
+.PHONY : 7_backtracking/day29/1_332.obj
+
+# target to build an object file
+7_backtracking/day29/1_332.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_332.dir\build.make CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.obj
+.PHONY : 7_backtracking/day29/1_332.cpp.obj
+
+7_backtracking/day29/1_332.i: 7_backtracking/day29/1_332.cpp.i
+.PHONY : 7_backtracking/day29/1_332.i
+
+# target to preprocess a source file
+7_backtracking/day29/1_332.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_332.dir\build.make CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.i
+.PHONY : 7_backtracking/day29/1_332.cpp.i
+
+7_backtracking/day29/1_332.s: 7_backtracking/day29/1_332.cpp.s
+.PHONY : 7_backtracking/day29/1_332.s
+
+# target to generate assembly for a file
+7_backtracking/day29/1_332.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_332.dir\build.make CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.s
+.PHONY : 7_backtracking/day29/1_332.cpp.s
+
+7_backtracking/day29/3_37.obj: 7_backtracking/day29/3_37.cpp.obj
+.PHONY : 7_backtracking/day29/3_37.obj
+
+# target to build an object file
+7_backtracking/day29/3_37.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_37.dir\build.make CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.obj
+.PHONY : 7_backtracking/day29/3_37.cpp.obj
+
+7_backtracking/day29/3_37.i: 7_backtracking/day29/3_37.cpp.i
+.PHONY : 7_backtracking/day29/3_37.i
+
+# target to preprocess a source file
+7_backtracking/day29/3_37.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_37.dir\build.make CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.i
+.PHONY : 7_backtracking/day29/3_37.cpp.i
+
+7_backtracking/day29/3_37.s: 7_backtracking/day29/3_37.cpp.s
+.PHONY : 7_backtracking/day29/3_37.s
+
+# target to generate assembly for a file
+7_backtracking/day29/3_37.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_37.dir\build.make CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.s
+.PHONY : 7_backtracking/day29/3_37.cpp.s
+
+7_backtracking/day29/test.obj: 7_backtracking/day29/test.cpp.obj
+.PHONY : 7_backtracking/day29/test.obj
+
+# target to build an object file
+7_backtracking/day29/test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day29.dir\build.make CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.obj
+.PHONY : 7_backtracking/day29/test.cpp.obj
+
+7_backtracking/day29/test.i: 7_backtracking/day29/test.cpp.i
+.PHONY : 7_backtracking/day29/test.i
+
+# target to preprocess a source file
+7_backtracking/day29/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day29.dir\build.make CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.i
+.PHONY : 7_backtracking/day29/test.cpp.i
+
+7_backtracking/day29/test.s: 7_backtracking/day29/test.cpp.s
+.PHONY : 7_backtracking/day29/test.s
+
+# target to generate assembly for a file
+7_backtracking/day29/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day29.dir\build.make CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.s
+.PHONY : 7_backtracking/day29/test.cpp.s
+
+8_greed/day31/1_455.obj: 8_greed/day31/1_455.cpp.obj
+.PHONY : 8_greed/day31/1_455.obj
+
+# target to build an object file
+8_greed/day31/1_455.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_455.dir\build.make CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.obj
+.PHONY : 8_greed/day31/1_455.cpp.obj
+
+8_greed/day31/1_455.i: 8_greed/day31/1_455.cpp.i
+.PHONY : 8_greed/day31/1_455.i
+
+# target to preprocess a source file
+8_greed/day31/1_455.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_455.dir\build.make CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.i
+.PHONY : 8_greed/day31/1_455.cpp.i
+
+8_greed/day31/1_455.s: 8_greed/day31/1_455.cpp.s
+.PHONY : 8_greed/day31/1_455.s
+
+# target to generate assembly for a file
+8_greed/day31/1_455.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_455.dir\build.make CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.s
+.PHONY : 8_greed/day31/1_455.cpp.s
+
+8_greed/day31/2_376.obj: 8_greed/day31/2_376.cpp.obj
+.PHONY : 8_greed/day31/2_376.obj
+
+# target to build an object file
+8_greed/day31/2_376.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_376.dir\build.make CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.obj
+.PHONY : 8_greed/day31/2_376.cpp.obj
+
+8_greed/day31/2_376.i: 8_greed/day31/2_376.cpp.i
+.PHONY : 8_greed/day31/2_376.i
+
+# target to preprocess a source file
+8_greed/day31/2_376.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_376.dir\build.make CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.i
+.PHONY : 8_greed/day31/2_376.cpp.i
+
+8_greed/day31/2_376.s: 8_greed/day31/2_376.cpp.s
+.PHONY : 8_greed/day31/2_376.s
+
+# target to generate assembly for a file
+8_greed/day31/2_376.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_376.dir\build.make CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.s
+.PHONY : 8_greed/day31/2_376.cpp.s
+
+8_greed/day31/3_53.obj: 8_greed/day31/3_53.cpp.obj
+.PHONY : 8_greed/day31/3_53.obj
+
+# target to build an object file
+8_greed/day31/3_53.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_53.dir\build.make CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.obj
+.PHONY : 8_greed/day31/3_53.cpp.obj
+
+8_greed/day31/3_53.i: 8_greed/day31/3_53.cpp.i
+.PHONY : 8_greed/day31/3_53.i
+
+# target to preprocess a source file
+8_greed/day31/3_53.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_53.dir\build.make CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.i
+.PHONY : 8_greed/day31/3_53.cpp.i
+
+8_greed/day31/3_53.s: 8_greed/day31/3_53.cpp.s
+.PHONY : 8_greed/day31/3_53.s
+
+# target to generate assembly for a file
+8_greed/day31/3_53.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_53.dir\build.make CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.s
+.PHONY : 8_greed/day31/3_53.cpp.s
+
+8_greed/day32/1_122.obj: 8_greed/day32/1_122.cpp.obj
+.PHONY : 8_greed/day32/1_122.obj
+
+# target to build an object file
+8_greed/day32/1_122.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_122.dir\build.make CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.obj
+.PHONY : 8_greed/day32/1_122.cpp.obj
+
+8_greed/day32/1_122.i: 8_greed/day32/1_122.cpp.i
+.PHONY : 8_greed/day32/1_122.i
+
+# target to preprocess a source file
+8_greed/day32/1_122.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_122.dir\build.make CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.i
+.PHONY : 8_greed/day32/1_122.cpp.i
+
+8_greed/day32/1_122.s: 8_greed/day32/1_122.cpp.s
+.PHONY : 8_greed/day32/1_122.s
+
+# target to generate assembly for a file
+8_greed/day32/1_122.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_122.dir\build.make CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.s
+.PHONY : 8_greed/day32/1_122.cpp.s
+
+8_greed/day32/2_55.obj: 8_greed/day32/2_55.cpp.obj
+.PHONY : 8_greed/day32/2_55.obj
+
+# target to build an object file
+8_greed/day32/2_55.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_55.dir\build.make CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.obj
+.PHONY : 8_greed/day32/2_55.cpp.obj
+
+8_greed/day32/2_55.i: 8_greed/day32/2_55.cpp.i
+.PHONY : 8_greed/day32/2_55.i
+
+# target to preprocess a source file
+8_greed/day32/2_55.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_55.dir\build.make CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.i
+.PHONY : 8_greed/day32/2_55.cpp.i
+
+8_greed/day32/2_55.s: 8_greed/day32/2_55.cpp.s
+.PHONY : 8_greed/day32/2_55.s
+
+# target to generate assembly for a file
+8_greed/day32/2_55.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_55.dir\build.make CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.s
+.PHONY : 8_greed/day32/2_55.cpp.s
+
+8_greed/day32/3_45.obj: 8_greed/day32/3_45.cpp.obj
+.PHONY : 8_greed/day32/3_45.obj
+
+# target to build an object file
+8_greed/day32/3_45.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_45.dir\build.make CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.obj
+.PHONY : 8_greed/day32/3_45.cpp.obj
+
+8_greed/day32/3_45.i: 8_greed/day32/3_45.cpp.i
+.PHONY : 8_greed/day32/3_45.i
+
+# target to preprocess a source file
+8_greed/day32/3_45.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_45.dir\build.make CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.i
+.PHONY : 8_greed/day32/3_45.cpp.i
+
+8_greed/day32/3_45.s: 8_greed/day32/3_45.cpp.s
+.PHONY : 8_greed/day32/3_45.s
+
+# target to generate assembly for a file
+8_greed/day32/3_45.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_45.dir\build.make CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.s
+.PHONY : 8_greed/day32/3_45.cpp.s
+
+8_greed/day33/1_1005.obj: 8_greed/day33/1_1005.cpp.obj
+.PHONY : 8_greed/day33/1_1005.obj
+
+# target to build an object file
+8_greed/day33/1_1005.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_1005.dir\build.make CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.obj
+.PHONY : 8_greed/day33/1_1005.cpp.obj
+
+8_greed/day33/1_1005.i: 8_greed/day33/1_1005.cpp.i
+.PHONY : 8_greed/day33/1_1005.i
+
+# target to preprocess a source file
+8_greed/day33/1_1005.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_1005.dir\build.make CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.i
+.PHONY : 8_greed/day33/1_1005.cpp.i
+
+8_greed/day33/1_1005.s: 8_greed/day33/1_1005.cpp.s
+.PHONY : 8_greed/day33/1_1005.s
+
+# target to generate assembly for a file
+8_greed/day33/1_1005.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_1005.dir\build.make CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.s
+.PHONY : 8_greed/day33/1_1005.cpp.s
+
+8_greed/day33/2_134.obj: 8_greed/day33/2_134.cpp.obj
+.PHONY : 8_greed/day33/2_134.obj
+
+# target to build an object file
+8_greed/day33/2_134.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_134.dir\build.make CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.obj
+.PHONY : 8_greed/day33/2_134.cpp.obj
+
+8_greed/day33/2_134.i: 8_greed/day33/2_134.cpp.i
+.PHONY : 8_greed/day33/2_134.i
+
+# target to preprocess a source file
+8_greed/day33/2_134.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_134.dir\build.make CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.i
+.PHONY : 8_greed/day33/2_134.cpp.i
+
+8_greed/day33/2_134.s: 8_greed/day33/2_134.cpp.s
+.PHONY : 8_greed/day33/2_134.s
+
+# target to generate assembly for a file
+8_greed/day33/2_134.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_134.dir\build.make CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.s
+.PHONY : 8_greed/day33/2_134.cpp.s
+
+8_greed/day33/3_135.obj: 8_greed/day33/3_135.cpp.obj
+.PHONY : 8_greed/day33/3_135.obj
+
+# target to build an object file
+8_greed/day33/3_135.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_135.dir\build.make CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.obj
+.PHONY : 8_greed/day33/3_135.cpp.obj
+
+8_greed/day33/3_135.i: 8_greed/day33/3_135.cpp.i
+.PHONY : 8_greed/day33/3_135.i
+
+# target to preprocess a source file
+8_greed/day33/3_135.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_135.dir\build.make CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.i
+.PHONY : 8_greed/day33/3_135.cpp.i
+
+8_greed/day33/3_135.s: 8_greed/day33/3_135.cpp.s
+.PHONY : 8_greed/day33/3_135.s
+
+# target to generate assembly for a file
+8_greed/day33/3_135.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_135.dir\build.make CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.s
+.PHONY : 8_greed/day33/3_135.cpp.s
+
+8_greed/day33/test.obj: 8_greed/day33/test.cpp.obj
+.PHONY : 8_greed/day33/test.obj
+
+# target to build an object file
+8_greed/day33/test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day33_test.dir\build.make CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.obj
+.PHONY : 8_greed/day33/test.cpp.obj
+
+8_greed/day33/test.i: 8_greed/day33/test.cpp.i
+.PHONY : 8_greed/day33/test.i
+
+# target to preprocess a source file
+8_greed/day33/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day33_test.dir\build.make CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.i
+.PHONY : 8_greed/day33/test.cpp.i
+
+8_greed/day33/test.s: 8_greed/day33/test.cpp.s
+.PHONY : 8_greed/day33/test.s
+
+# target to generate assembly for a file
+8_greed/day33/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day33_test.dir\build.make CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.s
+.PHONY : 8_greed/day33/test.cpp.s
+
+8_greed/day34/1_860.obj: 8_greed/day34/1_860.cpp.obj
+.PHONY : 8_greed/day34/1_860.obj
+
+# target to build an object file
+8_greed/day34/1_860.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_860.dir\build.make CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.obj
+.PHONY : 8_greed/day34/1_860.cpp.obj
+
+8_greed/day34/1_860.i: 8_greed/day34/1_860.cpp.i
+.PHONY : 8_greed/day34/1_860.i
+
+# target to preprocess a source file
+8_greed/day34/1_860.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_860.dir\build.make CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.i
+.PHONY : 8_greed/day34/1_860.cpp.i
+
+8_greed/day34/1_860.s: 8_greed/day34/1_860.cpp.s
+.PHONY : 8_greed/day34/1_860.s
+
+# target to generate assembly for a file
+8_greed/day34/1_860.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\1_860.dir\build.make CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.s
+.PHONY : 8_greed/day34/1_860.cpp.s
+
+8_greed/day34/2_406.obj: 8_greed/day34/2_406.cpp.obj
+.PHONY : 8_greed/day34/2_406.obj
+
+# target to build an object file
+8_greed/day34/2_406.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_406.dir\build.make CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.obj
+.PHONY : 8_greed/day34/2_406.cpp.obj
+
+8_greed/day34/2_406.i: 8_greed/day34/2_406.cpp.i
+.PHONY : 8_greed/day34/2_406.i
+
+# target to preprocess a source file
+8_greed/day34/2_406.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_406.dir\build.make CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.i
+.PHONY : 8_greed/day34/2_406.cpp.i
+
+8_greed/day34/2_406.s: 8_greed/day34/2_406.cpp.s
+.PHONY : 8_greed/day34/2_406.s
+
+# target to generate assembly for a file
+8_greed/day34/2_406.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\2_406.dir\build.make CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.s
+.PHONY : 8_greed/day34/2_406.cpp.s
+
+8_greed/day34/3_452.obj: 8_greed/day34/3_452.cpp.obj
+.PHONY : 8_greed/day34/3_452.obj
+
+# target to build an object file
+8_greed/day34/3_452.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_452.dir\build.make CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.obj
+.PHONY : 8_greed/day34/3_452.cpp.obj
+
+8_greed/day34/3_452.i: 8_greed/day34/3_452.cpp.i
+.PHONY : 8_greed/day34/3_452.i
+
+# target to preprocess a source file
+8_greed/day34/3_452.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_452.dir\build.make CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.i
+.PHONY : 8_greed/day34/3_452.cpp.i
+
+8_greed/day34/3_452.s: 8_greed/day34/3_452.cpp.s
+.PHONY : 8_greed/day34/3_452.s
+
+# target to generate assembly for a file
+8_greed/day34/3_452.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\3_452.dir\build.make CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.s
+.PHONY : 8_greed/day34/3_452.cpp.s
+
+8_greed/day34/test.obj: 8_greed/day34/test.cpp.obj
+.PHONY : 8_greed/day34/test.obj
+
+# target to build an object file
+8_greed/day34/test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day34_test.dir\build.make CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.obj
+.PHONY : 8_greed/day34/test.cpp.obj
+
+8_greed/day34/test.i: 8_greed/day34/test.cpp.i
+.PHONY : 8_greed/day34/test.i
+
+# target to preprocess a source file
+8_greed/day34/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day34_test.dir\build.make CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.i
+.PHONY : 8_greed/day34/test.cpp.i
+
+8_greed/day34/test.s: 8_greed/day34/test.cpp.s
+.PHONY : 8_greed/day34/test.s
+
+# target to generate assembly for a file
+8_greed/day34/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\day34_test.dir\build.make CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.s
+.PHONY : 8_greed/day34/test.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -493,14 +1122,31 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... 1_1005
+	@echo ... 1_122
+	@echo ... 1_332
+	@echo ... 1_455
 	@echo ... 1_491
+	@echo ... 1_860
 	@echo ... 1_93
+	@echo ... 2_134
+	@echo ... 2_376
 	@echo ... 2_40
+	@echo ... 2_406
 	@echo ... 2_46
+	@echo ... 2_55
 	@echo ... 2_78
 	@echo ... 3_131
+	@echo ... 3_135
+	@echo ... 3_37
+	@echo ... 3_45
+	@echo ... 3_452
 	@echo ... 3_47
+	@echo ... 3_53
 	@echo ... 3_90
+	@echo ... day29
+	@echo ... day33_test
+	@echo ... day34_test
 	@echo ... test
 	@echo ... test27
 	@echo ... 7_backtracking/day26/2_40.obj
@@ -533,6 +1179,57 @@ help:
 	@echo ... 7_backtracking/day28/3_47.obj
 	@echo ... 7_backtracking/day28/3_47.i
 	@echo ... 7_backtracking/day28/3_47.s
+	@echo ... 7_backtracking/day29/1_332.obj
+	@echo ... 7_backtracking/day29/1_332.i
+	@echo ... 7_backtracking/day29/1_332.s
+	@echo ... 7_backtracking/day29/3_37.obj
+	@echo ... 7_backtracking/day29/3_37.i
+	@echo ... 7_backtracking/day29/3_37.s
+	@echo ... 7_backtracking/day29/test.obj
+	@echo ... 7_backtracking/day29/test.i
+	@echo ... 7_backtracking/day29/test.s
+	@echo ... 8_greed/day31/1_455.obj
+	@echo ... 8_greed/day31/1_455.i
+	@echo ... 8_greed/day31/1_455.s
+	@echo ... 8_greed/day31/2_376.obj
+	@echo ... 8_greed/day31/2_376.i
+	@echo ... 8_greed/day31/2_376.s
+	@echo ... 8_greed/day31/3_53.obj
+	@echo ... 8_greed/day31/3_53.i
+	@echo ... 8_greed/day31/3_53.s
+	@echo ... 8_greed/day32/1_122.obj
+	@echo ... 8_greed/day32/1_122.i
+	@echo ... 8_greed/day32/1_122.s
+	@echo ... 8_greed/day32/2_55.obj
+	@echo ... 8_greed/day32/2_55.i
+	@echo ... 8_greed/day32/2_55.s
+	@echo ... 8_greed/day32/3_45.obj
+	@echo ... 8_greed/day32/3_45.i
+	@echo ... 8_greed/day32/3_45.s
+	@echo ... 8_greed/day33/1_1005.obj
+	@echo ... 8_greed/day33/1_1005.i
+	@echo ... 8_greed/day33/1_1005.s
+	@echo ... 8_greed/day33/2_134.obj
+	@echo ... 8_greed/day33/2_134.i
+	@echo ... 8_greed/day33/2_134.s
+	@echo ... 8_greed/day33/3_135.obj
+	@echo ... 8_greed/day33/3_135.i
+	@echo ... 8_greed/day33/3_135.s
+	@echo ... 8_greed/day33/test.obj
+	@echo ... 8_greed/day33/test.i
+	@echo ... 8_greed/day33/test.s
+	@echo ... 8_greed/day34/1_860.obj
+	@echo ... 8_greed/day34/1_860.i
+	@echo ... 8_greed/day34/1_860.s
+	@echo ... 8_greed/day34/2_406.obj
+	@echo ... 8_greed/day34/2_406.i
+	@echo ... 8_greed/day34/2_406.s
+	@echo ... 8_greed/day34/3_452.obj
+	@echo ... 8_greed/day34/3_452.i
+	@echo ... 8_greed/day34/3_452.s
+	@echo ... 8_greed/day34/test.obj
+	@echo ... 8_greed/day34/test.i
+	@echo ... 8_greed/day34/test.s
 .PHONY : help
 
 

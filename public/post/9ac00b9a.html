@@ -1,0 +1,652 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Promise">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="【Study】Go语言动手写Web框架-Gee第一天项目来源: 7天用Go动手写&#x2F;从零实现系列 第一天1. net&#x2F;http的简易demo代码和一些说明12345678910111213141516171819202122232425package mainimport (	&quot;fmt&quot;	&quot;log&quot;	&quot;net&#x2F;http&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Study】Go语言动手写Web框架-Gee第一天">
+<meta property="og:url" content="https://promisewang.github.io/post/9ac00b9a.html">
+<meta property="og:site_name" content="Study Or Debug">
+<meta property="og:description" content="【Study】Go语言动手写Web框架-Gee第一天项目来源: 7天用Go动手写&#x2F;从零实现系列 第一天1. net&#x2F;http的简易demo代码和一些说明12345678910111213141516171819202122232425package mainimport (	&quot;fmt&quot;	&quot;log&quot;	&quot;net&#x2F;http&quot;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://promisewang.github.io/images/Gee1/url_path.png">
+<meta property="og:image" content="https://promisewang.github.io/images/Gee1/helloHandler.png">
+<meta property="og:image" content="https://promisewang.github.io/images/Gee1/curl.png">
+<meta property="article:published_time" content="2024-01-14T15:04:59.000Z">
+<meta property="article:modified_time" content="2024-01-14T16:21:03.030Z">
+<meta property="article:author" content="Promise">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://promisewang.github.io/images/Gee1/url_path.png">
+  
+  
+  
+  <title>【Study】Go语言动手写Web框架-Gee第一天 - Study Or Debug</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"promisewang.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【Study】Go语言动手写Web框架-Gee第一天"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-01-14 23:04" pubdate>
+          2024年1月14日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          28 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">【Study】Go语言动手写Web框架-Gee第一天</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="【Study】Go语言动手写Web框架-Gee第一天"><a href="#【Study】Go语言动手写Web框架-Gee第一天" class="headerlink" title="【Study】Go语言动手写Web框架-Gee第一天"></a>【Study】Go语言动手写Web框架-Gee第一天</h1><p>项目来源: <a target="_blank" rel="noopener" href="https://github.com/geektutu/7days-golang">7天用Go动手写&#x2F;从零实现系列</a></p>
+<h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><h3 id="1-net-http的简易demo"><a href="#1-net-http的简易demo" class="headerlink" title="1. net&#x2F;http的简易demo"></a>1. net&#x2F;http的简易demo</h3><h4 id="代码和一些说明"><a href="#代码和一些说明" class="headerlink" title="代码和一些说明"></a>代码和一些说明</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-keyword">package</span> main<br><br><span class="hljs-keyword">import</span> (<br>	<span class="hljs-string">&quot;fmt&quot;</span><br>	<span class="hljs-string">&quot;log&quot;</span><br>	<span class="hljs-string">&quot;net/http&quot;</span><br>)<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>	http.HandleFunc(<span class="hljs-string">&quot;/&quot;</span>, indexHandler)<br>	http.HandleFunc(<span class="hljs-string">&quot;/hello&quot;</span>, helloHandler)<br>	log.Fatal(http.ListenAndServe(<span class="hljs-string">&quot;:9999&quot;</span>, <span class="hljs-literal">nil</span>))<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">indexHandler</span><span class="hljs-params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;<br>	fmt.Fprintf(w, <span class="hljs-string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">helloHandler</span><span class="hljs-params">(w http.ResponseWriter, req *http.Request)</span></span> &#123;<br>	<span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> req.Header &#123;<br>		fmt.Fprintf(w, <span class="hljs-string">&quot;Header[%q] = %q\n&quot;</span>, k, v)<br>	&#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>使用Go语言内置的<code>net/http</code>库, 简单写个demo</p>
+<blockquote>
+<p>第10、11行：设置两个路由，分别是<code>/</code>和<code>/hello</code>，并且分别绑定了两个函数（第16、20行）<code>indexHandler</code>和<code>helloHandler</code></p>
+<p>处理<code>indexHandler</code>，返回的是URL；处理<code>helloHandler</code>，返回的是请求头内的信息</p>
+<p>第12行：设置端口为9999，表示在9999端口进行监听。第二个参数为处理所有http请求实例，<code>nil</code>代表使用标准库中的实例处理。</p>
+<p><code>http.ListenAndServe</code>底层源码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// ListenAndServe listens on the TCP network address addr and then calls</span><br><span class="hljs-comment">// Serve with handler to handle requests on incoming connections.</span><br><span class="hljs-comment">// Accepted connections are configured to enable TCP keep-alives.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// The handler is typically nil, in which case the DefaultServeMux is used.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// ListenAndServe always returns a non-nil error.</span><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">ListenAndServe</span><span class="hljs-params">(addr <span class="hljs-type">string</span>, handler Handler)</span></span> <span class="hljs-type">error</span> &#123;<br>	server := &amp;Server&#123;Addr: addr, Handler: handler&#125;<br>	<span class="hljs-keyword">return</span> server.ListenAndServe()<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>Handler</code>底层源码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// A Handler responds to an HTTP request.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// ServeHTTP should write reply headers and data to the ResponseWriter</span><br><span class="hljs-comment">// and then return. Returning signals that the request is finished; it</span><br><span class="hljs-comment">// is not valid to use the ResponseWriter or read from the</span><br><span class="hljs-comment">// Request.Body after or concurrently with the completion of the</span><br><span class="hljs-comment">// ServeHTTP call.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// Depending on the HTTP client software, HTTP protocol version, and</span><br><span class="hljs-comment">// any intermediaries between the client and the Go server, it may not</span><br><span class="hljs-comment">// be possible to read from the Request.Body after writing to the</span><br><span class="hljs-comment">// ResponseWriter. Cautious handlers should read the Request.Body</span><br><span class="hljs-comment">// first, and then reply.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// Except for reading the body, handlers should not modify the</span><br><span class="hljs-comment">// provided Request.</span><br><span class="hljs-comment">//</span><br><span class="hljs-comment">// If ServeHTTP panics, the server (the caller of ServeHTTP) assumes</span><br><span class="hljs-comment">// that the effect of the panic was isolated to the active request.</span><br><span class="hljs-comment">// It recovers the panic, logs a stack trace to the server error log,</span><br><span class="hljs-comment">// and either closes the network connection or sends an HTTP/2</span><br><span class="hljs-comment">// RST_STREAM, depending on the HTTP protocol. To abort a handler so</span><br><span class="hljs-comment">// the client sees an interrupted response but the server doesn&#x27;t log</span><br><span class="hljs-comment">// an error, panic with the value ErrAbortHandler.</span><br><span class="hljs-keyword">type</span> Handler <span class="hljs-keyword">interface</span> &#123;<br>    ServeHTTP(ResponseWriter, *Request)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>http.ListenAndServe()</code>的第二个参数类型可以看到是一个接口，需要实现<code>ServeHTTP</code>方法，也就是说所有HTTP请求都交给它来处理（第二节实现）</p>
+<p><code>log.Fatal()</code>: 进入源码我们可以看到这样的注释<code>Fatal is equivalent to Print() followed by a call to os.Exit(1).</code></p>
+<p>可以得知，当程序报错之后打印日志并会立即退出，defer函数也不会执行，而不同于<code>panic()</code></p>
+<p><code>panic()</code>: </p>
+<ol>
+<li>函数立刻停止执行 (注意是函数本身，不是应用程序停止)</li>
+<li>defer函数被执行</li>
+<li>返回给调用者(caller)</li>
+<li>调用者函数假装也收到了一个panic函数，从而<br> 4.1 立即停止执行当前函数<br> 4.2 它defer函数被执行<br> 4.3 返回给它的调用者(caller)</li>
+<li>…(递归重复上述步骤，直到最上层函数)<br> 应用程序停止。</li>
+</ol>
+</blockquote>
+<h4 id="一些运行结果"><a href="#一些运行结果" class="headerlink" title="一些运行结果"></a>一些运行结果</h4><img src="..\images\Gee1\url_path.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<img src="..\images\Gee1\helloHandler.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<p>当然也可以使用curl工具</p>
+<img src="..\images\Gee1\curl.png" srcset="/img/loading.gif" lazyload style="zoom:50%;" />
+
+<h3 id="2-实现http-Handler接口"><a href="#2-实现http-Handler接口" class="headerlink" title="2. 实现http.Handler接口"></a>2. 实现http.Handler接口</h3><p>需要构造一个对象，并且实现<code>ServeHTTP</code>方法</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs go"><span class="hljs-comment">// 所有请求的统一实现</span><br><span class="hljs-keyword">type</span> Engine <span class="hljs-keyword">struct</span> &#123;&#125;<br><br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-params">(engine *Engine)</span></span> ServeHTTP(w http.ResponseWriter, req *http.Request) &#123;<br>	<span class="hljs-keyword">switch</span> req.URL.Path &#123;<br>	<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/&quot;</span>:<br>		fmt.Fprintf(w, <span class="hljs-string">&quot;URL.Path = %q\n&quot;</span>, req.URL.Path)<br>	<span class="hljs-keyword">case</span> <span class="hljs-string">&quot;/hello&quot;</span>:<br>		<span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> req.Header &#123;<br>			fmt.Fprintf(w, <span class="hljs-string">&quot;header[%q] = %q\n&quot;</span>, k, v)<br>		&#125;<br>	<span class="hljs-keyword">default</span>:<br>		fmt.Fprintf(w, <span class="hljs-string">&quot;404 NOT FOUND: %s\n&quot;</span>, req.URL)<br>	&#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;<br>    engine := <span class="hljs-built_in">new</span>(Engine)<br>    log.Fatal(http.ListenAndServe(<span class="hljs-string">&quot;:9999&quot;</span>, engine))<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>…(未完待续)</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Study/" class="print-no-link">#Study</a>
+      
+        <a href="/tags/Go/" class="print-no-link">#Go</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【Study】Go语言动手写Web框架-Gee第一天</div>
+      <div>https://promisewang.github.io/post/9ac00b9a.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Promise</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年1月14日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/94786f20.html" title="【debug】记一次失败的爬虫经历">
+                        <span class="hidden-mobile">【debug】记一次失败的爬虫经历</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
