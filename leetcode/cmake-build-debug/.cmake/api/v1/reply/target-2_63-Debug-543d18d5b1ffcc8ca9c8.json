@@ -2,7 +2,14 @@
 	"artifacts" : 
 	[
 		{
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_63-Debug-543d18d5b1ffcc8ca9c8.json
 			"path" : "2_63"
+=======
+			"path" : "1_122.exe"
+		},
+		{
+			"path" : "1_122.pdb"
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_122-Debug-e46d9a68d1c41b5935d2.json
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +32,11 @@
 			{
 				"command" : 0,
 				"file" : 0,
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_63-Debug-543d18d5b1ffcc8ca9c8.json
 				"line" : 35,
+=======
+				"line" : 28,
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_122-Debug-e46d9a68d1c41b5935d2.json
 				"parent" : 0
 			},
 			{
@@ -42,14 +53,17 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics"
+					"fragment" : "-g -fdiagnostics-color=always"
+				},
+				{
+					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/Users/promise/Promise Code/blog/leetcode/include"
+					"path" : "C:/Promise Code/blog/leetcode/include"
 				}
 			],
 			"language" : "CXX",
@@ -79,12 +93,21 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_63-Debug-543d18d5b1ffcc8ca9c8.json
 	"name" : "2_63",
 	"nameOnDisk" : "2_63",
+=======
+	"name" : "1_122",
+	"nameOnDisk" : "1_122.exe",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_122-Debug-e46d9a68d1c41b5935d2.json
 	"paths" : 
 	{
 		"build" : ".",

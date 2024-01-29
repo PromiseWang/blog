@@ -2,10 +2,20 @@
 	"artifacts" : 
 	[
 		{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_96-Debug-9a58d9933c0a2a9d75a1.json
+			"path" : "2_96"
+=======
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 			"path" : "1_455.exe"
 		},
 		{
 			"path" : "1_455.pdb"
+<<<<<<< HEAD
+=======
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_455-Debug-c5ac7ab11357b48fc679.json
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +38,15 @@
 			{
 				"command" : 0,
 				"file" : 0,
+<<<<<<< HEAD
 				"line" : 24,
+=======
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_96-Debug-9a58d9933c0a2a9d75a1.json
+				"line" : 37,
+=======
+				"line" : 24,
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_455-Debug-c5ac7ab11357b48fc679.json
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 				"parent" : 0
 			},
 			{
@@ -73,7 +91,11 @@
 			]
 		}
 	],
+<<<<<<< HEAD
 	"id" : "1_455::@6890427a1f51a3e7e1df",
+=======
+	"id" : "2_96::@6890427a1f51a3e7e1df",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 	"link" : 
 	{
 		"commandFragments" : 
@@ -93,8 +115,18 @@
 		],
 		"language" : "CXX"
 	},
+<<<<<<< HEAD
 	"name" : "1_455",
 	"nameOnDisk" : "1_455.exe",
+=======
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-2_96-Debug-9a58d9933c0a2a9d75a1.json
+	"name" : "2_96",
+	"nameOnDisk" : "2_96",
+=======
+	"name" : "1_455",
+	"nameOnDisk" : "1_455.exe",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/target-1_455-Debug-c5ac7ab11357b48fc679.json
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 	"paths" : 
 	{
 		"build" : ".",
@@ -115,7 +147,11 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
+<<<<<<< HEAD
 			"path" : "8_greed/day31/1_455.cpp",
+=======
+			"path" : "9_dynamicProgramming/day40/2_96.cpp",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3
 			"sourceGroupIndex" : 0
 		}
 	],

@@ -4,38 +4,42 @@
 		"generator" : 
 		{
 			"multiConfig" : false,
-			"name" : "Ninja"
+			"name" : "MinGW Makefiles"
 		},
 		"paths" : 
 		{
-			"cmake" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake",
-			"cpack" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cpack",
-			"ctest" : "/Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest",
-			"root" : "/Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26"
+			"cmake" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/x64/bin/cmake.exe",
+			"cpack" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/x64/bin/cpack.exe",
+			"ctest" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/x64/bin/ctest.exe",
+			"root" : "C:/Program Files/JetBrains/CLion 2022.3.1/bin/cmake/win/x64/share/cmake-3.25"
 		},
 		"version" : 
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 26,
-			"patch" : 4,
-			"string" : "3.26.4",
+			"minor" : 25,
+			"patch" : 2,
+			"string" : "3.25.2",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/index-2023-11-06T06-42-42-0631.json
 			"jsonFile" : "codemodel-v2-1b4ac4a0b2456d14ffbd.json",
+=======
+			"jsonFile" : "codemodel-v2-8595b4d6322e45c6def0.json",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-29T07-57-55-0601.json
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 5
+				"minor" : 4
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-581234b6e95d1a95d1a8.json",
+			"jsonFile" : "cache-v2-c29325cb3dac371f2465.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -44,7 +48,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cmakeFiles-v1-6f2d6ed9019e17724605.json",
+			"jsonFile" : "cmakeFiles-v1-b0255d2a07866266a8ec.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -53,7 +57,7 @@
 			}
 		},
 		{
-			"jsonFile" : "toolchains-v1-2ebdd397a9b9a925bf87.json",
+			"jsonFile" : "toolchains-v1-fd3748892154b852e1ee.json",
 			"kind" : "toolchains",
 			"version" : 
 			{
@@ -66,7 +70,7 @@
 	{
 		"cache-v2" : 
 		{
-			"jsonFile" : "cache-v2-581234b6e95d1a95d1a8.json",
+			"jsonFile" : "cache-v2-c29325cb3dac371f2465.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -76,7 +80,7 @@
 		},
 		"cmakeFiles-v1" : 
 		{
-			"jsonFile" : "cmakeFiles-v1-6f2d6ed9019e17724605.json",
+			"jsonFile" : "cmakeFiles-v1-b0255d2a07866266a8ec.json",
 			"kind" : "cmakeFiles",
 			"version" : 
 			{
@@ -86,17 +90,21 @@
 		},
 		"codemodel-v2" : 
 		{
+<<<<<<< HEAD:leetcode/cmake-build-debug/.cmake/api/v1/reply/index-2023-11-06T06-42-42-0631.json
 			"jsonFile" : "codemodel-v2-1b4ac4a0b2456d14ffbd.json",
+=======
+			"jsonFile" : "codemodel-v2-8595b4d6322e45c6def0.json",
+>>>>>>> 93635f3c92ff5ea992253b989f902341b22e7cb3:leetcode/cmake-build-debug/.cmake/api/v1/reply/index-2023-10-29T07-57-55-0601.json
 			"kind" : "codemodel",
 			"version" : 
 			{
 				"major" : 2,
-				"minor" : 5
+				"minor" : 4
 			}
 		},
 		"toolchains-v1" : 
 		{
-			"jsonFile" : "toolchains-v1-2ebdd397a9b9a925bf87.json",
+			"jsonFile" : "toolchains-v1-fd3748892154b852e1ee.json",
 			"kind" : "toolchains",
 			"version" : 
 			{
