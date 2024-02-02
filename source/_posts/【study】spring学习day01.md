@@ -1,10 +1,11 @@
 ---
 title: 【study】Spring学习day01
-date: 2024-01-28 10:57:22
 tags:
   - Study
   - Java
   - Spring框架
+abbrlink: 2c7b6666
+date: 2024-01-28 10:57:22
 ---
 
 # 【study】Spring学习day01
@@ -226,3 +227,83 @@ value是类的定义（描述）信息
 ```
 
 配置log4j2，在`day01.src.main.resources`下新建`log4j2.xml`
+
+``` xml
+<!--日志信息配置-->
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <loggers>
+        <root level="DEBUG">
+            <appender-ref ref="spring6log" />
+            <appender-ref ref="RollingFile"/>
+            <appender-ref ref="log"/>
+        </root>
+    </loggers>
+    <appenders>
+        <!--输入日志信息到控制台-->
+        <console name="spring6log" target="SYSTEM_OUT">
+            <!--控制日志输出的格式-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss SSS} [%t] %-3level %logger{1024} - %msg%n"/>
+        </console>
+
+        <!--文件会打印输出所有信息，这个log每次运行程序会自动清空，由append属性决定，适合临时测试调用-->
+        <File name="log" fileName="/Users/promise/Promise Code/Java/FinalWork/SpringStudy/day01/test.log" append="false">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %class{36} %L %M - %msg%xEx%n" />
+        </File>
+
+        <!--
+        这个会打印所有的信息
+        每次大小超过size，则这size大小的日志会自动存入按年份-月份建立的文件夹下面进行压缩，作为存档
+        -->
+        <RollingFile name="RollingFile" fileName="/Users/promise/Promise Code/Java/FinalWork/SpringStudy/day01/app.log"
+                     filePattern="log/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd 'at' HH:mm:ss z} %-5level %class{36} %L %M - %msg%xEx%n"/>
+            <SizeBasedTriggeringPolicy size="50MB"/>
+            <!--DefaultRolloverStrategy 属性不设置，则默认为最多同一文件夹下7个文件，这里设置了20-->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </appenders>
+</configuration>
+```
+
+### 使用logger
+
+在`org/example/test/TestUserService.java`文件，自定义logger
+
+``` java
+package org.example.test;
+
+
+import org.example.service.UserService;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestUserService {
+    // 创建Logger对象
+    private Logger logger = LoggerFactory.getLogger(TestUserService.class);
+    @Test
+    public void testUserService() {
+        // 加载Spring配置文件, 对象创建
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+
+        // 获取创建的对象
+        // context.getBean("userService")的返回值为Object类型, 需要强制类型转换
+        UserService userService = (UserService) context.getBean("userService");
+        System.out.println(userService);
+
+        // 使用对象调用方法进行调试
+        userService.add();
+
+        //手动写日志
+        logger.info("执行调用成功**************");
+    }
+
+}
+
+```
+
+![自定义日志输出](../images/springDay01/logger自定义输出@2x.png)
+
