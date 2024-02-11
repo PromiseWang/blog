@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Promise">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &amp;#123;    int add(int a, int b);    i">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【study】Spring学习part05">
+<meta property="og:url" content="https://promisewang.github.io/post/1824774.html">
+<meta property="og:site_name" content="Study Or Debug">
+<meta property="og:description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &amp;#123;    int add(int a, int b);    i">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.jpeg">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E6%A8%AA%E5%88%87%E5%85%B3%E6%B3%A8%E7%82%B9.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E9%80%9A%E7%9F%A5%EF%BC%88%E5%A2%9E%E5%BC%BA%EF%BC%89.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E5%88%87%E9%9D%A2.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5%E6%B5%8B%E8%AF%95.png">
+<meta property="og:image" content="https://promisewang.github.io/images/springPart05/xml%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5%E6%B5%8B%E8%AF%95.png">
+<meta property="article:published_time" content="2024-02-09T05:02:37.000Z">
+<meta property="article:modified_time" content="2024-02-11T16:16:17.941Z">
+<meta property="article:author" content="Promise">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Spring框架">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://promisewang.github.io/images/springPart05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.jpeg">
+  
+  
+  
+  <title>【study】Spring学习part05 - Study Or Debug</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"promisewang.github.io","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="【study】Spring学习part05"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-02-09 13:02" pubdate>
+          2024年2月9日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          15k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          127 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">【study】Spring学习part05</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="【study】Spring学习part05"><a href="#【study】Spring学习part05" class="headerlink" title="【study】Spring学习part05"></a>【study】Spring学习part05</h1><h2 id="AOP面向切面编程"><a href="#AOP面向切面编程" class="headerlink" title="AOP面向切面编程"></a>AOP面向切面编程</h2><p>需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出</p>
+<p>代码实现</p>
+<p>新建计算器类接口<code>Calculator</code>，定义四则运算</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.demo;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>定义接口实现<code>CalculatorImpl</code>，实现四则运算的简单操作</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.demo.impl;<br><br><span class="hljs-keyword">import</span> org.example.demo.Calculator;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-09 13:12</span><br><span class="hljs-comment"> * Description: 基本的实现类, 实现四则运算</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a + b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a - b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a * b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a / b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>定义接口实现<code>CalculatorLogImpl</code>，增加日志输出</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.demo.impl;<br><br><span class="hljs-keyword">import</span> org.example.demo.Calculator;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-09 13:20</span><br><span class="hljs-comment"> * Description: 含有日志的实现类, 包含四则运算</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorLogImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;[日志] add方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a + b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        System.out.printf(<span class="hljs-string">&quot;[日志] add方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;[日志] sub方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a - b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        System.out.printf(<span class="hljs-string">&quot;[日志] sub方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;[日志] mul方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a * b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        System.out.printf(<span class="hljs-string">&quot;[日志] mul方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        System.out.printf(<span class="hljs-string">&quot;[日志] div方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a / b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        System.out.printf(<span class="hljs-string">&quot;[日志] div方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>目前存在的问题</strong></p>
+<ol>
+<li><p>日志功能混合到一定，代码耦合度高，维护起来不方便</p>
+<blockquote>
+<p>  日志功能和核心业务能否分离？</p>
+<ul>
+<li>如果将日志功能抽象出工具类并不能做到，因为还是耦合在了业务中。</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h3><p>设计模式中的一种，是<strong>结构型模式</strong>。作用是通过提供一个代理类，让我们在调用目标的方法时，不再是直接对目标方法进行调用，而是通过代理类<strong>间接调用</strong>，让不属于目标方法核心逻辑的代码从目标方法中剥离出来——<strong>解耦</strong>。调用目标方法时先调用代理对象的方法，减少对目标方法的调用和打扰，同时让附加功能能够集中在一起有利于统一维护。</p>
+<p><img src="/../images/springPart05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.jpeg" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li>代理：将非核心逻辑剥离出来以后，封装这些非核心逻辑的类、对象、方法。</li>
+<li>目标：被代理“套用”了非核心逻辑代码的类、对象、方法。</li>
+</ul>
+<h4 id="静态代理"><a href="#静态代理" class="headerlink" title="静态代理"></a>静态代理</h4><p>新建静态代理类<code>proxy.CalculatorStaticProxy.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.demo.proxy;<br><br><span class="hljs-keyword">import</span> org.example.demo.Calculator;<br><br><span class="hljs-keyword">import</span> java.lang.ref.PhantomReference;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-10 19:13</span><br><span class="hljs-comment"> * Description:</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorStaticProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <br>    <span class="hljs-comment">// 被代理的目标对象传递过来</span><br>    <span class="hljs-keyword">private</span> Calculator calculator;<br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">CalculatorStaticProxy</span><span class="hljs-params">(Calculator calculator)</span> &#123;<br>        <span class="hljs-built_in">this</span>.calculator = calculator;<br>    &#125;<br>    <br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] add方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br>        <br>        <span class="hljs-comment">// 调用目标对象的方法实现核心业务</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> calculator.add(a, b);<br>        <br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] add方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] sub方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br><br>        <span class="hljs-comment">// 调用目标对象的方法实现核心业务</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> calculator.sub(a, b);<br><br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] sub方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] mul方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br><br>        <span class="hljs-comment">// 调用目标对象的方法实现核心业务</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> calculator.mul(a, b);<br><br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] mul方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] div方法开始执行, 参数是:%d, %d&quot;</span>, a, b);<br><br>        <span class="hljs-comment">// 调用目标对象的方法实现核心业务</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> calculator.div(a, b);<br><br>        <span class="hljs-comment">// 输出日志</span><br>        System.out.printf(<span class="hljs-string">&quot;[日志] div方法执行结束, 结果是:%d&quot;</span>, result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+<p>当前存在问题，日志功能并没有抽取出来，不具备灵活性。将来有任何日志需求都需要一个代理类来实现。</p>
+<h4 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a>动态代理</h4><p>定义代理工厂<code>ProxyFactory</code>，</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.demo.proxy;<br><br><br><span class="hljs-keyword">import</span> java.lang.reflect.InvocationHandler;<br><span class="hljs-keyword">import</span> java.lang.reflect.Method;<br><span class="hljs-keyword">import</span> java.lang.reflect.Proxy;<br><span class="hljs-keyword">import</span> java.util.Arrays;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-10 19:29</span><br><span class="hljs-comment"> * Description:</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">ProxyFactory</span> &#123;<br><br>    <span class="hljs-comment">// 目标对象</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> Object target;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">ProxyFactory</span><span class="hljs-params">(Object target)</span> &#123;<br>        <span class="hljs-built_in">this</span>.target = target;<br>    &#125;<br><br>    <span class="hljs-comment">// 创建一个方法, 返回代理对象(动态)</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">getProxy</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">         * @param ClassLoader: 加载动态生成代理类的类加载器</span><br><span class="hljs-comment">         * @param interfaces: 目标对象实现所有接口类型的class</span><br><span class="hljs-comment">         * @param InvocationHandler: 设置代理对象实现目标对象方法的过程</span><br><span class="hljs-comment">         * */</span><br>        <span class="hljs-type">ClassLoader</span> <span class="hljs-variable">classLoader</span> <span class="hljs-operator">=</span> target.getClass().getClassLoader();<br>        Class&lt;?&gt;[] interfaces = target.getClass().getInterfaces();<br>        <span class="hljs-type">InvocationHandler</span> <span class="hljs-variable">invocationHandler</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">InvocationHandler</span>() &#123;<br><br>            <span class="hljs-comment">/**</span><br><span class="hljs-comment">             * <span class="hljs-doctag">@param</span> proxy 代理对象</span><br><span class="hljs-comment">             * <span class="hljs-doctag">@param</span> method 需要重写目标对象的方法</span><br><span class="hljs-comment">             * <span class="hljs-doctag">@param</span> args method方法中所需要的参数</span><br><span class="hljs-comment">             * <span class="hljs-doctag">@return</span> Object</span><br><span class="hljs-comment">             * */</span><br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> <span class="hljs-keyword">throws</span> Throwable &#123;<br>                <span class="hljs-comment">// 调用目标方法</span><br>                <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>                <span class="hljs-keyword">try</span> &#123;<br>                    System.out.println(<span class="hljs-string">&quot;[动态代理][日志] &quot;</span> + method.getName() + <span class="hljs-string">&quot;, 参数: &quot;</span> + Arrays.toString(args));<br>                    result = method.invoke(target, args);<br>                    System.out.println(<span class="hljs-string">&quot;[动态代理][日志] &quot;</span> + method.getName() + <span class="hljs-string">&quot;, 结果: &quot;</span> + result);<br>                &#125; <span class="hljs-keyword">catch</span> (Exception e) &#123;<br>                    e.printStackTrace();<br>                    System.out.println(<span class="hljs-string">&quot;[动态代理][日志] &quot;</span> + method.getName() + <span class="hljs-string">&quot;, 异常: &quot;</span> + e.getMessage());<br>                &#125; <span class="hljs-keyword">finally</span> &#123;<br>                    System.out.println(<span class="hljs-string">&quot;[动态代理][日志] &quot;</span> + method.getName() + <span class="hljs-string">&quot;, 方法执行完毕&quot;</span>);<br>                &#125;<br>                <span class="hljs-keyword">return</span> result;<br>            &#125;<br>        &#125;;<br>        <span class="hljs-keyword">return</span> Proxy.newProxyInstance(classLoader, interfaces, invocationHandler);<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>测试单元</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testCalculator</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-comment">// 1. 创建代理对象(动态)</span><br>    <span class="hljs-type">ProxyFactory</span> <span class="hljs-variable">proxyFactory</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ProxyFactory</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">CalculatorImpl</span>());<br>    <span class="hljs-type">Calculator</span> <span class="hljs-variable">proxy</span> <span class="hljs-operator">=</span> (Calculator) proxyFactory.getProxy();<br>    proxy.add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出结果</p>
+<p><img src="/../images/springPart05/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h3><p>AOP (Aspect Oriented Programming）是一种设计思想，是软件设计领域中的面向切面编程，它是面向对象编程的一种补充和完善，它以通过预编译方式和运行期动态代理方式实现，<strong>在不修改源代码的情况下，给程序动态统一添加额外功能的一种技术</strong>。利用AOP可以对业务逻辑的各个部分进行隔离，从而使得业务逻辑各部分之问的耦合降低，提高程序的可重用性，同时提高了开发的效率。</p>
+<h4 id="1-横切关注点"><a href="#1-横切关注点" class="headerlink" title="1. 横切关注点"></a>1. 横切关注点</h4><p>分散在每个、各个模块中解决同一样的问题，例如用户验证、日志管理、事务处理、数据缓存都属于<strong>横切关注点</strong>。</p>
+<p>从每个方法中抽取出来的同一类非核心业务。在同一个项目中，我们可以使用多个横切关注点对相关方法进行多个不同方面的增强。</p>
+<p><img src="/../images/springPart05/%E6%A8%AA%E5%88%87%E5%85%B3%E6%B3%A8%E7%82%B9.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="2-通知（增强）"><a href="#2-通知（增强）" class="headerlink" title="2. 通知（增强）"></a>2. 通知（增强）</h4><p>增强，想要增强的功能，例如安全、事务、日志等。</p>
+<p>每一个横切关注点上要做的事情都需要写一个方法来实现，这样的方法叫做通知方法。</p>
+<ul>
+<li>前置通知：在被代理的目标方法前执行</li>
+<li>返回通知：在被代理的目标方法<strong>成功结束</strong>后执行（寿终正寝）</li>
+<li>异常通知：在被代理的目标方法<strong>异常结束</strong>后执行（死于非命）</li>
+<li>后置通知：在被代理的目标方法<strong>最终结束</strong>后执行（盖棺定论）</li>
+<li>环绕通知：使用<code>try...catch...finally</code>结构围绕着<strong>整个</strong>被代理的目标方法，包括上面四种通知对应的所有位置</li>
+</ul>
+<p><img src="/../images/springPart05/%E9%80%9A%E7%9F%A5%EF%BC%88%E5%A2%9E%E5%BC%BA%EF%BC%89.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="3-切面"><a href="#3-切面" class="headerlink" title="3. 切面"></a>3. 切面</h4><p>封装通知方法类</p>
+<p><img src="/../images/springPart05/%E5%88%87%E9%9D%A2.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="4-目标"><a href="#4-目标" class="headerlink" title="4. 目标"></a>4. 目标</h4><p>被代理的目标对象</p>
+<h4 id="5-代理"><a href="#5-代理" class="headerlink" title="5. 代理"></a>5. 代理</h4><p>向目标对象应用通知之后创建的代理对象。</p>
+<h4 id="6-连接点"><a href="#6-连接点" class="headerlink" title="6. 连接点"></a>6. 连接点</h4><p>这是一个纯逻辑的概念</p>
+<p>把每个方法排成一排，每一个横切位置看成x轴方向，把方法从上到下执行顺序看成y轴，x轴和y轴交叉点就是连接点。<strong>通俗说，就是Spring允许使用通知的地方</strong></p>
+<h4 id="7-切入点"><a href="#7-切入点" class="headerlink" title="7. 切入点"></a>7. 切入点</h4><p>定位连接点的方式。</p>
+<p>每个类的方法中都包含多个连接点，所以连接点是类中客观存在的事物（从逻辑上来说），</p>
+<p>如果把连接点看作数据库中的记录，那么切入点就是查询记录的SQL 语句。</p>
+<p><strong>Spring 的 AOP 技术可以通过切入点定位到特定的连接点。通俗说，要实际去增强的方法</strong></p>
+<p>切点通过 <code>org.springframework.aop.Pointcut</code> 接口进行描述，它使用类和方法作为连接点的查询条件。</p>
+<h3 id="基于注解的AOP"><a href="#基于注解的AOP" class="headerlink" title="基于注解的AOP"></a>基于注解的AOP</h3><h4 id="1-添加依赖"><a href="#1-添加依赖" class="headerlink" title="1. 添加依赖"></a>1. 添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--Spring AOP依赖--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-aop<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br><span class="hljs-comment">&lt;!--Spring aspects依赖--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>spring-aspects<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.0.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2-创建目标资源"><a href="#2-创建目标资源" class="headerlink" title="2. 创建目标资源"></a>2. 创建目标资源</h4><ol>
+<li>接口</li>
+<li>实现类</li>
+</ol>
+<p>同计算器的例子<code>Calculator.java</code>，<code>CalculatorImpl.java</code>，放入新的包<code>annotationaop</code>当中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.annotationaop;<br><br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br><br>    <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span>;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.annotationaop.impl;<br><br><br><span class="hljs-keyword">import</span> org.example.annotationaop.Calculator;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Component;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-09 13:12</span><br><span class="hljs-comment"> * Description: 基本的实现类, 实现四则运算</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-meta">@Component</span>  <span class="hljs-comment">// 添加注解注入</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">CalculatorImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title class_">Calculator</span> &#123;<br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a + b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">sub</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a - b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">mul</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a * b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br><br>    <span class="hljs-meta">@Override</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">div</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> a / b;<br>        System.out.println(<span class="hljs-string">&quot;方法内部result = &quot;</span> + result);<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="3-创建切面类"><a href="#3-创建切面类" class="headerlink" title="3. 创建切面类"></a>3. 创建切面类</h4><ol>
+<li>切入点</li>
+<li>创建类型</li>
+</ol>
+<h5 id="切入点表达式"><a href="#切入点表达式" class="headerlink" title="切入点表达式"></a>切入点表达式</h5><p>五种通知类型注解，括号内参数为切入点表达式</p>
+<ul>
+<li>前置 <code>@Before()</code></li>
+<li>返回 <code>@AfterReturning()</code></li>
+<li>异常<code> @AfterThrowing()</code></li>
+<li>后置 <code>@After()</code></li>
+<li>环绕<code> @Around()</code></li>
+</ul>
+<p><img src="/../images/springPart05/%E5%88%87%E5%85%A5%E7%82%B9%E8%A1%A8%E8%BE%BE%E5%BC%8F.png" srcset="/img/loading.gif" lazyload></p>
+<p>创建切面类<code>LogAspect.java</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> org.example.annotationaop;<br><br><span class="hljs-keyword">import</span> org.aspectj.lang.JoinPoint;<br><span class="hljs-keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;<br><span class="hljs-keyword">import</span> org.aspectj.lang.annotation.*;<br><span class="hljs-keyword">import</span> org.springframework.stereotype.Component;<br><br><span class="hljs-keyword">import</span> java.util.Arrays;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * </span><br><span class="hljs-comment"> * Date: 2024-02-10 23:14</span><br><span class="hljs-comment"> * Description:</span><br><span class="hljs-comment"> */</span><br><br><span class="hljs-comment">// 切面类</span><br><span class="hljs-meta">@Aspect</span>  <span class="hljs-comment">// 切面类注解</span><br><span class="hljs-meta">@Component</span>  <span class="hljs-comment">// 在Spring IoC容器中管理</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">LogAspect</span> &#123;<br>    <span class="hljs-comment">// 设置切入点和通知类型</span><br>    <span class="hljs-comment">// 括号内写 切入点表达式 execution(访问修饰符 增强方法返回类型 增强方法所在类的全类名.方法名称(参数))</span><br>    <span class="hljs-comment">// * 可以省略一些</span><br>    <span class="hljs-comment">// 通知类型:</span><br>    <span class="hljs-comment">//      前置 @Before()</span><br>    <span class="hljs-comment">//      返回 @AfterReturning()</span><br>    <span class="hljs-comment">//      异常 @AfterThrowing()</span><br>    <span class="hljs-comment">//          目标方法出现异常, 这个通知会执行, 也能获取到目标方法异常信息</span><br>    <span class="hljs-comment">//      后置 @After()</span><br>    <span class="hljs-comment">//      环绕 @Around()</span><br><br>    <span class="hljs-comment">// 前置通知 @Before()</span><br>    <span class="hljs-meta">@Before(value = &quot;execution(public int org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">beforeMethod</span><span class="hljs-params">(JoinPoint joinPoint)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">methodName</span> <span class="hljs-operator">=</span> joinPoint.getSignature().getName();<br>        Object[] args = joinPoint.getArgs();<br>        System.out.println(<span class="hljs-string">&quot;Logger --&gt; 前置通知, 方法名称: &quot;</span> + methodName + <span class="hljs-string">&quot;, 参数为: &quot;</span> + Arrays.toString(args));<br>    &#125;<br><br>    <span class="hljs-comment">// 后置通知 @After()</span><br>    <span class="hljs-meta">@After(value = &quot;execution (* org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterMethod</span><span class="hljs-params">(JoinPoint joinPoint)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">methodName</span> <span class="hljs-operator">=</span> joinPoint.getSignature().getName();<br>        System.out.println(<span class="hljs-string">&quot;Logger --&gt; 后置通知, 方法名称: &quot;</span> + methodName);<br>    &#125;<br><br>    <span class="hljs-comment">// 返回通知 @AfterReturning</span><br>    <span class="hljs-comment">// 参数returning = &quot;参数名&quot;, 下方函数参数中Object 命名也必须一致</span><br>    <span class="hljs-meta">@AfterReturning(value = &quot;execution(* org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;, returning = &quot;results&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterReturningMethod</span><span class="hljs-params">(JoinPoint joinPoint, Object results)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">methodName</span> <span class="hljs-operator">=</span> joinPoint.getSignature().getName();<br>        System.out.println(<span class="hljs-string">&quot;Logger --&gt; 返回通知, 方法名称: &quot;</span> + methodName + <span class="hljs-string">&quot;, 返回结果: &quot;</span> + results);<br>    &#125;<br><br>    <span class="hljs-comment">// 异常通知 @AfterThrowing</span><br>    <span class="hljs-meta">@AfterThrowing(value = &quot;execution(* org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;, throwing = &quot;ex&quot;)</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">afterThrowingMethod</span><span class="hljs-params">(JoinPoint joinPoint, Throwable ex)</span> &#123;<br>        <span class="hljs-type">String</span> <span class="hljs-variable">methodName</span> <span class="hljs-operator">=</span> joinPoint.getSignature().getName();<br>        System.out.println(<span class="hljs-string">&quot;Logger --&gt; 异常通知, 方法名称: &quot;</span> + methodName + <span class="hljs-string">&quot;, 异常结果: &quot;</span> + ex);<br>    &#125;<br><br>    <span class="hljs-comment">// 环绕通知 @Around</span><br>    <span class="hljs-meta">@Around(value = &quot;execution(* org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;)</span><br>    <span class="hljs-keyword">public</span> Object <span class="hljs-title function_">aroundMethod</span><span class="hljs-params">(ProceedingJoinPoint joinPoint)</span> &#123;  <span class="hljs-comment">// 使用ProceedingJoinPoint类型, 更强</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">methodName</span> <span class="hljs-operator">=</span> joinPoint.getSignature().getName();<br>        Object[] args = joinPoint.getArgs();<br>        <span class="hljs-type">String</span> <span class="hljs-variable">argString</span> <span class="hljs-operator">=</span> Arrays.toString(args);<br>        <span class="hljs-type">Object</span> <span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">try</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;环绕通知, 目标方法之前执行&quot;</span>);<br>            result = joinPoint.proceed();<br>            System.out.println(<span class="hljs-string">&quot;环绕通知, 目标方法返回值之后执行&quot;</span>);<br>        &#125; <span class="hljs-keyword">catch</span> (Throwable throwable) &#123;<br>            throwable.printStackTrace();<br>            System.out.println(<span class="hljs-string">&quot;环绕通知, 目标方法出现异常时执行&quot;</span>);<br>        &#125; <span class="hljs-keyword">finally</span> &#123;<br>            System.out.println(<span class="hljs-string">&quot;环绕通知, 目标方法执行完毕时执行&quot;</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> result;<br>    &#125;<br>&#125;<br><br><br></code></pre></td></tr></table></figure>
+
+
+
+<p>创建配置文件<code>bean.xml</code></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:aop</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/aop&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans </span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/beans/spring-beans.xsd</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/context</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/context.xsd</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/aop </span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/aop.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--</span><br><span class="hljs-comment">        基于注解的AOP实现:</span><br><span class="hljs-comment">        1. 将目标对象和切面交给IoC容器管理(注解+扫描)</span><br><span class="hljs-comment">        2. 开启AspectJ的自动代理, 为目标对象自动生成代理</span><br><span class="hljs-comment">        3. 将切面类通过注解@Aspect标识</span><br><span class="hljs-comment">    --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example.annotationaop&quot;</span>/&gt;</span><br>	<span class="hljs-tag">&lt;<span class="hljs-name">aop:aspectj-autoproxy</span>/&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+<p>创建测试用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testAOPAdd</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;bean.xml&quot;</span>);<br>    org.example.annotationaop.<span class="hljs-type">Calculator</span> <span class="hljs-variable">calculator</span> <span class="hljs-operator">=</span> context.getBean(org.example.annotationaop.Calculator.class);<br>    System.out.println(<span class="hljs-string">&quot;**********add()开始执行**********&quot;</span>);<br>    calculator.add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********add()执行完毕**********&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********div()开始执行**********&quot;</span>);<br>    calculator.div(<span class="hljs-number">2</span>, <span class="hljs-number">0</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********div()执行完毕**********&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>   测试用例中使用<code>2/0</code>来引发错误异常。</p>
+</blockquote>
+<p><img src="/../images/springPart05/%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5%E6%B5%8B%E8%AF%95.png" srcset="/img/loading.gif" lazyload></p>
+<h4 id="切入点表达式的重用"><a href="#切入点表达式的重用" class="headerlink" title="切入点表达式的重用"></a>切入点表达式的重用</h4><p>定义方法<code>pointCut()</code>，在之前使用注解<code>@Pointcut()</code>，使用时候</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 重用切入点表达式</span><br><span class="hljs-meta">@Pointcut(value = &quot;execution(* org.example.annotationaop.impl.CalculatorImpl.*(..))&quot;)</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">pointCut</span><span class="hljs-params">()</span> &#123;<br><br>&#125;<br><br><span class="hljs-meta">@After(value = &quot;pointCut()&quot;)</span>  <span class="hljs-comment">// 注解时的值直接写方法名（同一个包里面的切面），不同包就是全路径</span><br><br><br><span class="hljs-meta">@After(value = &quot;org.example.annotationaop.LogAspect.pointCut()&quot;)</span><br><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="切面优先级"><a href="#切面优先级" class="headerlink" title="切面优先级"></a>切面优先级</h4><p>使用<code>Order()</code>可以控制切面的优先级，越小级别越高</p>
+<h3 id="基于XML的AOP"><a href="#基于XML的AOP" class="headerlink" title="基于XML的AOP"></a>基于XML的AOP</h3><p> 计算器接口、实现类、切面类同上，切面类去掉方法前的所有注解。</p>
+<p>新建配置文件<code>bean-aop.xml</code>，写入配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span>?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xmlns:aop</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/aop&quot;</span></span><br><span class="hljs-tag">       <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/beans/spring-beans.xsd</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/context</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/context/spring-context.xsd</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/aop</span></span><br><span class="hljs-string"><span class="hljs-tag">       http://www.springframework.org/schema/aop/spring-aop.xsd&quot;</span>&gt;</span><br>    <span class="hljs-comment">&lt;!--开启组件扫描--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example.xmlaop&quot;</span>/&gt;</span><br>    <span class="hljs-comment">&lt;!--配置AOP五种通知类型--&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span><br>        <span class="hljs-comment">&lt;!--配置切面类--&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">aop:aspect</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;logAspect&quot;</span>&gt;</span><br>            <span class="hljs-comment">&lt;!--配置切入点--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;pointcut&quot;</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;execution(* org.example.xmlaop.impl.CalculatorImpl.*(..))&quot;</span>/&gt;</span><br>            <span class="hljs-comment">&lt;!--配置五种通知类型--&gt;</span><br>            <span class="hljs-comment">&lt;!--1. 前置通知--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:before</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;beforeMethod&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;pointcut&quot;</span>/&gt;</span><br><br>            <span class="hljs-comment">&lt;!--2. 后置通知--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:after</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;afterMethod&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;pointcut&quot;</span>/&gt;</span><br><br>            <span class="hljs-comment">&lt;!--3. 返回通知--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:after-returning</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;afterReturningMethod&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;pointcut&quot;</span> <span class="hljs-attr">returning</span>=<span class="hljs-string">&quot;results&quot;</span>/&gt;</span><br><br>            <span class="hljs-comment">&lt;!--4. 异常通知--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:after-throwing</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;afterThrowingMethod&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;pointcut&quot;</span> <span class="hljs-attr">throwing</span>=<span class="hljs-string">&quot;ex&quot;</span>/&gt;</span><br><br>            <span class="hljs-comment">&lt;!--5. 环绕通知--&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">aop:around</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;aroundMethod&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;pointcut&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">aop:aspect</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>新建测试用例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Test</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">testXMLAOPAdd</span><span class="hljs-params">()</span> &#123;<br>    <span class="hljs-type">ApplicationContext</span> <span class="hljs-variable">context</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">ClassPathXmlApplicationContext</span>(<span class="hljs-string">&quot;bean-aop.xml&quot;</span>);<br>    org.example.xmlaop.<span class="hljs-type">Calculator</span> <span class="hljs-variable">calculator</span> <span class="hljs-operator">=</span> context.getBean(org.example.xmlaop.Calculator.class);<br>    System.out.println(<span class="hljs-string">&quot;**********add()开始执行**********&quot;</span>);<br>    calculator.add(<span class="hljs-number">6</span>, <span class="hljs-number">2</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********add()执行完毕**********&quot;</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********div()开始执行**********&quot;</span>);<br>    calculator.div(<span class="hljs-number">4</span>, <span class="hljs-number">0</span>);<br>    System.out.println(<span class="hljs-string">&quot;**********div()执行完毕**********&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<p>结果输出</p>
+<p><img src="/../images/springPart05/xml%E5%90%84%E7%A7%8D%E9%80%9A%E7%9F%A5%E6%B5%8B%E8%AF%95.png" srcset="/img/loading.gif" lazyload></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Java/" class="print-no-link">#Java</a>
+      
+        <a href="/tags/Study/" class="print-no-link">#Study</a>
+      
+        <a href="/tags/Spring%E6%A1%86%E6%9E%B6/" class="print-no-link">#Spring框架</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>【study】Spring学习part05</div>
+      <div>https://promisewang.github.io/post/1824774.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Promise</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年2月9日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/post/768577e2.html" title="【study】Spring学习part04">
+                        <span class="hidden-mobile">【study】Spring学习part04</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

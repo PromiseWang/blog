@@ -1,5 +1,5 @@
 ---
-title: 【study】Spring学习day02
+title: 【study】Spring学习part02
 tags:
   - Study
   - Java
@@ -8,7 +8,7 @@ abbrlink: b57237dc
 date: 2024-02-01 19:16:23
 ---
 
-# Spring学习day02
+# Spring学习part02
 
 
 

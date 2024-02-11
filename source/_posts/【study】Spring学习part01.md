@@ -1,5 +1,5 @@
 ---
-title: 【study】Spring学习day01
+title: 【study】Spring学习part01
 tags:
   - Study
   - Java
@@ -8,7 +8,7 @@ abbrlink: 2c7b6666
 date: 2024-01-28 10:57:22
 ---
 
-# 【study】Spring学习day01
+# 【study】Spring学习part01
 
 - 传统JavaWeb开发的困惑
 - IoC、DI和AOP思想提出
