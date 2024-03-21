@@ -55,6 +55,8 @@ build CMakeFiles/test.dir/7_backtracking/day26/test.cpp.o: CXX_COMPILER__test_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/test.dir
   OBJECT_FILE_DIR = CMakeFiles/test.dir/7_backtracking/day26
+  TARGET_COMPILE_PDB = CMakeFiles/test.dir/
+  TARGET_PDB = test.pdb
 
 
 # =============================================================================
@@ -69,8 +71,9 @@ build test: CXX_EXECUTABLE_LINKER__test_Debug CMakeFiles/test.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/test.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test.dir/
   TARGET_FILE = test
-  TARGET_PDB = test.dbg
+  TARGET_PDB = test.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_40
@@ -87,6 +90,8 @@ build CMakeFiles/2_40.dir/7_backtracking/day26/2_40.cpp.o: CXX_COMPILER__2_40_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_40.dir
   OBJECT_FILE_DIR = CMakeFiles/2_40.dir/7_backtracking/day26
+  TARGET_COMPILE_PDB = CMakeFiles/2_40.dir/
+  TARGET_PDB = 2_40.pdb
 
 
 # =============================================================================
@@ -101,8 +106,9 @@ build 2_40: CXX_EXECUTABLE_LINKER__2_40_Debug CMakeFiles/2_40.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/2_40.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_40.dir/
   TARGET_FILE = 2_40
-  TARGET_PDB = 2_40.dbg
+  TARGET_PDB = 2_40.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_131
@@ -119,6 +125,8 @@ build CMakeFiles/3_131.dir/7_backtracking/day26/3_131.cpp.o: CXX_COMPILER__3_131
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_131.dir
   OBJECT_FILE_DIR = CMakeFiles/3_131.dir/7_backtracking/day26
+  TARGET_COMPILE_PDB = CMakeFiles/3_131.dir/
+  TARGET_PDB = 3_131.pdb
 
 
 # =============================================================================
@@ -133,8 +141,9 @@ build 3_131: CXX_EXECUTABLE_LINKER__3_131_Debug CMakeFiles/3_131.dir/7_backtrack
   OBJECT_DIR = CMakeFiles/3_131.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_131.dir/
   TARGET_FILE = 3_131
-  TARGET_PDB = 3_131.dbg
+  TARGET_PDB = 3_131.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_93
@@ -151,6 +160,8 @@ build CMakeFiles/1_93.dir/7_backtracking/day27/1_93.cpp.o: CXX_COMPILER__1_93_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_93.dir
   OBJECT_FILE_DIR = CMakeFiles/1_93.dir/7_backtracking/day27
+  TARGET_COMPILE_PDB = CMakeFiles/1_93.dir/
+  TARGET_PDB = 1_93.pdb
 
 
 # =============================================================================
@@ -165,8 +176,9 @@ build 1_93: CXX_EXECUTABLE_LINKER__1_93_Debug CMakeFiles/1_93.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/1_93.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_93.dir/
   TARGET_FILE = 1_93
-  TARGET_PDB = 1_93.dbg
+  TARGET_PDB = 1_93.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target test27
@@ -183,6 +195,8 @@ build CMakeFiles/test27.dir/7_backtracking/day27/test.cpp.o: CXX_COMPILER__test2
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/test27.dir
   OBJECT_FILE_DIR = CMakeFiles/test27.dir/7_backtracking/day27
+  TARGET_COMPILE_PDB = CMakeFiles/test27.dir/
+  TARGET_PDB = test27.pdb
 
 
 # =============================================================================
@@ -197,8 +211,9 @@ build test27: CXX_EXECUTABLE_LINKER__test27_Debug CMakeFiles/test27.dir/7_backtr
   OBJECT_DIR = CMakeFiles/test27.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/test27.dir/
   TARGET_FILE = test27
-  TARGET_PDB = test27.dbg
+  TARGET_PDB = test27.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_78
@@ -215,6 +230,8 @@ build CMakeFiles/2_78.dir/7_backtracking/day27/2_78.cpp.o: CXX_COMPILER__2_78_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_78.dir
   OBJECT_FILE_DIR = CMakeFiles/2_78.dir/7_backtracking/day27
+  TARGET_COMPILE_PDB = CMakeFiles/2_78.dir/
+  TARGET_PDB = 2_78.pdb
 
 
 # =============================================================================
@@ -229,8 +246,9 @@ build 2_78: CXX_EXECUTABLE_LINKER__2_78_Debug CMakeFiles/2_78.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/2_78.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_78.dir/
   TARGET_FILE = 2_78
-  TARGET_PDB = 2_78.dbg
+  TARGET_PDB = 2_78.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_90
@@ -247,6 +265,8 @@ build CMakeFiles/3_90.dir/7_backtracking/day27/3_90.cpp.o: CXX_COMPILER__3_90_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_90.dir
   OBJECT_FILE_DIR = CMakeFiles/3_90.dir/7_backtracking/day27
+  TARGET_COMPILE_PDB = CMakeFiles/3_90.dir/
+  TARGET_PDB = 3_90.pdb
 
 
 # =============================================================================
@@ -261,8 +281,9 @@ build 3_90: CXX_EXECUTABLE_LINKER__3_90_Debug CMakeFiles/3_90.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/3_90.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_90.dir/
   TARGET_FILE = 3_90
-  TARGET_PDB = 3_90.dbg
+  TARGET_PDB = 3_90.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_491
@@ -279,6 +300,8 @@ build CMakeFiles/1_491.dir/7_backtracking/day28/1_491.cpp.o: CXX_COMPILER__1_491
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_491.dir
   OBJECT_FILE_DIR = CMakeFiles/1_491.dir/7_backtracking/day28
+  TARGET_COMPILE_PDB = CMakeFiles/1_491.dir/
+  TARGET_PDB = 1_491.pdb
 
 
 # =============================================================================
@@ -293,8 +316,9 @@ build 1_491: CXX_EXECUTABLE_LINKER__1_491_Debug CMakeFiles/1_491.dir/7_backtrack
   OBJECT_DIR = CMakeFiles/1_491.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_491.dir/
   TARGET_FILE = 1_491
-  TARGET_PDB = 1_491.dbg
+  TARGET_PDB = 1_491.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_46
@@ -311,6 +335,8 @@ build CMakeFiles/2_46.dir/7_backtracking/day28/2_46.cpp.o: CXX_COMPILER__2_46_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_46.dir
   OBJECT_FILE_DIR = CMakeFiles/2_46.dir/7_backtracking/day28
+  TARGET_COMPILE_PDB = CMakeFiles/2_46.dir/
+  TARGET_PDB = 2_46.pdb
 
 
 # =============================================================================
@@ -325,8 +351,9 @@ build 2_46: CXX_EXECUTABLE_LINKER__2_46_Debug CMakeFiles/2_46.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/2_46.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_46.dir/
   TARGET_FILE = 2_46
-  TARGET_PDB = 2_46.dbg
+  TARGET_PDB = 2_46.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_47
@@ -343,6 +370,8 @@ build CMakeFiles/3_47.dir/7_backtracking/day28/3_47.cpp.o: CXX_COMPILER__3_47_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_47.dir
   OBJECT_FILE_DIR = CMakeFiles/3_47.dir/7_backtracking/day28
+  TARGET_COMPILE_PDB = CMakeFiles/3_47.dir/
+  TARGET_PDB = 3_47.pdb
 
 
 # =============================================================================
@@ -357,8 +386,9 @@ build 3_47: CXX_EXECUTABLE_LINKER__3_47_Debug CMakeFiles/3_47.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/3_47.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_47.dir/
   TARGET_FILE = 3_47
-  TARGET_PDB = 3_47.dbg
+  TARGET_PDB = 3_47.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_37
@@ -375,6 +405,8 @@ build CMakeFiles/3_37.dir/7_backtracking/day29/3_37.cpp.o: CXX_COMPILER__3_37_un
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_37.dir
   OBJECT_FILE_DIR = CMakeFiles/3_37.dir/7_backtracking/day29
+  TARGET_COMPILE_PDB = CMakeFiles/3_37.dir/
+  TARGET_PDB = 3_37.pdb
 
 
 # =============================================================================
@@ -389,8 +421,9 @@ build 3_37: CXX_EXECUTABLE_LINKER__3_37_Debug CMakeFiles/3_37.dir/7_backtracking
   OBJECT_DIR = CMakeFiles/3_37.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_37.dir/
   TARGET_FILE = 3_37
-  TARGET_PDB = 3_37.dbg
+  TARGET_PDB = 3_37.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target day29
@@ -407,6 +440,8 @@ build CMakeFiles/day29.dir/7_backtracking/day29/test.cpp.o: CXX_COMPILER__day29_
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/day29.dir
   OBJECT_FILE_DIR = CMakeFiles/day29.dir/7_backtracking/day29
+  TARGET_COMPILE_PDB = CMakeFiles/day29.dir/
+  TARGET_PDB = day29.pdb
 
 
 # =============================================================================
@@ -421,8 +456,9 @@ build day29: CXX_EXECUTABLE_LINKER__day29_Debug CMakeFiles/day29.dir/7_backtrack
   OBJECT_DIR = CMakeFiles/day29.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/day29.dir/
   TARGET_FILE = day29
-  TARGET_PDB = day29.dbg
+  TARGET_PDB = day29.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_332
@@ -439,6 +475,8 @@ build CMakeFiles/1_332.dir/7_backtracking/day29/1_332.cpp.o: CXX_COMPILER__1_332
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_332.dir
   OBJECT_FILE_DIR = CMakeFiles/1_332.dir/7_backtracking/day29
+  TARGET_COMPILE_PDB = CMakeFiles/1_332.dir/
+  TARGET_PDB = 1_332.pdb
 
 
 # =============================================================================
@@ -453,8 +491,9 @@ build 1_332: CXX_EXECUTABLE_LINKER__1_332_Debug CMakeFiles/1_332.dir/7_backtrack
   OBJECT_DIR = CMakeFiles/1_332.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_332.dir/
   TARGET_FILE = 1_332
-  TARGET_PDB = 1_332.dbg
+  TARGET_PDB = 1_332.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_455
@@ -471,6 +510,8 @@ build CMakeFiles/1_455.dir/8_greed/day31/1_455.cpp.o: CXX_COMPILER__1_455_unscan
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_455.dir
   OBJECT_FILE_DIR = CMakeFiles/1_455.dir/8_greed/day31
+  TARGET_COMPILE_PDB = CMakeFiles/1_455.dir/
+  TARGET_PDB = 1_455.pdb
 
 
 # =============================================================================
@@ -485,8 +526,9 @@ build 1_455: CXX_EXECUTABLE_LINKER__1_455_Debug CMakeFiles/1_455.dir/8_greed/day
   OBJECT_DIR = CMakeFiles/1_455.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_455.dir/
   TARGET_FILE = 1_455
-  TARGET_PDB = 1_455.dbg
+  TARGET_PDB = 1_455.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_376
@@ -503,6 +545,8 @@ build CMakeFiles/2_376.dir/8_greed/day31/2_376.cpp.o: CXX_COMPILER__2_376_unscan
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_376.dir
   OBJECT_FILE_DIR = CMakeFiles/2_376.dir/8_greed/day31
+  TARGET_COMPILE_PDB = CMakeFiles/2_376.dir/
+  TARGET_PDB = 2_376.pdb
 
 
 # =============================================================================
@@ -517,8 +561,9 @@ build 2_376: CXX_EXECUTABLE_LINKER__2_376_Debug CMakeFiles/2_376.dir/8_greed/day
   OBJECT_DIR = CMakeFiles/2_376.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_376.dir/
   TARGET_FILE = 2_376
-  TARGET_PDB = 2_376.dbg
+  TARGET_PDB = 2_376.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_53
@@ -535,6 +580,8 @@ build CMakeFiles/3_53.dir/8_greed/day31/3_53.cpp.o: CXX_COMPILER__3_53_unscanned
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_53.dir
   OBJECT_FILE_DIR = CMakeFiles/3_53.dir/8_greed/day31
+  TARGET_COMPILE_PDB = CMakeFiles/3_53.dir/
+  TARGET_PDB = 3_53.pdb
 
 
 # =============================================================================
@@ -549,8 +596,9 @@ build 3_53: CXX_EXECUTABLE_LINKER__3_53_Debug CMakeFiles/3_53.dir/8_greed/day31/
   OBJECT_DIR = CMakeFiles/3_53.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_53.dir/
   TARGET_FILE = 3_53
-  TARGET_PDB = 3_53.dbg
+  TARGET_PDB = 3_53.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_122
@@ -567,6 +615,8 @@ build CMakeFiles/1_122.dir/8_greed/day32/1_122.cpp.o: CXX_COMPILER__1_122_unscan
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_122.dir
   OBJECT_FILE_DIR = CMakeFiles/1_122.dir/8_greed/day32
+  TARGET_COMPILE_PDB = CMakeFiles/1_122.dir/
+  TARGET_PDB = 1_122.pdb
 
 
 # =============================================================================
@@ -581,8 +631,9 @@ build 1_122: CXX_EXECUTABLE_LINKER__1_122_Debug CMakeFiles/1_122.dir/8_greed/day
   OBJECT_DIR = CMakeFiles/1_122.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_122.dir/
   TARGET_FILE = 1_122
-  TARGET_PDB = 1_122.dbg
+  TARGET_PDB = 1_122.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_55
@@ -599,6 +650,8 @@ build CMakeFiles/2_55.dir/8_greed/day32/2_55.cpp.o: CXX_COMPILER__2_55_unscanned
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_55.dir
   OBJECT_FILE_DIR = CMakeFiles/2_55.dir/8_greed/day32
+  TARGET_COMPILE_PDB = CMakeFiles/2_55.dir/
+  TARGET_PDB = 2_55.pdb
 
 
 # =============================================================================
@@ -613,8 +666,9 @@ build 2_55: CXX_EXECUTABLE_LINKER__2_55_Debug CMakeFiles/2_55.dir/8_greed/day32/
   OBJECT_DIR = CMakeFiles/2_55.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_55.dir/
   TARGET_FILE = 2_55
-  TARGET_PDB = 2_55.dbg
+  TARGET_PDB = 2_55.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_45
@@ -631,6 +685,8 @@ build CMakeFiles/3_45.dir/8_greed/day32/3_45.cpp.o: CXX_COMPILER__3_45_unscanned
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_45.dir
   OBJECT_FILE_DIR = CMakeFiles/3_45.dir/8_greed/day32
+  TARGET_COMPILE_PDB = CMakeFiles/3_45.dir/
+  TARGET_PDB = 3_45.pdb
 
 
 # =============================================================================
@@ -645,8 +701,9 @@ build 3_45: CXX_EXECUTABLE_LINKER__3_45_Debug CMakeFiles/3_45.dir/8_greed/day32/
   OBJECT_DIR = CMakeFiles/3_45.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_45.dir/
   TARGET_FILE = 3_45
-  TARGET_PDB = 3_45.dbg
+  TARGET_PDB = 3_45.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 1_1005
@@ -663,6 +720,8 @@ build CMakeFiles/1_1005.dir/8_greed/day33/1_1005.cpp.o: CXX_COMPILER__1_1005_uns
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/1_1005.dir
   OBJECT_FILE_DIR = CMakeFiles/1_1005.dir/8_greed/day33
+  TARGET_COMPILE_PDB = CMakeFiles/1_1005.dir/
+  TARGET_PDB = 1_1005.pdb
 
 
 # =============================================================================
@@ -677,8 +736,9 @@ build 1_1005: CXX_EXECUTABLE_LINKER__1_1005_Debug CMakeFiles/1_1005.dir/8_greed/
   OBJECT_DIR = CMakeFiles/1_1005.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_1005.dir/
   TARGET_FILE = 1_1005
-  TARGET_PDB = 1_1005.dbg
+  TARGET_PDB = 1_1005.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 2_134
@@ -695,6 +755,8 @@ build CMakeFiles/2_134.dir/8_greed/day33/2_134.cpp.o: CXX_COMPILER__2_134_unscan
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/2_134.dir
   OBJECT_FILE_DIR = CMakeFiles/2_134.dir/8_greed/day33
+  TARGET_COMPILE_PDB = CMakeFiles/2_134.dir/
+  TARGET_PDB = 2_134.pdb
 
 
 # =============================================================================
@@ -709,8 +771,9 @@ build 2_134: CXX_EXECUTABLE_LINKER__2_134_Debug CMakeFiles/2_134.dir/8_greed/day
   OBJECT_DIR = CMakeFiles/2_134.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_134.dir/
   TARGET_FILE = 2_134
-  TARGET_PDB = 2_134.dbg
+  TARGET_PDB = 2_134.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target day33_test
@@ -727,6 +790,8 @@ build CMakeFiles/day33_test.dir/8_greed/day33/test.cpp.o: CXX_COMPILER__day33_te
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/day33_test.dir
   OBJECT_FILE_DIR = CMakeFiles/day33_test.dir/8_greed/day33
+  TARGET_COMPILE_PDB = CMakeFiles/day33_test.dir/
+  TARGET_PDB = day33_test.pdb
 
 
 # =============================================================================
@@ -741,8 +806,9 @@ build day33_test: CXX_EXECUTABLE_LINKER__day33_test_Debug CMakeFiles/day33_test.
   OBJECT_DIR = CMakeFiles/day33_test.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/day33_test.dir/
   TARGET_FILE = day33_test
-  TARGET_PDB = day33_test.dbg
+  TARGET_PDB = day33_test.pdb
 
 # =============================================================================
 # Object build statements for EXECUTABLE target 3_135
@@ -759,6 +825,8 @@ build CMakeFiles/3_135.dir/8_greed/day33/3_135.cpp.o: CXX_COMPILER__3_135_unscan
   INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
   OBJECT_DIR = CMakeFiles/3_135.dir
   OBJECT_FILE_DIR = CMakeFiles/3_135.dir/8_greed/day33
+  TARGET_COMPILE_PDB = CMakeFiles/3_135.dir/
+  TARGET_PDB = 3_135.pdb
 
 
 # =============================================================================
@@ -773,8 +841,149 @@ build 3_135: CXX_EXECUTABLE_LINKER__3_135_Debug CMakeFiles/3_135.dir/8_greed/day
   OBJECT_DIR = CMakeFiles/3_135.dir
   POST_BUILD = :
   PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_135.dir/
   TARGET_FILE = 3_135
-  TARGET_PDB = 3_135.dbg
+  TARGET_PDB = 3_135.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 1_860
+
+
+#############################################
+# Order-only phony target for 1_860
+
+build cmake_object_order_depends_target_1_860: phony || CMakeFiles/1_860.dir
+
+build CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.o: CXX_COMPILER__1_860_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day34/1_860.cpp || cmake_object_order_depends_target_1_860
+  DEP_FILE = CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/1_860.dir
+  OBJECT_FILE_DIR = CMakeFiles/1_860.dir/8_greed/day34
+  TARGET_COMPILE_PDB = CMakeFiles/1_860.dir/
+  TARGET_PDB = 1_860.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 1_860
+
+
+#############################################
+# Link the executable 1_860
+
+build 1_860: CXX_EXECUTABLE_LINKER__1_860_Debug CMakeFiles/1_860.dir/8_greed/day34/1_860.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/1_860.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/1_860.dir/
+  TARGET_FILE = 1_860
+  TARGET_PDB = 1_860.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target day34_test
+
+
+#############################################
+# Order-only phony target for day34_test
+
+build cmake_object_order_depends_target_day34_test: phony || CMakeFiles/day34_test.dir
+
+build CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.o: CXX_COMPILER__day34_test_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day34/test.cpp || cmake_object_order_depends_target_day34_test
+  DEP_FILE = CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/day34_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/day34_test.dir/8_greed/day34
+  TARGET_COMPILE_PDB = CMakeFiles/day34_test.dir/
+  TARGET_PDB = day34_test.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target day34_test
+
+
+#############################################
+# Link the executable day34_test
+
+build day34_test: CXX_EXECUTABLE_LINKER__day34_test_Debug CMakeFiles/day34_test.dir/8_greed/day34/test.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/day34_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/day34_test.dir/
+  TARGET_FILE = day34_test
+  TARGET_PDB = day34_test.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 2_406
+
+
+#############################################
+# Order-only phony target for 2_406
+
+build cmake_object_order_depends_target_2_406: phony || CMakeFiles/2_406.dir
+
+build CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.o: CXX_COMPILER__2_406_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day34/2_406.cpp || cmake_object_order_depends_target_2_406
+  DEP_FILE = CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/2_406.dir
+  OBJECT_FILE_DIR = CMakeFiles/2_406.dir/8_greed/day34
+  TARGET_COMPILE_PDB = CMakeFiles/2_406.dir/
+  TARGET_PDB = 2_406.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 2_406
+
+
+#############################################
+# Link the executable 2_406
+
+build 2_406: CXX_EXECUTABLE_LINKER__2_406_Debug CMakeFiles/2_406.dir/8_greed/day34/2_406.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/2_406.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/2_406.dir/
+  TARGET_FILE = 2_406
+  TARGET_PDB = 2_406.pdb
+
+# =============================================================================
+# Object build statements for EXECUTABLE target 3_452
+
+
+#############################################
+# Order-only phony target for 3_452
+
+build cmake_object_order_depends_target_3_452: phony || CMakeFiles/3_452.dir
+
+build CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.o: CXX_COMPILER__3_452_unscanned_Debug /Users/promise/Promise$ Code/blog/leetcode/8_greed/day34/3_452.cpp || cmake_object_order_depends_target_3_452
+  DEP_FILE = CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fcolor-diagnostics
+  INCLUDES = -I"/Users/promise/Promise Code/blog/leetcode/include"
+  OBJECT_DIR = CMakeFiles/3_452.dir
+  OBJECT_FILE_DIR = CMakeFiles/3_452.dir/8_greed/day34
+  TARGET_COMPILE_PDB = CMakeFiles/3_452.dir/
+  TARGET_PDB = 3_452.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target 3_452
+
+
+#############################################
+# Link the executable 3_452
+
+build 3_452: CXX_EXECUTABLE_LINKER__3_452_Debug CMakeFiles/3_452.dir/8_greed/day34/3_452.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk
+  OBJECT_DIR = CMakeFiles/3_452.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/3_452.dir/
+  TARGET_FILE = 3_452
+  TARGET_PDB = 3_452.pdb
 
 
 #############################################
@@ -810,7 +1019,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/promise/Promise Code/blog/leetcode/cmake-build-debug
 
-build all: phony test 2_40 3_131 1_93 test27 2_78 3_90 1_491 2_46 3_47 3_37 day29 1_332 1_455 2_376 3_53 1_122 2_55 3_45 1_1005 2_134 day33_test 3_135
+build all: phony test 2_40 3_131 1_93 test27 2_78 3_90 1_491 2_46 3_47 3_37 day29 1_332 1_455 2_376 3_53 1_122 2_55 3_45 1_1005 2_134 day33_test 3_135 1_860 day34_test 2_406 3_452
 
 # =============================================================================
 # Built-in targets
@@ -819,14 +1028,14 @@ build all: phony test 2_40 3_131 1_93 test27 2_78 3_90 1_491 2_46 3_47 3_37 day2
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/promise/Promise$ Code/blog/leetcode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/promise/Promise$ Code/blog/leetcode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/promise/Promise$ Code/blog/leetcode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCCompilerABI.c /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXCompiler.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeCompilerIdDetection.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompileFeatures.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeFindBinUtils.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseImplicitIncludeInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseImplicitLinkInfo.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeParseLibraryArchitecture.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystem.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/CMakeTestCompilerCommon.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ADSP-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ARMCC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/ARMClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/AppleClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Borland-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Cray-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GHS-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/HP-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IAR-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Intel-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/LCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/MSVC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/NVHPC-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/PGI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/PathScale-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SCO-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/TI-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Tasking-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/Watcom-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XL-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/zOS-C-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Internal/FeatureTesting.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Determine-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.26/Modules/Platform/UnixPaths.cmake /Users/promise/Promise$ Code/blog/leetcode/CMakeLists.txt CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake: phony
 
 
 #############################################
