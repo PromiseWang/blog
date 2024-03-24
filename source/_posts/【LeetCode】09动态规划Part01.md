@@ -56,13 +56,13 @@ date: 2024-03-20 15:50:08
 
 ### 代码
 
-``` cpp
+``` java
 class Solution {
-public:
-    int fib(int n) {
-        if (n < 2) 
+    public int fib(int n) {
+        if (n < 2) {
             return n;
-        vector<int> dp(n + 1, 0);
+        }
+        int[] dp = new int[n + 1];
         dp[0] = 0;
         dp[1] = 1;
         for (int i = 2; i < n + 1; i++) {
@@ -70,7 +70,7 @@ public:
         }
         return dp[n];
     }
-};
+}
 ```
 
 
@@ -109,22 +109,22 @@ public:
 
 ### 代码
 
-``` cpp
+``` java
 class Solution {
 public:
-    int climbStairs(int n) {
-        if (n <= 2) {
+    public int climbStairs(int n) {
+        if (n < 2) {
             return n;
         }
-        vector<int> dp(n + 1, 0);
+        int []dp = new int[n + 1];
         dp[1] = 1;
         dp[2] = 2;
-        for (auto i = 3; i < n + 1; i++) {
+        for (int i = 3; i <= n; i++) {
             dp[i] = dp[i - 1] + dp[i - 2];
         }
-        return dp.back();
+        return dp[n];
     }
-};
+}
 ```
 
 
@@ -165,27 +165,26 @@ public:
 
 ### 代码
 
-``` cpp
+``` java
 class Solution {
 public:
-    int minCostClimbingStairs(vector<int> &cost) {
-        vector<int> dp(cost.size(), 0);
+    public int minCostClimbingStairs(int[] cost) {
+        int[] dp = new int[cost.length];
         dp[0] = cost[0];
         dp[1] = cost[1];
-        if (cost.size() == 2) {
-            return min(dp[0], dp[1]);
+        if (cost.length == 2) {
+            return Math.min(dp[0], dp[1]);
         }
-        for (int i = 2; i < dp.size(); ++i) {
-            if (i == dp.size() - 1) {
-                dp[i] = min(dp[i - 1], cost[i] + dp[i - 2]);
-            }
-            else {
-                dp[i] = cost[i] + min(dp[i - 1], dp[i - 2]);
+        for (int i = 2; i < dp.length; i++) {
+            if (i == dp.length - 1) {
+                dp[i] = Math.min(dp[i - 1], cost[i] + dp[i - 2]);
+            } else {
+                dp[i] = cost[i] + Math.min(dp[i - 1], dp[i - 2]);
             }
         }
-        return dp.back();
+        return dp[dp.length - 1];
     }
-};
+}
 ```
 
 
