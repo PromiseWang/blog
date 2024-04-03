@@ -16,12 +16,12 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="【study】Spring学习part01 传统JavaWeb开发的困惑 IoC、DI和AOP思想提出 Spring框架诞生  传统JavaWeb开发的困惑以及解决方案123456789101112131415161718192021&#x2F;&#x2F; 用户账户信息修改业务方法public void updateUserInfo(User user) &amp;#123;    try &amp;#123;        &#x2F;&#x2F;">
+    <meta name="description" content="【study】Spring学习part01 传统JavaWeb开发的困惑 IoC、DI和AOP思想提出 Spring框架诞生  传统JavaWeb开发的困惑以及解决方案123456789101112131415161718192021&#x2F;&#x2F; 用户账户信息修改业务方法public void updateUserInfo(User user) &#123;    try &#123;        &#x2F;&#x2F;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【study】Spring学习part01">
 <meta property="og:url" content="https://promisewang.github.io/post/2c7b6666.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="【study】Spring学习part01 传统JavaWeb开发的困惑 IoC、DI和AOP思想提出 Spring框架诞生  传统JavaWeb开发的困惑以及解决方案123456789101112131415161718192021&#x2F;&#x2F; 用户账户信息修改业务方法public void updateUserInfo(User user) &amp;#123;    try &amp;#123;        &#x2F;&#x2F;">
+<meta property="og:description" content="【study】Spring学习part01 传统JavaWeb开发的困惑 IoC、DI和AOP思想提出 Spring框架诞生  传统JavaWeb开发的困惑以及解决方案123456789101112131415161718192021&#x2F;&#x2F; 用户账户信息修改业务方法public void updateUserInfo(User user) &#123;    try &#123;        &#x2F;&#x2F;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://promisewang.github.io/images/springDay01/logger%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BE%93%E5%87%BA@2x.png">
 <meta property="article:published_time" content="2024-01-28T02:57:22.000Z">
@@ -86,7 +86,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -476,6 +476,12 @@
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -667,6 +673,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

@@ -16,12 +16,12 @@
   <meta name="author" content="Promise">
   <meta name="keywords" content="">
   
-    <meta name="description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &amp;#123;    int add(int a, int b);    i">
+    <meta name="description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &#123;    int add(int a, int b);    i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【study】Spring学习part05">
 <meta property="og:url" content="https://promisewang.github.io/post/1824774.html">
 <meta property="og:site_name" content="Study Or Debug">
-<meta property="og:description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &amp;#123;    int add(int a, int b);    i">
+<meta property="og:description" content="【study】Spring学习part05AOP面向切面编程需求：制作一个计算器，包括加减乘除。还需要日志在核心业务前后做输出 代码实现 新建计算器类接口Calculator，定义四则运算 123456789101112package org.example.demo;public interface Calculator &#123;    int add(int a, int b);    i">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.jpeg">
 <meta property="og:image" content="https://promisewang.github.io/images/springPart05/%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C.png">
@@ -93,7 +93,7 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -553,6 +553,12 @@
   
 
 
+  
+  
+
+
+
+
 
 
 
@@ -744,6 +750,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
